@@ -1,0 +1,595 @@
+{
+  "hadm_id": {
+    "description": "Hospital admission identifier. Unique number assigned to each hospital admission or hospital stay. Used to track a patient's specific visit to the hospital. Also referred to as admission ID, admission number, hospitalization ID, or encounter ID. This identifier links all clinical events, procedures, diagnoses, medications, and observations that occurred during a single hospital admission. Multiple patients can have different admission IDs, and the same patient can have multiple admission IDs for different hospital visits.",
+    "tables": [
+      "admissions",
+      "icustays",
+      "diagnoses_icd",
+      "procedures_icd",
+      "prescriptions",
+      "labevents",
+      "chartevents",
+      "inputevents_cv",
+      "inputevents_mv",
+      "outputevents",
+      "microbiologyevents",
+      "procedureevents_mv",
+      "noteevents",
+      "services",
+      "transfers",
+
+
+      "callout",
+      "cptevents",
+      "datetimeevents",
+      "drgcodes"
+    ], 
+    "data_type": "int32"
+  },
+  "subject_id": {
+    "description": "Patient identifier. Unique number assigned to each individual patient across all their hospital admissions and ICU stays. Used to track all healthcare encounters and medical history for a single patient over time. Also referred to as patient ID, patient number, medical record number (MRN), or patient reference. This identifier remains constant for a patient across multiple hospital admissions, allowing longitudinal analysis of patient care. Essential for tracking patient demographics, outcomes, and historical medical information.",
+    "tables": [
+      "admissions",
+      "patients",
+      "icustays",
+      "diagnoses_icd",
+      "procedures_icd",
+      "prescriptions",
+      "labevents",
+      "chartevents",
+      "inputevents_cv",
+      "inputevents_mv",
+      "outputevents",
+      "microbiologyevents",
+      "procedureevents_mv",
+      "noteevents",
+     "services",
+      "transfers",
+
+      "callout",
+      "cptevents",
+      "datetimeevents",
+      "drgcodes"
+    ],
+    "data_type": "int32"
+  },
+  "admittime": {
+    "description": "Hospital admission timestamp. The exact date and time when a patient was admitted to or entered the hospital. Marks the beginning of a hospital stay or hospitalization episode. Used to calculate length of stay, time to events, and admission patterns. Also referred to as admission date, admission datetime, hospital entry time, or time of admission. Format is typically datetime with year, month, day, hour, and minute. Critical for temporal analysis and understanding the timeline of patient care.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "int64"
+  },
+  "dischtime": {
+    "description": "Hospital discharge timestamp. The exact date and time when a patient was discharged from or left the hospital. Marks the end of a hospital stay or hospitalization episode. Used to calculate length of stay, hospital utilization, and discharge patterns. Also referred to as discharge date, discharge datetime, hospital exit time, or time of discharge. Format is typically datetime with year, month, day, hour, and minute. Essential for determining total hospitalization duration and patient flow analysis.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type":"int64"
+  },
+  "deathtime": {
+    "description": "Death timestamp during hospital admission. The exact date and time when a patient died or expired during their hospital stay. Only populated if the patient died while admitted to the hospital. Used for mortality analysis, time-to-death calculations, and outcome studies. Also referred to as time of death, death datetime, expiration time, or mortality timestamp. NULL or empty if the patient survived the hospital admission. Critical for understanding in-hospital mortality and end-of-life care patterns.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type":"int64"
+  },
+  "admission_type": {
+    "description": "Type or category of hospital admission. Indicates how urgent the admission was and whether it was planned or unplanned. Common values include EMERGENCY (urgent unplanned admission), ELECTIVE (scheduled planned admission), URGENT (semi-urgent admission), and NEWBORN (admission of newborn infant). Also referred to as admission category, admission classification, or admission urgency. Used to analyze admission patterns, resource utilization, and patient acuity. Emergency admissions typically indicate more acute illness compared to elective admissions.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "str"
+  },
+  "admission_location": {
+    "description": "Location or source from which the patient was admitted to the hospital. Indicates where the patient came from immediately before hospital admission. Common values include EMERGENCY ROOM (admitted via ER), PHYSICIAN REFERRAL (referred by doctor), TRANSFER FROM HOSPITAL (from another hospital), TRANSFER FROM SKILLED NURSING FACILITY (from nursing home), CLINIC REFERRAL, and others. Also referred to as admission source, patient origin, admission point of entry, or referring location. Used to understand patient pathways and referral patterns.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "str"
+  },
+  "discharge_location": {
+    "description": "Location or destination to which the patient was discharged from the hospital. Indicates where the patient went immediately after hospital discharge. Common values include HOME (discharged home), HOME HEALTH CARE (home with services), SKILLED NURSING FACILITY (nursing home), REHAB/DISTINCT PART HOSPITAL (rehabilitation facility), SHORT TERM HOSPITAL (transferred to another hospital), DEAD/EXPIRED (died in hospital), and others. Also referred to as discharge destination, discharge disposition, discharge to location, or post-discharge location. Used to analyze discharge planning, care transitions, and patient outcomes.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "str"
+  },
+  "insurance": {
+    "description": "Type of health insurance or payment method for the hospital admission. Indicates the primary payer or insurance coverage. Common values include MEDICARE (federal insurance for elderly/disabled), MEDICAID (state insurance for low-income), PRIVATE (commercial insurance), GOVERNMENT (other government insurance), and SELF PAY (uninsured). Also referred to as insurance type, payer, insurance provider, insurance coverage, or payment source. Used to analyze healthcare financing, access to care, and socioeconomic factors in patient care.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "str"
+  },
+  "language": {
+    "description": "Primary language spoken by the patient. The language the patient uses for communication with healthcare providers. Common values include ENGLISH (English speaker), SPANISH (Spanish speaker), and various other languages. Also referred to as patient language, spoken language, preferred language, or language preference. Important for ensuring appropriate language services, interpreters, and culturally competent care. May affect health literacy and patient-provider communication.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "str"
+  },
+  "religion": {
+    "description": "Religious affiliation or spiritual beliefs of the patient. The religion the patient identifies with or practices. Values include various religious denominations such as CATHOLIC, PROTESTANT, JEWISH, MUSLIM, BUDDHIST, HINDU, NOT SPECIFIED, and others. Also referred to as religious preference, faith, spiritual affiliation, or religious background. May be relevant for spiritual care, dietary restrictions, end-of-life care decisions, and cultural considerations in healthcare delivery.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "str"
+  },
+  "marital_status": {
+    "description": "Marital or relationship status of the patient. Indicates whether the patient is married or in a relationship. Common values include MARRIED, SINGLE, DIVORCED, WIDOWED, SEPARATED, LIFE PARTNER, and UNKNOWN. Also referred to as marriage status, relationship status, or civil status. Used to understand social support systems, family dynamics, emergency contacts, and social determinants of health. May affect care planning and discharge disposition.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "str"
+  },
+  "ethnicity": {
+    "description": "Ethnic background, race, or ancestry of the patient. Self-reported or documented ethnic/racial category. Common values include WHITE, BLACK/AFRICAN AMERICAN, HISPANIC/LATINO, ASIAN, AMERICAN INDIAN/ALASKA NATIVE, NATIVE HAWAIIAN/PACIFIC ISLANDER, OTHER, and UNKNOWN. Also referred to as race, ethnic group, ethnicity category, racial background, or ancestry. Important for studying health disparities, population health, and ensuring equitable care delivery. Used in epidemiological research and quality improvement initiatives.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "str"
+  },
+  "diagnosis": {
+    "description": "Primary diagnosis or main reason for hospital admission. The principal medical condition, disease, or problem that necessitated hospitalization. Free-text description of the admitting diagnosis or chief medical issue. Also referred to as admission diagnosis, primary condition, principal diagnosis, admitting problem, or main diagnosis. Different from detailed ICD diagnosis codes. Represents the clinician's initial assessment of why the patient needed hospital-level care. Used for understanding admission patterns and disease prevalence.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "str"
+  },
+  "hospital_expire_flag": {
+    "description": "In-hospital mortality indicator. Binary flag (0 or 1) indicating whether the patient died during this specific hospital admission. Value of 1 means the patient died/expired in the hospital; value of 0 means the patient survived and was discharged alive. Also referred to as hospital death flag, in-hospital mortality, hospital mortality indicator, died in hospital, or hospital death status. Critical outcome measure for quality assessment, mortality studies, and severity of illness analysis. Corresponds with deathtime field.",
+    "tables": [
+      "admissions"
+    ],
+    "data_type": "int8"
+  },
+  "gender": {
+    "description": "Biological sex or gender of the patient. Indicates whether the patient is male or female. Values are typically M (male) or F (female). Also referred to as patient sex, biological sex, patient gender, or sex assigned at birth. Important demographic variable for clinical decision-making, as many diseases, treatments, and normal laboratory values differ by gender. Used in epidemiological studies and for appropriate gender-specific care protocols.",
+    "tables": [
+      "patients"
+    ],
+    "data_type": "str"
+  },
+  "dob": {
+    "description": "Patient's date of birth. The date when the patient was born, used to calculate age. Format is typically date with year, month, and day. Also referred to as birth date, birthday, date born, DOB, or birth datetime. Essential for determining patient age at time of admission, age-related risk factors, and age-appropriate care protocols. Note: in MIMIC-III, dates may be shifted for privacy protection while maintaining temporal relationships. Critical for pediatric vs adult vs geriatric care decisions.",
+    "tables": [
+      "patients"
+    ],
+    "data_type": "int64"
+  },
+  "dod": {
+    "description": "Patient's date of death. The date when the patient died or expired, either during hospitalization or after discharge. Format is typically date with year, month, and day. NULL or empty if the patient has not died or death date is unknown. Also referred to as death date, date of death, date died, mortality date, DOD, or expiration date. Used for survival analysis, long-term mortality studies, and outcome assessment beyond hospital discharge. May include deaths occurring outside the hospital.",
+    "tables": [
+      "patients"
+    ],
+    "data_type": "int64"
+  },
+  "expire_flag": {
+    "description": "Overall mortality indicator for the patient. Binary flag (0 or 1) indicating whether the patient died at any point (either during hospitalization or after discharge in available follow-up data). Value of 1 means patient is deceased; value of 0 means patient is alive or death status unknown. Also referred to as death flag, mortality indicator, patient expired, deceased status, or mortality flag. Different from hospital_expire_flag which only tracks in-hospital deaths. Used for long-term survival analysis and overall mortality outcomes.",
+    "tables": [
+      "patients"
+    ],
+    "data_type": "int32"
+  },
+  "icustay_id": {
+    "description": "Intensive Care Unit stay identifier. Unique number assigned to each ICU admission or ICU stay. Used to track a patient's specific visit to the ICU. Also referred to as ICU ID, ICU stay number, ICU encounter ID, or intensive care stay identifier. A single hospital admission (hadm_id) may have multiple ICU stays if the patient is transferred in and out of the ICU. Links all ICU-specific events, monitoring data, procedures, and treatments during one continuous ICU episode. Essential for analyzing critical care interventions and outcomes.",
+    "tables": [
+      "icustays",
+      "prescriptions",
+      "chartevents",
+      "inputevents_cv",
+      "inputevents_mv",
+      "outputevents",
+      "procedureevents_mv",
+      "transfers",
+
+      "datetimeevents"
+    ],
+     "data_type": "int32"
+  },
+  "intime": {
+    "description": "ICU admission timestamp or ICU entry time. The exact date and time when a patient was admitted to or transferred into the intensive care unit. Marks the beginning of an ICU stay or critical care episode. Also referred to as ICU in time, ICU admission datetime, ICU entry timestamp, ICU start time, or time entered ICU. Used to calculate ICU length of stay, time to ICU admission from hospital admission, and ICU utilization patterns. Format is datetime with year, month, day, hour, and minute. Critical for analyzing timing of critical care interventions.",
+    "tables": [
+      "icustays",
+      "transfers"
+    ]
+  },
+  "outtime": {
+    "description": "ICU discharge timestamp or ICU exit time. The exact date and time when a patient was discharged from or transferred out of the intensive care unit. Marks the end of an ICU stay or critical care episode. Also referred to as ICU out time, ICU discharge datetime, ICU exit timestamp, ICU end time, or time left ICU. Used to calculate ICU length of stay and ICU discharge patterns. Format is datetime with year, month, day, hour, and minute. Essential for determining ICU utilization and patient flow analysis.",
+    "tables": [
+      "icustays",
+      "transfers"
+    ],
+     "data_type": "int32"
+  },
+  "los": {
+    "description": "Length of stay in the ICU measured in days. The duration or number of days the patient spent in the intensive care unit during this ICU stay. Calculated as the difference between ICU intime and outtime. Also referred to as ICU length of stay, ICU LOS, ICU duration, days in ICU, ICU stay duration, or time spent in ICU. Decimal values represent fractional days (e.g., 2.5 days = 2 days and 12 hours). Key metric for ICU resource utilization, severity of illness, and care complexity. Used in ICU capacity planning and outcome studies.",
+    "tables": [
+      "icustays",
+      
+      "transfers"
+    ],
+     "data_type": "float64"
+  },
+  "first_careunit": {
+    "description": "First or initial ICU type where the patient was admitted. The specific type of intensive care unit where the patient first entered during this ICU stay. Common values include MICU (Medical ICU), SICU (Surgical ICU), CCU (Coronary Care Unit), CSRU (Cardiac Surgery Recovery Unit), TSICU (Trauma/Surgical ICU), NICU (Neonatal ICU), and others. Also referred to as initial ICU, starting ICU type, first ICU unit, or admission ICU. Used to analyze ICU admission patterns and specialty care needs. Patient may be transferred to different ICU types during their stay.",
+    "tables": [
+      "icustays"
+    ],
+     "data_type": "str"
+  },
+  "last_careunit": {
+    "description": "Last or final ICU type where the patient was located. The specific type of intensive care unit where the patient was situated at the end of their ICU stay before discharge or transfer out. Common values include MICU, SICU, CCU, CSRU, TSICU, NICU, and others. Also referred to as final ICU, ending ICU type, discharge ICU, or last ICU unit. Used to analyze ICU transfer patterns and patient care pathways. May differ from first_careunit if patient was transferred between ICU types during their critical care stay.",
+    "tables": [
+      "icustays"
+    ],
+     "data_type": "str"
+  },
+  "icd9_code": {
+    "description": "ICD-9-CM code for diagnosis or procedure. International Classification of Diseases, 9th Revision, Clinical Modification code used to classify diseases, conditions, injuries, and medical procedures. Alphanumeric code (e.g., 410.71, V45.81, 99.04) standardized for billing, research, and epidemiology. Also referred to as diagnosis code, procedure code, ICD9 code, disease code, condition code, or medical classification code. Each code corresponds to a specific diagnosis or procedure with varying levels of detail. Used for analyzing disease prevalence, comorbidities, treatment patterns, and healthcare utilization. Links to d_icd_diagnoses or d_icd_procedures tables for code descriptions.",
+    "tables": [
+      "diagnoses_icd",
+      "d_icd_diagnoses",
+      "procedures_icd",
+      "d_icd_procedures"
+    ],
+     "data_type": "str"
+  },
+  "seq_num": {
+    "description": "Sequence number indicating the priority or order of diagnoses or procedures. Numeric rank assigned to each diagnosis or procedure code for an admission. Value of 1 indicates the primary or principal diagnosis/procedure (most significant condition or main procedure). Higher values (2, 3, 4, etc.) indicate secondary diagnoses or additional procedures in decreasing order of importance. Also referred to as diagnosis sequence, diagnosis rank, diagnosis order, procedure sequence, primary vs secondary designation, or diagnosis priority. Used to distinguish between primary conditions and comorbidities, and to identify the main reason for hospitalization versus contributing factors. Critical for proper disease classification and risk adjustment.",
+    "tables": [
+      "diagnoses_icd",
+      "procedures_icd"
+    ],
+    "data_type": "int32"
+  },
+  "short_title": {
+    "description": "Abbreviated or shortened description of an ICD-9 diagnosis or procedure code. Brief clinical name or title for the medical condition or procedure, typically 20-30 characters. More concise than long_title but less detailed. Also referred to as short diagnosis name, abbreviated diagnosis, brief description, short procedure name, or diagnosis abbreviation. Examples: 'CHF NOS' for congestive heart failure, 'Acute MI NOS' for myocardial infarction, 'Mech vent <96 hrs' for mechanical ventilation. Used for space-constrained displays and quick reference. Provides human-readable interpretation of numeric ICD codes.",
+    "tables": [
+      "d_icd_diagnoses",
+      "d_icd_procedures"
+    ],
+     "data_type": "str"
+  },
+  "long_title": {
+    "description": "Complete or full description of an ICD-9 diagnosis or procedure code. Comprehensive clinical name or detailed title for the medical condition or procedure, providing maximum specificity. More detailed and explicit than short_title. Also referred to as full diagnosis description, complete diagnosis name, detailed diagnosis, long procedure name, or full code description. Examples: 'Congestive heart failure, unspecified', 'Acute myocardial infarction of other specified sites, initial episode of care', 'Continuous invasive mechanical ventilation for less than 96 consecutive hours'. Used for accurate clinical documentation and detailed disease classification. Provides complete human-readable interpretation of ICD codes.",
+    "tables": [
+      "d_icd_diagnoses",
+      "d_icd_procedures"
+    ],
+     "data_type": "str"
+  },
+  "startdate": {
+    "description": "Medication or prescription start date. The date when a medication was initiated, prescribed, or ordered for the patient. Marks the beginning of drug therapy or treatment period. Format is typically date with year, month, and day. Also referred to as prescription start date, medication start date, drug start date, therapy start date, or order start date. Used to analyze medication timing, duration of therapy, and temporal relationships with clinical events. May differ from actual administration time. Critical for understanding pharmacotherapy timelines and drug exposure periods.",
+    "tables": [
+      "prescriptions"
+    ],
+     "data_type": "int64"
+  },
+  "enddate": {
+    "description": "Medication or prescription end date. The date when a medication was discontinued, stopped, or the prescription ended. Marks the end of drug therapy or treatment period. Format is typically date with year, month, and day. Also referred to as prescription end date, medication stop date, drug discontinuation date, therapy end date, or order end date. May be NULL if medication is ongoing or end date not documented. Used to calculate medication duration, analyze discontinuation patterns, and understand total drug exposure. Critical for medication reconciliation and understanding complete pharmacotherapy course.",
+    "tables": [
+      "prescriptions"
+    ],
+     "data_type": "int64"
+  },
+  "drug": {
+    "description": "Name of the medication, pharmaceutical agent, or drug prescribed to the patient. The specific medication identifier as recorded in the prescription system. May include brand names, generic names, or formulation details. Also referred to as medication name, drug name, pharmaceutical name, prescribed drug, therapeutic agent, or medication identifier. Examples: 'Aspirin', 'Metoprolol', 'Insulin', 'Vancomycin', 'Normal Saline'. Used for pharmacotherapy analysis, drug utilization studies, medication safety research, and polypharmacy assessment. May vary in specificity and formatting across different records.",
+    "tables": [
+      "prescriptions"
+    ],
+     "data_type": "str"
+  },
+  "drug_name_poe": {
+    "description": "Drug name as entered in the Provider Order Entry system. The medication name exactly as the prescribing physician or provider entered it into the computerized order entry system. May include specific formulations, brand preferences, or ordering conventions. Also referred to as ordered drug name, POE drug name, provider-entered medication name, or order entry drug name. Can be more specific or formatted differently than the generic drug name field. Useful for understanding prescribing patterns and medication ordering practices. Reflects real-world clinical ordering behavior.",
+    "tables": [
+      "prescriptions"
+    ],
+     "data_type": "str"
+  },
+  "drug_name_generic": {
+    "description": "Generic or non-proprietary name of the medication. The standardized chemical or pharmaceutical name of the drug without brand names. Also referred to as generic medication name, non-brand drug name, chemical name, pharmaceutical generic name, or generic drug identifier. Examples: 'metoprolol' instead of 'Lopressor', 'acetaminophen' instead of 'Tylenol'. Used for drug class analysis, cost studies, and standardized medication research. Facilitates comparison across different brand formulations of the same active ingredient. Important for formulary management and therapeutic equivalence studies.",
+    "tables": [
+      "prescriptions"
+    ],
+     "data_type": "str"
+  },
+  "dose_val_rx": {
+    "description": "Prescribed dose amount or dosage value of the medication. The numeric quantity or strength of the drug ordered for administration. Represents how much of the medication should be given. Also referred to as dose amount, dosage value, drug quantity, medication dose, prescribed amount, or dose strength. Examples: 5, 10, 100, 500 (corresponding to units in dose_unit_rx). Used with dose_unit_rx to specify complete dosing information (e.g., '5 mg', '100 units'). Critical for pharmacotherapy analysis, dosing appropriateness studies, and medication safety research.",
+    "tables": [
+      "prescriptions"
+    ],
+     "data_type": "str"
+  },
+  "dose_unit_rx": {
+    "description": "Unit of measurement for the prescribed medication dose. The specific unit in which the drug dosage is measured. Common values include mg (milligrams), mcg (micrograms), mL (milliliters), units, grams, mg/kg, and others. Also referred to as dosage unit, dose measurement unit, medication unit, drug amount unit, or unit of administration. Used together with dose_val_rx to form complete dosing information. Examples: 'mg' for milligrams, 'units' for insulin, 'mL' for liquid medications. Essential for accurate medication administration and dose calculations. Critical for pharmacological analysis and dose-response studies.",
+    "tables": [
+      "prescriptions"
+    ],
+     "data_type": "str"
+  },
+  "route": {
+    "description": "Route or method of medication administration. Indicates how the drug is given to or taken by the patient. Common values include PO (by mouth/oral), IV (intravenous), IM (intramuscular), SC/SubQ (subcutaneous), NG (nasogastric tube), GT (gastrostomy tube), INH (inhaled), TOP (topical), and others. Also referred to as administration route, route of administration, delivery method, medication pathway, or how drug is given. Critical for pharmacokinetics as absorption, onset, and bioavailability vary by route. Used for medication safety analysis and administration practice studies.",
+    "tables": [
+      "prescriptions"
+    ],
+     "data_type": "str"
+  },
+  "itemid": {
+    "description": "Item identifier for laboratory tests, vital signs, medications, procedures, or other clinical measurements. Unique numeric code that identifies a specific type of measurement, observation, or intervention in the database. Links to descriptive dictionaries (d_labitems, d_items) to get the name and details of what was measured or performed. Also referred to as lab item ID, measurement ID, parameter ID, observation ID, or test identifier. Different itemid values represent different types of data (e.g., itemid 50820 = pH, itemid 220045 = heart rate). Essential for identifying and querying specific clinical measurements, lab tests, vital signs, or interventions. Used across multiple tables to standardize clinical data representation.",
+    "tables": [
+      "labevents",
+      "d_labitems",
+      "chartevents",
+      "inputevents_cv",
+      "inputevents_mv",
+      "outputevents",
+      "procedureevents_mv",
+      "d_items",
+      "datetimeevents"
+    ],
+     "data_type": "int32"
+  },
+  "charttime": {
+    "description": "Timestamp when clinical data was charted, recorded, or collected. The exact date and time when a measurement was taken, observation was made, specimen was collected, or event was documented. Marks when the clinical data point occurred. Also referred to as measurement time, observation time, collection time, documentation time, test time, recording datetime, or event timestamp. Format is datetime with year, month, day, hour, and minute. Used to establish temporal relationships between clinical events, track disease progression over time, and analyze time-series data. Critical for understanding the chronological sequence of patient care and clinical status changes.",
+    "tables": [
+      "labevents",
+      "chartevents",
+      "inputevents_cv",
+      "outputevents",
+      "microbiologyevents",
+      "noteevents",
+      "datetimeevents"
+    ],
+     "data_type": "int64"
+  },
+  "value": {
+    "description": "Clinical measurement result or observation value as text. The recorded value for a laboratory test, vital sign, or clinical observation in its original text format. May include numeric values, qualitative results, categorical data, or descriptive findings. Also referred to as test result, lab value, measurement value, observation result, recorded value, or clinical finding. Examples: '7.35', 'Negative', 'Normal', 'Positive', 'Unable to obtain', or descriptive text. Can be numeric or non-numeric. For numeric analysis, use valuenum field instead. Used for comprehensive data capture including non-numeric results and qualitative findings.",
+    "tables": [
+      "labevents",
+      "chartevents",
+      "outputevents",
+      "datetimeevents",
+      "procedureevents_mv",
+      "microbiologyevents"
+    ],
+     "data_type": "str"
+  },
+  "valuenum": {
+    "description": "Numeric clinical measurement value. The laboratory test or vital sign result converted to or stored as a numeric value for quantitative analysis. Only populated when the measurement is numeric (not for text or qualitative results). Also referred to as numeric value, numerical result, quantitative value, numeric lab result, or measurement number. Examples: 7.35 (pH), 98.6 (temperature), 120 (heart rate), 140 (blood pressure). Used for statistical analysis, trend analysis, abnormality detection, and mathematical calculations. Critical for quantitative research, plotting vital sign trends, and automated clinical decision support. NULL when result is non-numeric.",
+    "tables": [
+      "labevents",
+      "chartevents"
+    ],
+     "data_type": "float64"
+  },
+  "valueuom": {
+    "description": "Unit of measurement for the clinical value. The specific unit in which the laboratory test or vital sign is measured or reported. Common units include mg/dL (milligrams per deciliter), mmol/L (millimoles per liter), mmHg (millimeters of mercury), bpm (beats per minute), Celsius, Fahrenheit, %, and many others. Also referred to as measurement unit, value unit, result unit, test unit, or unit of measure. Examples: 'mg/dL' for glucose, 'mmHg' for blood pressure, 'bpm' for heart rate. Essential for proper interpretation of numeric values and unit conversion. Used to ensure measurements are compared using consistent units.",
+    "tables": [
+      "labevents",
+      "chartevents",
+      "outputevents",
+      "datetimeevents",
+      "procedureevents_mv"
+    ],
+     "data_type": "str"
+  },
+  "flag": {
+    "description": "Abnormal result flag or indicator for laboratory tests. Categorical marker indicating whether the lab value is within normal range or abnormal. Common values include 'abnormal' (outside reference range), 'normal' (within reference range), 'delta' (significant change from previous), or specific flags like 'high', 'low', 'critical'. Also referred to as abnormality flag, abnormal indicator, lab flag, result flag, or reference range status. Used to identify clinically significant abnormal results that may require attention. Helps prioritize review of laboratory data and identify potential clinical concerns. May be NULL if flagging not performed.",
+    "tables": [
+      "labevents"
+    ],
+     "data_type": "str"
+  },
+  "label": {
+    "description": "Descriptive name or label for a laboratory test or clinical item. The human-readable name that identifies what measurement, test, or observation is being recorded. Also referred to as test name, item name, parameter name, measurement name, observation label, or test description. Examples: 'Glucose', 'White Blood Cells', 'Blood Pressure', 'Heart Rate', 'pH', 'Creatinine', 'Temperature'. Used to understand what clinical data is being captured without needing to look up item codes. Links itemid codes to clinically meaningful names. Essential for data interpretation and clinical relevance assessment.",
+    "tables": [
+      "caregivers",  
+      "d_labitems",
+      "d_items"
+    ],
+     "data_type": "str"
+  },
+  "fluid": {
+    "description": "Specimen type or biological fluid tested in laboratory analysis. Indicates what body fluid or tissue sample was collected and analyzed. Common values include Blood (whole blood, serum, plasma), Urine, Cerebrospinal Fluid (CSF), Pleural fluid, Ascites, Joint fluid, and others. Also referred to as specimen type, sample type, body fluid, specimen source, or material tested. Used to distinguish between tests performed on different specimen types (e.g., blood glucose vs urine glucose). Critical for proper interpretation of laboratory results as reference ranges vary by specimen type. Important for microbiology cultures and cytology studies.",
+    "tables": [
+      "d_labitems"
+    ],
+     "data_type": "str"
+  },
+  "loinc_code": {
+    "description": "LOINC (Logical Observation Identifiers Names and Codes) code for laboratory test. Standardized universal identifier for laboratory and clinical observations maintained by Regenstrief Institute. Numeric code (e.g., 2345-7) that enables interoperability and data exchange across different healthcare systems. Also referred to as LOINC identifier, standardized lab code, universal test code, or interoperability code. Used for consistent identification of laboratory tests across institutions. Facilitates data integration, research collaboration, and health information exchange. More standardized than local itemid codes. May be NULL if LOINC mapping not available.",
+    "tables": [
+      "d_labitems"
+    ],
+     "data_type": "str"
+  },
+  "cgid": {
+    "description": "Caregiver identifier. Unique numeric code identifying the healthcare provider, nurse, clinician, or staff member who recorded, documented, or entered the clinical observation or data. Also referred to as provider ID, clinician ID, documenting provider, staff identifier, or charting provider ID. Used to track who documented specific clinical data points. Important for understanding documentation patterns, provider-specific practices, and data quality assessment. May be used to link to provider demographics or credentials if available. Helps establish accountability and data provenance. May be NULL if documenting provider not recorded.",
+    "tables": [
+        "datetimeevents",
+      "chartevents",
+      "inputevents_cv",
+      "inputevents_mv",
+      "noteevents",
+      "outputevents",
+      "procedureevents_mv"
+    ],
+     "data_type": "int32"
+  },
+  "amount": {
+    "description": "Total volume or quantity of fluid or medication administered. The cumulative amount of intravenous fluid, medication infusion, nutrition, or other input given to the patient during a specific time period. Also referred to as total volume, administered amount, infusion volume, given quantity, or intake amount. Measured in units specified by amountuom field. Examples: 1000 (mL of normal saline), 50 (mL of antibiotic infusion), 500 (mL of blood product). Used to calculate fluid balance, medication exposure, and hemodynamic management. Critical for intensive care monitoring and fluid resuscitation analysis. Represents total delivered volume, not rate of administration.",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ],
+     "data_type": "float64"
+  },
+  "amountuom": {
+    "description": "Unit of measurement for administered fluid or medication amount. The specific unit in which the infusion volume or input quantity is measured. Common values include mL (milliliters), L (liters), cc (cubic centimeters), and other volume units. Also referred to as amount unit, volume unit, infusion unit, intake unit, or administered volume unit. Used together with amount field to specify complete volume information. Examples: 'mL' for most IV fluids and medications, 'L' for large volume resuscitation. Essential for accurate fluid balance calculations and intake/output monitoring. Critical for understanding total fluid administration and hemodynamic management in critical care settings.",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ],
+     "data_type": "str"
+  },
+  "rate": {
+    "description": "Administration or infusion rate for fluids and medications. The speed at which intravenous fluid or medication is being delivered to the patient. Indicates how fast the infusion is running. Also referred to as infusion rate, flow rate, administration rate, drip rate, or delivery speed. Measured in units specified by rateuom field. Examples: 100 (mL/hr), 50 (mL/hr), 10 (mcg/kg/min). Used to analyze medication dosing, fluid resuscitation strategies, and hemodynamic support. Critical for vasopressor and inotrope administration where rate adjustments reflect patient status changes. May vary over time as clinical conditions change. Important for pharmacokinetic analysis and titration studies.",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ],
+     "data_type": "float64"
+  },
+  "rateuom": {
+    "description": "Unit of measurement for administration or infusion rate. The specific unit in which the infusion speed is measured. Common values include mL/hr (milliliters per hour), mL/min (milliliters per minute), mcg/kg/min (micrograms per kilogram per minute), units/hr, and other rate units. Also referred to as rate unit, infusion rate unit, flow unit, administration speed unit, or delivery rate unit. Used together with rate field to specify complete infusion rate information. Examples: 'mL/hr' for most IV fluid rates, 'mcg/kg/min' for vasoactive medications. Essential for proper medication dosing and understanding infusion protocols. Critical for weight-based and time-dependent drug administration.",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ],
+     "data_type": "str"
+  },
+  "starttime": {
+    "description": "Start timestamp for medication infusion or procedure. The exact date and time when an intravenous infusion was started, a procedure was initiated, or an intervention began. Marks the beginning of a treatment episode or procedural event. Also referred to as infusion start time, procedure start time, intervention start time, begin time, or initiation datetime. Format is datetime with year, month, day, hour, and minute. Used to calculate duration of therapy, time to intervention, and temporal relationships with clinical outcomes. Critical for analyzing timing of critical care interventions and medication exposure periods. Paired with endtime to determine total duration of treatment or procedure.",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ],
+    "data_type":"int64"
+  },
+  "endtime": {
+    "description": "End timestamp for medication infusion or procedure. The exact date and time when an intravenous infusion was stopped, a procedure was completed, or an intervention ended. Marks the conclusion of a treatment episode or procedural event. Also referred to as infusion end time, procedure end time, intervention end time, stop time, or completion datetime. Format is datetime with year, month, day, hour, and minute. Used to calculate duration of therapy, total treatment time, and analyze discontinuation patterns. Critical for determining cumulative medication exposure and procedure duration. Paired with starttime to determine total time interval. May be NULL if infusion or procedure ongoing at time of data extraction.",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ],
+    "data_type":"int64"
+  },
+  "ordercategoryname": {
+    "description": "Category or type of order for medications, fluids, or procedures. Classification that groups similar types of orders or interventions together. Common values for medications include Continuous IV (continuous infusions), Drug Push (IV push medications), Antibiotics, Sedation, Vasoactive agents. For procedures: invasive lines, ventilator management, dialysis. Also referred to as order category, order type, medication class, intervention category, or treatment type. Used to analyze patterns of medication use, procedure types, and treatment strategies. Helps identify specific classes of interventions such as vasoactive medications, sedatives, or life support interventions. Facilitates filtering and grouping of clinical orders for research and quality improvement.",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ],
+    "data_type":"str"
+  },
+  "chartdate": {
+    "description": "Date when specimen was collected for microbiology culture or when clinical note was created. The specific date (without time) when a microbiological specimen was obtained or when clinical documentation was generated. Format is typically date with year, month, and day (no specific time). Also referred to as culture date, specimen collection date, note date, documentation date, or collection date. For microbiology: indicates when sample was taken for culture (blood culture, urine culture, wound culture, etc.). For notes: indicates when clinical note was written or documented. Used for temporal analysis of infections, documentation patterns, and culture results. May differ from charttime which includes specific time. Important for tracking infection timelines and documentation workflows.",
+    "tables": [
+        "cptevents",
+      "microbiologyevents",
+      "noteevents"
+    ],
+    "data_type":"int64"
+  },
+  "spec_type_desc": {
+    "description": "Specimen type description for microbiology cultures. Detailed description of the biological specimen or sample that was collected and sent for microbiological culture and sensitivity testing. Common values include BLOOD CULTURE (blood), URINE (urine culture), SPUTUM (respiratory secretions), WOUND (wound culture), CSF (cerebrospinal fluid), CATHETER TIP (central line tip), STOOL (stool culture), and many others. Also referred to as specimen type, culture specimen, sample type, specimen description, or material cultured. Indicates the body site or source from which the culture was obtained. Critical for interpreting culture results as different organisms are expected in different specimen types. Used to analyze infection sources, contamination rates, and specimen collection practices. Essential for infectious disease research and antimicrobial stewardship.",
+    "tables": [
+      "microbiologyevents"
+    ],
+    "data_type":"str"
+  },
+  "org_name": {
+    "description": "Organism name identified in microbiology culture. The specific microorganism, bacteria, fungus, or pathogen that grew or was isolated from the culture specimen. Common examples include Staphylococcus aureus, Escherichia coli, Pseudomonas aeruginosa, Candida albicans, Enterococcus species, Klebsiella pneumoniae, and many others. Also referred to as microorganism, bacteria name, pathogen, culture result, what grew, isolated organism, or cultured microbe. NULL or negative if no organism was isolated (no growth). Used to identify infectious agents, track nosocomial infections, analyze resistance patterns, and guide antimicrobial therapy. Critical for infection control surveillance, epidemiological studies, and understanding microbial ecology in healthcare settings. May include multiple organisms if polymicrobial infection.",
+    "tables": [
+      "microbiologyevents"
+    ],
+    "data_type":"str"
+  },
+  "ab_name": {
+    "description": "Antibiotic name tested in susceptibility testing. The specific antimicrobial drug or antibiotic that was tested against the isolated organism to determine susceptibility or resistance. Common examples include Vancomycin, Penicillin, Ciprofloxacin, Ceftriaxone, Meropenem, Gentamicin, and many others. Also referred to as antibiotic, antimicrobial agent, drug tested, susceptibility drug, or antibiotic tested. Used in conjunction with interpretation field to determine if organism is sensitive, resistant, or intermediate to the antibiotic. Critical for antimicrobial stewardship, selecting appropriate antibiotic therapy, and tracking antibiotic resistance patterns. Essential for studying multidrug resistant organisms and guiding empiric and targeted antimicrobial treatment decisions. NULL if no susceptibility testing performed.",
+    "tables": [
+      "microbiologyevents"
+    ],
+    "data_type":"str"
+  },
+  "interpretation": {
+    "description": "Antibiotic susceptibility test result or interpretation. Indicates whether the isolated organism is susceptible, resistant, or intermediate to a specific antibiotic tested. Standard values include S (Sensitive/Susceptible - organism killed by antibiotic at normal doses), R (Resistant - organism not killed by antibiotic), I (Intermediate - organism may be inhibited by higher antibiotic doses), and occasionally P (Presumptive). Also referred to as susceptibility result, sensitivity result, antibiotic sensitivity, resistance status, or S/R/I designation. Critical for selecting effective antibiotic therapy and avoiding ineffective treatments. Used to track antibiotic resistance trends, multidrug resistant organisms (MDROs), and inform antimicrobial stewardship programs. Essential for analyzing resistance patterns over time and guiding empiric antibiotic selection in ICU settings.",
+    "tables": [
+      "microbiologyevents"
+    ],
+    "data_type":"str"
+  },
+  "description": {
+    "description": "Clinical note description or subtype. Categorizes the specific type or subtype of clinical documentation within a broader category. Provides more detailed classification than category field alone. Examples include 'Discharge summary' (final hospital summary), 'Radiology report' (imaging interpretation), 'Nursing/other' (nursing notes), 'ECG report' (electrocardiogram interpretation), 'Echo report' (echocardiogram), 'Physician note' (doctor's documentation), 'Respiratory' (respiratory therapy notes), and many others. Also referred to as note type, note subtype, documentation type, note description, or report type. Used to filter and retrieve specific types of clinical documentation. Essential for natural language processing studies, clinical documentation research, and accessing specific types of clinical information. Helps identify the clinical context and purpose of the documented note.",
+    "tables": [
+      "noteevents",
+      "caregivers",
+      "cptevents",
+      "drgcodes",
+      "noteevents"
+    ],
+    "data_type":"str"
+  },
+  "text": {
+    "description": "Free-text content of clinical notes and documentation. The complete unstructured text of clinical documentation including physician notes, nursing notes, discharge summaries, radiology reports, operative notes, consultation notes, and other clinical narratives. Also referred to as note text, clinical note, documentation text, clinical documentation, free text, narrative text, or note content. Contains detailed clinical information including patient history, physical examination findings, assessment and plan, test interpretations, clinical reasoning, and treatment decisions. Rich source of clinical information not captured in structured data fields. Used for natural language processing (NLP), clinical phenotyping, information extraction, and comprehensive clinical context. May contain sensitive patient information. Critical for understanding complete clinical picture, extracting detailed diagnoses, identifying clinical events, and qualitative research. Typically very long text fields with detailed medical terminology.",
+    "tables": [
+      "noteevents"
+    ]
+  },
+  "abbreviation": {
+    "description": "Abbreviated or shortened name for clinical items and measurements. Brief alphanumeric code or short form used to quickly identify a specific clinical parameter, vital sign, or laboratory test. More concise than the full label. Also referred to as short code, item abbreviation, parameter abbreviation, short name, or code abbreviation. Examples: 'HR' for heart rate, 'BP' for blood pressure, 'SpO2' for oxygen saturation, 'Temp' for temperature, 'RR' for respiratory rate. Used for compact display in medical charts, quick reference, and space-constrained interfaces. Facilitates rapid identification of commonly monitored parameters. May vary by institution or documentation system. Helpful for understanding clinical shorthand and medical abbreviations used in practice.",
+    "tables": [
+      "d_items"
+    ],
+    "data_type":"str"
+  },
+  "unitname": {
+    "description": "Name or description of the measurement unit for clinical items. Specifies the unit of measurement in which a clinical parameter, vital sign, or observation is expressed. Common examples include 'beats/min' (heart rate), 'mmHg' (blood pressure), '°C' or '°F' (temperature), '%' (oxygen saturation), 'breaths/min' (respiratory rate), and many others. Also referred to as unit of measure, measurement unit, unit description, or parameter unit. Provides the scale and dimension for interpreting numeric clinical values. Essential for proper data interpretation, unit conversion, and ensuring consistency in measurements. Used to validate that values are being compared using appropriate units. Critical for clinical decision support and automated alerting systems. May be NULL for non-numeric or categorical items.",
+    "tables": [
+      "d_items"
+    ],
+    "data_type":"str"
+  },
+  "linksto": {
+    "description": "Database table linkage indicator for clinical items. Specifies which clinical data table(s) contain actual recorded values for this item. Indicates where to find the measurement data associated with this itemid. Common values include 'chartevents' (bedside charted data and vital signs), 'labevents' (laboratory test results), 'inputevents_cv' or 'inputevents_mv' (medication and fluid inputs), 'outputevents' (patient outputs), 'procedureevents_mv' (procedures performed). Also referred to as links to table, data table reference, source table, or table connection. Used to determine which table to query when searching for specific measurements or clinical data. Essential for database navigation and understanding data architecture. Helps researchers efficiently locate relevant clinical information. Critical for properly joining tables and constructing queries across the MIMIC database structure.",
+    "tables": [
+      "d_items"
+    ],
+    "data_type":"str"
+  },
+  "transfertime": {
+    "description": "Service transfer timestamp. The exact date and time when a patient was transferred between clinical services or medical specialties within the hospital. Marks when responsibility for patient care changed from one clinical service to another. Also referred to as service change time, service transfer datetime, specialty transfer time, or service transition time. Format is datetime with year, month, day, hour, and minute. Examples of transfers: Medicine to Surgery, Cardiology to Medicine, Neurology to Neurosurgery. Used to track patient care pathways, analyze service utilization patterns, and understand multidisciplinary care coordination. Critical for studying clinical workflows, consultation patterns, and how patient care evolves across medical specialties during hospitalization. Indicates changes in primary treating team.",
+    "tables": [
+      "services"
+    ],
+    "data_type":"int64"
+  },
+  "prev_service": {
+    "description": "Previous or prior clinical service. The medical specialty or clinical service that was responsible for the patient's care immediately before a service transfer. Indicates which team was managing the patient before the transition. Common values include MEDICINE (internal medicine), SURGERY (general surgery), CARDIOLOGY (cardiac care), NEUROLOGY (neurological care), TRAUMA (trauma service), ORTHOPEDICS, and others. Also referred to as prior service, previous specialty, service transferred from, originating service, or source service. Used to understand patient care transitions and referral patterns between specialties. Shows the clinical context from which the patient is coming. Important for analyzing service-to-service transfer patterns and understanding how patient conditions evolve requiring different specialty care. May be NULL for initial service assignment at admission.",
+    "tables": [
+      "services"
+    ],
+    "data_type":"str"
+  },
+  "curr_service": {
+    "description": "Current or new clinical service. The medical specialty or clinical service that assumed responsibility for the patient's care after a service transfer. Indicates which team is now managing the patient following the transition. Common values include MEDICINE, SURGERY, CARDIOLOGY, NEUROLOGY, TRAUMA, ORTHOPEDICS, and others. Also referred to as new service, current specialty, service transferred to, receiving service, destination service, or active service. Used to track which clinical service is currently caring for the patient. Shows where the patient is in their clinical care pathway. Critical for understanding service utilization, specialty-specific outcomes, and which medical teams provided care during hospitalization. Indicates the clinical expertise currently directing patient management.",
+    "tables": [
+      "services"
+    ],
+    "data_type":"str"
+  },
+  "prev_careunit": {
+    "description": "Previous or prior care unit location. The specific hospital ward, unit, or location where the patient was situated immediately before a transfer or location change. Indicates the physical location from which the patient is moving. Common values include ICU types (MICU, SICU, CCU, CSRU, TSICU), floor units, emergency department, operating room, and other hospital locations. Also referred to as prior unit, previous location, origin unit, source location, unit transferred from, or where patient was. Used to track patient movement through the hospital, analyze transfer patterns, and understand physical care pathways. Shows patient flow and geographic movement during hospitalization. Important for capacity planning, understanding escalation/de-escalation of care, and analyzing intrahospital patient transportation. May be NULL for initial hospital admission.",
+    "tables": [
+      "transfers"
+    ],
+    "data_type":"str"
+  },
+  "curr_careunit": {
+    "description": "Current or new care unit location. The specific hospital ward, unit, or location where the patient is now situated after a transfer or location change. Indicates the physical location to which the patient is moving. Common values include ICU types (MICU, SICU, CCU, CSRU, TSICU), floor units, emergency department, discharge locations, and other hospital areas. Also referred to as new unit, current location, destination unit, receiving location, unit transferred to, or where patient is now. Used to track real-time patient location and analyze unit-level patient flow. Shows where patients are geographically throughout their hospital stay. Critical for understanding ICU admission/discharge patterns, bed utilization, patient acuity changes, and hospital capacity management. Essential for analyzing critical care resource utilization and patient care intensity over time.",
+    "tables": [
+      "transfers",
+      "callout"
+    ],
+    "data_type":"str"
+  },
+  "eventtype": {
+    "description": "Type of transfer or location change event. Categorizes the nature of the patient location change or care unit transition. Indicates what kind of movement or status change occurred. Common values include 'admit' (patient admitted to unit), 'transfer' (patient moved between units), 'discharge' (patient left unit or hospital), and potentially other event types depending on the system. Also referred to as transfer type, event category, movement type, location change type, or transfer classification. Used to distinguish between different types of patient movement events. Essential for accurately tracking patient flow, calculating length of stay in specific units, and understanding admission and discharge patterns. Critical for determining when patients enter and exit ICU versus floor units. Helps identify true ICU admissions versus intra-ICU transfers. Important for properly calculating unit-specific occupancy and turnover rates.",
+    "tables": [
+      "transfers"
+    ],
+    "data_type":"str"
+  }
+}

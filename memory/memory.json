@@ -1,0 +1,247 @@
+[
+  {
+    "id": "patient_gender",
+    "pattern": "patient demographic attribute",
+    "description": "Retrieve patient's gender/sex information",
+    "question": "What is the gender of patient 12345?",
+    "intent_signature": { "entity": "patients", "attribute": "gender" },
+    "filters": {},
+    "examples": ["What is the sex of patient 67890?"],
+    "retrieval_tags": ["gender", "demographics", "sex"],
+    "sql": "SELECT gender FROM patients WHERE subject_id = 12345 LIMIT 1;"
+  },
+  {
+    "id": "patient_dob",
+    "pattern": "patient birth information",
+    "description": "Retrieve patient's date of birth",
+    "question": "When was patient 67890 born?",
+    "intent_signature": { "entity": "patients", "attribute": "dob" },
+    "filters": {},
+    "examples": ["Date of birth of patient 54321?"],
+    "retrieval_tags": ["dob", "birth"],
+    "sql": "SELECT dob FROM patients WHERE subject_id = 67890 LIMIT 1;"
+  },
+  {
+    "id": "last_admission_los",
+    "pattern": "length of stay – last hospital admission",
+    "description": "Compute duration of last hospital stay (days)",
+    "question": "What is the length of stay of the patient's last hospital visit?",
+    "intent_signature": { "entity": "admissions", "metric": "los", "time": "last" },
+    "filters": {},
+    "examples": ["LOS of most recent admission?"],
+    "retrieval_tags": ["los", "admission"],
+    "sql": "SELECT TIMESTAMPDIFF(DAY, admittime, dischtime) AS los FROM admissions WHERE subject_id = 12345 AND dischtime IS NOT NULL ORDER BY admittime DESC LIMIT 1;"
+  },
+  {
+    "id": "first_admission_time",
+    "pattern": "first hospital admission time",
+    "description": "Retrieve date/time of first admission",
+    "question": "When was the patient's first hospital admission?",
+    "intent_signature": { "entity": "admissions", "time": "first" },
+    "filters": {},
+    "examples": ["Date of first admission?"],
+    "retrieval_tags": ["first admission"],
+    "sql": "SELECT admittime FROM admissions WHERE subject_id = 12345 ORDER BY admittime ASC LIMIT 1;"
+  },
+  {
+    "id": "last_admission_diagnosis",
+    "pattern": "diagnosis of last admission",
+    "description": "Retrieve diagnosis of the most recent admission",
+    "question": "What was the diagnosis of the patient's last admission?",
+    "intent_signature": { "entity": "diagnoses_icd", "time": "last" },
+    "filters": {},
+    "examples": ["Last admission diagnosis?"],
+    "retrieval_tags": ["diagnosis", "ICD9"],
+    "sql": "SELECT d.long_title FROM diagnoses_icd di JOIN d_icd_diagnoses d ON di.icd9_code = d.icd9_code WHERE di.subject_id = 12345 ORDER BY di.row_id DESC LIMIT 1;"
+  },
+  {
+    "id": "icu_los_last",
+    "pattern": "ICU length of stay",
+    "description": "Compute ICU stay duration (days)",
+    "question": "How long did the patient stay in the ICU during the last ICU visit?",
+    "intent_signature": { "entity": "icustays", "metric": "los", "time": "last" },
+    "filters": {},
+    "examples": ["ICU LOS of most recent stay?"],
+    "retrieval_tags": ["ICU", "LOS"],
+    "sql": "SELECT TIMESTAMPDIFF(DAY, intime, outtime) AS los FROM icustays WHERE subject_id = 12345 AND outtime IS NOT NULL ORDER BY intime DESC LIMIT 1;"
+  },
+  {
+    "id": "number_of_admissions",
+    "pattern": "count hospital admissions",
+    "description": "Count total hospital admissions of a patient",
+    "question": "How many times was the patient admitted to the hospital?",
+    "intent_signature": { "entity": "admissions", "aggregation": "count" },
+    "filters": {},
+    "examples": ["Total hospital visits?"],
+    "retrieval_tags": ["admission count"],
+    "sql": "SELECT COUNT(*) AS admission_count FROM admissions WHERE subject_id = 12345;"
+  },
+  {
+    "id": "has_diagnosis",
+    "pattern": "diagnosis existence",
+    "description": "Check if patient ever had a specific diagnosis",
+    "question": "Did the patient ever have a diagnosis of pneumonia?",
+    "intent_signature": { "entity": "diagnoses_icd", "filter": "diagnosis" },
+    "filters": { "diagnosis": "pneumonia" },
+    "examples": ["Has patient had pneumonia?"],
+    "retrieval_tags": ["diagnosis", "pneumonia"],
+    "sql": "SELECT COUNT(*) AS diagnosis_count FROM diagnoses_icd di JOIN d_icd_diagnoses d ON di.icd9_code = d.icd9_code WHERE di.subject_id = 12345 AND LOWER(d.long_title) LIKE '%pneumonia%';"
+  },
+  {
+    "id": "prescribed_drug",
+    "pattern": "medication prescribed",
+    "description": "Check if a patient was prescribed a specific drug",
+    "question": "Was the patient prescribed warfarin?",
+    "intent_signature": { "entity": "prescriptions", "drug": "warfarin" },
+    "filters": {},
+    "examples": ["Did patient take insulin?"],
+    "retrieval_tags": ["drug", "prescriptions"],
+    "sql": "SELECT COUNT(*) AS drug_count FROM prescriptions WHERE subject_id = 12345 AND LOWER(drug) = 'warfarin';"
+  },
+  {
+    "id": "lab_test_value",
+    "pattern": "specific lab test value",
+    "description": "Retrieve numeric value of a lab test",
+    "question": "What was the patient's glucose level?",
+    "intent_signature": { "entity": "labevents", "lab": "glucose" },
+    "filters": {},
+    "examples": ["Creatinine value?"],
+    "retrieval_tags": ["lab", "glucose"],
+    "sql": "SELECT le.valuenum FROM labevents le JOIN d_labitems d ON le.itemid = d.itemid WHERE le.subject_id = 12345 AND LOWER(d.label) = 'glucose' AND le.valuenum IS NOT NULL ORDER BY le.charttime DESC LIMIT 1;"
+  },
+  {
+    "id": "lab_delta_potassium",
+    "pattern": "lab value change",
+    "description": "Compute absolute change between first two lab values",
+    "question": "What was the change in potassium level during the admission?",
+    "intent_signature": { "entity": "labevents", "metric": "delta", "lab": "potassium" },
+    "filters": {},
+    "examples": ["Potassium difference over time?"],
+    "retrieval_tags": ["lab", "potassium", "delta"],
+    "sql": "SELECT ABS(v2.valuenum - v1.valuenum) FROM (SELECT le.valuenum FROM labevents le JOIN d_labitems d ON le.itemid = d.itemid WHERE le.subject_id = 12345 AND LOWER(d.label) = 'potassium' AND le.valuenum IS NOT NULL ORDER BY le.charttime ASC LIMIT 1) v1 JOIN (SELECT le.valuenum FROM labevents le JOIN d_labitems d ON le.itemid = d.itemid WHERE le.subject_id = 12345 AND LOWER(d.label) = 'potassium' AND le.valuenum IS NOT NULL ORDER BY le.charttime ASC LIMIT 1,1) v2;"
+  },
+  {
+    "id": "latest_lab_value_last_admission",
+    "pattern": "latest lab in last admission",
+    "description": "Retrieve most recent lab value during last admission",
+    "question": "What was the latest sodium level during the patient's last admission?",
+    "intent_signature": { "entity": "labevents", "lab": "sodium", "time": "last_admission" },
+    "filters": {},
+    "examples": ["Latest potassium in last admission?"],
+    "retrieval_tags": ["lab", "latest", "admission"],
+    "sql": "SELECT le.valuenum FROM labevents le JOIN d_labitems d ON le.itemid = d.itemid WHERE le.subject_id = 12345 AND le.hadm_id = (SELECT hadm_id FROM admissions WHERE subject_id = 12345 ORDER BY admittime DESC LIMIT 1) AND LOWER(d.label) = 'sodium' AND le.valuenum IS NOT NULL ORDER BY le.charttime DESC LIMIT 1;"
+  },
+  {
+    "id": "lab_average_value",
+    "pattern": "average lab value",
+    "description": "Compute average lab value over all measurements",
+    "question": "What was the average glucose level for the patient?",
+    "intent_signature": { "entity": "labevents", "aggregation": "avg", "lab": "glucose" },
+    "filters": {},
+    "examples": ["Mean creatinine value?"],
+    "retrieval_tags": ["lab", "average"],
+    "sql": "SELECT AVG(le.valuenum) AS avg_value FROM labevents le JOIN d_labitems d ON le.itemid = d.itemid WHERE le.subject_id = 12345 AND LOWER(d.label) = 'glucose' AND le.valuenum IS NOT NULL;"
+  },
+  {
+    "id": "procedure_cost_soft_tissue_division",
+    "pattern": "procedure cost lookup",
+    "description": "Retrieve the cost of a medical procedure using ICD procedure short title",
+    "question": "What is the price of a procedure named soft tissue division nec?",
+    "intent_signature": {
+      "entity": "procedures_icd",
+      "attribute": "cost",
+      "join": ["cost", "d_icd_procedures"]
+    },
+    "filters": {
+      "procedure_name": "soft tissue division nec"
+    },
+    "examples": [
+      "How much does the procedure soft tissue division nec cost?",
+      "What is the cost of soft tissue division nec?"
+    ],
+    "retrieval_tags": [
+      "procedure",
+      "cost",
+      "icd9",
+      "billing",
+      "insurance"
+    ],
+    "sql": "SELECT DISTINCT cost.cost FROM cost WHERE cost.event_type = 'procedures_icd' AND cost.event_id IN ( SELECT procedures_icd.row_id FROM procedures_icd WHERE procedures_icd.icd9_code = ( SELECT d_icd_procedures.icd9_code FROM d_icd_procedures WHERE d_icd_procedures.short_title = 'soft tissue division nec' ) );"
+  },
+  {
+    "id": "procedure_cost_dressing_wound",
+    "pattern": "procedure cost lookup",
+    "description": "Retrieve the cost of a wound dressing procedure",
+    "question": "How much to pay for a dressing of wound nec?",
+    "intent_signature": {
+      "entity": "procedures_icd",
+      "attribute": "cost",
+      "join": ["cost", "d_icd_procedures"]
+    },
+    "filters": {
+      "procedure_name": "dressing of wound nec"
+    },
+    "examples": [
+      "What is the cost of a dressing of wound nec?",
+      "How much does wound dressing nec cost?"
+    ],
+    "retrieval_tags": [
+      "procedure",
+      "cost",
+      "wound",
+      "billing",
+      "insurance"
+    ],
+    "sql": "SELECT DISTINCT cost.cost FROM cost WHERE cost.event_type = 'procedures_icd' AND cost.event_id IN ( SELECT procedures_icd.row_id FROM procedures_icd WHERE procedures_icd.icd9_code = ( SELECT d_icd_procedures.icd9_code FROM d_icd_procedures WHERE d_icd_procedures.short_title = 'dressing of wound nec' ) );"
+  },
+  {
+    "id": "procedure_cost_heart_vessel",
+    "pattern": "procedure cost lookup",
+    "description": "Retrieve the cost of a heart vessel procedure",
+    "question": "What is heart vessel op nec's price?",
+    "intent_signature": {
+      "entity": "procedures_icd",
+      "attribute": "cost",
+      "join": ["cost", "d_icd_procedures"]
+    },
+    "filters": {
+      "procedure_name": "heart vessel op nec"
+    },
+    "examples": [
+      "What is the cost of heart vessel op nec?",
+      "How much does heart vessel op nec procedure cost?"
+    ],
+    "retrieval_tags": [
+      "procedure",
+      "cost",
+      "cardiac",
+      "icd9",
+      "insurance"
+    ],
+    "sql": "SELECT DISTINCT cost.cost FROM cost WHERE cost.event_type = 'procedures_icd' AND cost.event_id IN ( SELECT procedures_icd.row_id FROM procedures_icd WHERE procedures_icd.icd9_code = ( SELECT d_icd_procedures.icd9_code FROM d_icd_procedures WHERE d_icd_procedures.short_title = 'heart vessel op nec' ) );"
+  },
+  {
+  "id": "readmission_rate_30_days",
+  "pattern": "clinical outcome / hospital utilization metric",
+  "description": "Calculate the 30-day hospital readmission rate",
+  "question": "What is the 30-day readmission rate for patients discharged from the hospital?",
+  "intent_signature": { 
+    "entity": "admissions", 
+    "attribute": "readmission_rate_30_days" 
+  },
+  "filters": {
+    "time_window_days": 30
+  },
+  "examples": [
+    "How many patients are readmitted within 30 days after discharge?",
+    "What percentage of discharged patients return to the hospital within 30 days?"
+  ],
+  "retrieval_tags": [
+    "readmission",
+    "30-day readmission",
+    "hospital utilization",
+    "quality metrics"
+  ],
+  "sql": "SELECT COUNT(DISTINCT a2.subject_id) * 1.0 / COUNT(DISTINCT a1.subject_id) AS readmission_rate_30_days FROM admissions a1 LEFT JOIN admissions a2 ON a1.subject_id = a2.subject_id AND a2.admittime > a1.dischtime AND a2.admittime <= a1.dischtime + INTERVAL 30 DAY;"
+}
+]

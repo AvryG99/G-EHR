@@ -1,0 +1,7 @@
+{
+    "int4": "int32",
+    "timestamp": "int64",
+    "varchar": "str",
+    "float8": "float64",
+    "int2": "int8"
+}

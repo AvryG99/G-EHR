@@ -1,0 +1,90 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+service_account*.json
+
+# Python virtual environments
+env/
+venv/
+.venv/
+ENV/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Packaging and build output
+build/
+dist/
+downloads/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Local databases and database journals
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.duckdb
+*.wal
+*.shm
+
+# Logs, runtime state, and conversation memory
+*.log
+logs/
+conversation_history.json
+memory/long_term_memory.json
+save.txt
+
+# Generated model, execution, and evaluation output
+generated_code*.json
+execution_results.json
+normalized_results*.json
+final.json
+buff.json
+graph/rag_column_results.jsonl
+graph/schema_graph_*.png
+graph/test.txt
+
+# Model and notebook caches
+.cache/
+huggingface/
+wandb/
+mlruns/
+lightning_logs/
+.ipynb_checkpoints/
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
