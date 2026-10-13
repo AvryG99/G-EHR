@@ -1,0 +1,1288 @@
+﻿id,question,previous_correct,current_correct,transition,review_status
+0,does the patient have a current copd exacerbation,True,True,unchanged,accepted
+1000,does the patient have a history of shortness of breath,True,True,unchanged,accepted
+1,has been the patient ever been considered for copd exacerbation,True,True,unchanged,accepted
+2,does the patient have a prior history of shortness of breath,True,True,unchanged,accepted
+3,what is the patient 's copd exacerbation status,True,True,unchanged,accepted
+4,does the patient have any copd exacerbation history,True,True,unchanged,accepted
+5,has the patient had previous shortness of breath,True,True,unchanged,accepted
+6,has been the patient ever been considered for acute worsening in dyspnea,True,True,unchanged,accepted
+7,what is the patient 's history of acute worsening in dyspnea,True,True,unchanged,accepted
+8,has this patient ever had acute worsening in dyspnea,True,True,unchanged,accepted
+9,does the patient have any history of previous acute worsening in dyspnea,True,True,unchanged,accepted
+10,has tachypnea been considered in the past,True,True,unchanged,accepted
+1001,is the patient tachypnic,False,True,recovered,accepted
+11,does the patient have any history of previous tachypnic,True,True,unchanged,accepted
+12,is there a mention of chills in the records,False,False,unchanged,accepted
+13,does the patient have any history of previous chest pain,False,False,unchanged,accepted
+14,any mention of fevers,False,False,unchanged,accepted
+15,does the patient have a past history of chest pain,False,False,unchanged,accepted
+16,has the patient ever had any leukocytosis,False,True,recovered,accepted
+17,any mention of leukocytosis,True,True,unchanged,accepted
+18,has the patient ever been positive for leukocytosis,False,True,recovered,accepted
+19,was the patient ever checked for leukocytosis,False,True,recovered,accepted
+20,what were the results of the patient 's last lactate for his leukocytosis,False,False,unchanged,accepted
+21,has there been any history of mi,True,True,unchanged,accepted
+1002,what causes the patient's death?,True,True,unchanged,accepted
+22,has cva been considered in the past,True,True,unchanged,accepted
+23,has been the patient ever been considered for cva,True,True,unchanged,accepted
+24,does the patient have a history of cva,False,True,recovered,accepted
+25,does the patient have any history of mi,True,True,unchanged,insufficient_evidence
+26,is the patient 's lad well controlled,False,True,recovered,insufficient_evidence
+27,does the patient have any history of lad,False,False,unchanged,accepted
+28,what is the patient 's current lad status,False,False,unchanged,insufficient_evidence
+29,any mention of lad,True,True,unchanged,accepted
+30,does the patient have any other history of murmurs,False,True,recovered,accepted
+31,what is the patient 's gallops history,True,True,unchanged,accepted
+32,does the patient have any history of previous rubs,False,True,recovered,insufficient_evidence
+33,does gallops exist,True,True,unchanged,accepted
+34,has rubs been considered in the past,True,True,unchanged,accepted
+35,does the patient have any history of previous mildly thickened,True,True,unchanged,accepted
+36,what is the patient 's aortic stenosis history,True,True,unchanged,insufficient_evidence
+37,does the patient have a current aortic stenosis,False,False,unchanged,accepted
+38,has the patient had a previous mildly thickened,True,True,unchanged,accepted
+39,what is the status of her mildly thickened,True,True,unchanged,accepted
+1003,does aortic stenosis present,True,True,unchanged,accepted
+40,any mention of aortic stenosis,True,True,unchanged,accepted
+1004,has been the patient ever been considered for mild mitral regurgitation,False,False,unchanged,insufficient_evidence
+41,what is the status of her moderate pulmonary artery systolic hypertension,True,True,unchanged,accepted
+42,is there a mention of moderate pulmonary artery systolic hypertension in the record,False,False,unchanged,insufficient_evidence
+1005,any mention of dyspnea,True,True,unchanged,accepted
+1006,does the patient have clear cough or fevers,False,False,unchanged,accepted
+43,any mention of fevers,False,False,unchanged,accepted
+1007,does the patient have clear cough,False,False,unchanged,accepted
+1008,does the patient have a fever currently,False,False,unchanged,accepted
+44,what is the patient 's history of chills,False,False,unchanged,accepted
+1009,what is the patient's cough history,False,False,unchanged,accepted
+1010,does the patient have a history of cough,False,False,unchanged,accepted
+1011,is romi result negative,False,True,recovered,accepted
+45,any history of large intraabdominal hernia,False,False,unchanged,insufficient_evidence
+46,what is the patient 's history of large hiatal hernia,True,True,unchanged,accepted
+47,does the patient have a current large hiatal hernia,True,True,unchanged,accepted
+48,does large hiatal hernia exist,True,True,unchanged,accepted
+49,can i search my patient 's medical record for large hiatal hernia in the past,True,True,unchanged,accepted
+50,does the patient have any history of gi bleeding,True,True,unchanged,accepted
+51,what treatment has the patient had for his gi bleeding,True,True,unchanged,accepted
+52,what interventions were done for the patient 's gi bleeding,True,True,unchanged,accepted
+53,was the patient ever seen for gi bleeding,True,True,unchanged,accepted
+54,has there been any history of insomnia,True,True,unchanged,accepted
+1012,how was insomnia treated,False,True,recovered,accepted
+1013,why does the patient have insomnia,True,True,unchanged,accepted
+55,why is the patient on trazodone,True,True,unchanged,accepted
+56,can i search my patient 's medical record for gastrointestinal bleed in the past,True,True,unchanged,accepted
+57,does gastrointestinal bleed exist,True,True,unchanged,accepted
+1014,how was gastrointestinal bleed developed,True,True,unchanged,accepted
+58,has been the patient ever been considered for gastrointestinal bleed,True,True,unchanged,accepted
+1015,why does the patient have morphine,False,True,recovered,accepted
+59,does the patient have a current symptoms of respiratory,True,True,unchanged,accepted
+60,was the patient ever seen for respiratory,True,True,unchanged,accepted
+1016,How does the patient control respiratory,True,False,regressed,insufficient_evidence
+1017,when did the patient evaluated for an acute worsening in dyspnea,False,True,recovered,accepted
+61,was the patient ever seen for confusion,False,False,unchanged,accepted
+1018,is there a mention of chest pain and chills in the records,False,False,unchanged,accepted
+1019,Why did his fathter die,False,False,unchanged,insufficient_evidence
+1020,When did his father get an mi,True,True,unchanged,insufficient_evidence
+1021,When did his father die,False,False,unchanged,insufficient_evidence
+62,is there a mention of moderate pulmonary artery systolic hypertension in the records,False,False,unchanged,insufficient_evidence
+1022,Has the patient had cough or fevers,False,False,unchanged,accepted
+1023,Why was aspirin held,False,False,unchanged,insufficient_evidence
+63,how was the patient 's gi bleeding treated,True,True,unchanged,accepted
+1024,why has the patient taken trazodone,True,True,unchanged,accepted
+64,how was the patient 's insomnia treated,True,True,unchanged,accepted
+65,is there any mention of respiratory failure in the patient 's record,True,True,unchanged,accepted
+66,why is the patient on morphine,True,True,unchanged,accepted
+67,what is the patient 's history of c - dif colitis,True,True,unchanged,accepted
+1025,does extensive pan colitis colitis exist,True,False,regressed,insufficient_evidence
+68,"does the patient have a past history of ascites ,",True,True,unchanged,accepted
+1026,what is the status of ascites,True,True,unchanged,accepted
+69,does the patient have any small amount of ascites,True,True,unchanged,accepted
+1027,any ascites history,True,True,unchanged,accepted
+1028,does the patient have any history of afebrile,True,True,unchanged,accepted
+70,can i search my patient 's medical record for afebrile in the past,True,True,unchanged,accepted
+71,what is the patient 's current afebrile status,True,True,unchanged,accepted
+72,has she ever had acute renal failure before,True,True,unchanged,accepted
+73,is the patient 's acute renal failure well - controlled,False,False,unchanged,accepted
+74,does the patient have a current acute renal failure,True,True,unchanged,accepted
+75,what is the patient 's current acute renal failure status,True,True,unchanged,accepted
+76,any mention of diarrhea,True,True,unchanged,accepted
+1029,what is her cr test result,False,False,unchanged,insufficient_evidence
+77,does the patient have any history of previous diarrhea,True,True,unchanged,accepted
+78,does the patient have a current diarrhea,True,True,unchanged,accepted
+79,what interventions were done for the patient 's diarrhea,True,True,unchanged,accepted
+80,has she ever had transient metabolic alkalosis before,True,True,unchanged,accepted
+81,was the patient ever seen for transient metabolic alkalosis,True,True,unchanged,accepted
+82,is there a mention of transient metabolic alkalosis in the record,True,True,unchanged,accepted
+83,can i search my patient 's medical record for transient metabolic alkalosis in the past,True,True,unchanged,accepted
+84,does the patient have any history of previous transient metabolic alkalosis,True,True,unchanged,accepted
+85,what is the patient 's current transient metabolic alkalosis status,True,True,unchanged,accepted
+1030,does the patient have any history of ischemic event,True,True,unchanged,accepted
+86,has this patient ever had ischemic event,True,True,unchanged,accepted
+87,has there been any history of ischemia,True,True,unchanged,accepted
+88,can i search my patient 's medical record for hypotensive in the past,True,True,unchanged,accepted
+89,what is the patient 's hypotensive history,True,True,unchanged,accepted
+90,has hypotensive been considered in the past,True,True,unchanged,accepted
+91,any mention of hypotensive,True,True,unchanged,accepted
+92,what is the status of her hypotensive,True,True,unchanged,accepted
+93,does the patient have a history of currently chest pain,False,False,unchanged,accepted
+1031,is chest pain well - controllerd,True,False,regressed,insufficient_evidence
+94,what is the patient 's history of chest pain,True,True,unchanged,accepted
+95,can i search my patient 's medical record for currently chest pain in the past,False,True,recovered,accepted
+96,does the patient have any history of previous gi bleed,True,True,unchanged,accepted
+97,can i search my patient 's medical record for blood loss anemia in the past,False,False,unchanged,insufficient_evidence
+98,has there been any history of blood loss anemia,False,False,unchanged,insufficient_evidence
+99,what is the patient 's history of blood loss anemia,False,False,unchanged,insufficient_evidence
+100,does the patient have a prior history of blood loss anemia,False,False,unchanged,insufficient_evidence
+1032,did the patient have low tibc,True,True,unchanged,accepted
+101,any chronic history,True,True,unchanged,accepted
+102,does the patient have a history of anemia of chronic,False,False,unchanged,insufficient_evidence
+103,has been the patient ever been considered for anemia,True,True,unchanged,accepted
+104,what is the patient 's history of low tibc,True,True,unchanged,accepted
+105,has there been any history of gastrointestinal bleed,True,True,unchanged,accepted
+106,does gastrointestinal bleed exist,True,True,unchanged,accepted
+107,is there a mention of gastrointestinal bleed in the record,True,True,unchanged,accepted
+108,what is the patient 's gastrointestinal bleed status,True,True,unchanged,accepted
+109,was the patient ever seen for diarrhea,True,True,unchanged,accepted
+1033,why was diagnostic catheritization not performed,False,False,unchanged,insufficient_evidence
+1034,was the patient ever seen for anemia of chronic disease,False,False,unchanged,insufficient_evidence
+1035,is there a mention of right forearm swelling in the records,True,True,unchanged,accepted
+1036,does the patient have a history of right forearm swelling,True,True,unchanged,accepted
+110,can i search my patient 's medical record for forehead laceration in the past,True,True,unchanged,accepted
+111,does the patient have a history of right arm forehead laceration,False,True,recovered,accepted
+1037,what is the patient 's history of right forearm swelling,True,True,unchanged,accepted
+112,does the patient have any history of previous right arm pain,False,True,recovered,accepted
+113,has this patient ever reported right arm swelling,False,False,unchanged,insufficient_evidence
+114,does the patient have any history of previous right forearm swelling,True,True,unchanged,accepted
+115,what is the patient 's coarse afib status,True,True,unchanged,accepted
+116,does the patient have any history of previous coarse afib,True,True,unchanged,accepted
+117,has coarse afib been considered in the past,True,True,unchanged,accepted
+1038,does the patient currently have acute ischemic,False,False,unchanged,accepted
+1039,what is the patient 's history of ischemic,False,False,unchanged,accepted
+1040,does the patient have any other history of acute ischemic,False,False,unchanged,
+1041,what were the results of the patient 's ekg of his coarse afib,False,True,recovered,accepted
+118,is there any mention of acute ischemic changes in the patient 's record,True,True,unchanged,accepted
+119,what is the patient 's history of new c - spine fracture on c - spine,False,False,unchanged,accepted
+120,does new c - spine fracture on c - spine exist,False,False,unchanged,accepted
+1042,what is the head ct result for intracranial hemorrhage,True,True,unchanged,accepted
+121,what is the status of the patient 's new c - spine fracture on c - spine,True,True,unchanged,accepted
+122,does the patient have any history of previous new c - spine fracture on c - spine,True,False,regressed,accepted
+1043,does the patient have a new c - spine fracture on c - spine,False,False,unchanged,insufficient_evidence
+123,has the patient ever gone into new c - spine fracture on c - spine,False,True,recovered,accepted
+124,has been the patient ever been considered for pulmonary hypertension,True,True,unchanged,accepted
+125,what is the patient 's pulmonary hypertension history,True,True,unchanged,accepted
+126,has this patient ever reported pulmonary hypertension,True,True,unchanged,accepted
+127,was the patient ever seen for pulmonary hypertension,True,True,unchanged,accepted
+128,is there a mention of increased cholesterol in the records,True,True,unchanged,accepted
+129,any mention of increased cholesterol,True,True,unchanged,accepted
+130,has there been any history of increased cholesterol,True,True,unchanged,accepted
+1044,does the patient have a history of swelling of right wrist,True,True,unchanged,accepted
+131,does the patient have any other history of pain of right wrist,False,False,unchanged,insufficient_evidence
+1045,does the patient have any history of swelling of right wrist,True,True,unchanged,accepted
+132,has there been any history of swelling of right wrist,True,True,unchanged,accepted
+1046,what is the patients swelling of right wrist history,True,True,unchanged,accepted
+1047,any swelling of right wrist history,True,True,unchanged,accepted
+133,does the patient have a current pain,True,True,unchanged,accepted
+134,can i search my patient 's medical record for pain in the past,True,True,unchanged,accepted
+135,does nontender exist,True,True,unchanged,accepted
+1048,does the patient have any history of nontender,True,True,unchanged,accepted
+136,can i search my patient 's medical record for nontender in the past,True,True,unchanged,accepted
+1049,have the patient got nontender,True,True,unchanged,accepted
+137,can i search my patient 's medical record for ptosis / swelling of the right eyelid in the past,True,True,unchanged,accepted
+138,does the patient have any history of swelling of the right eyelid,True,True,unchanged,accepted
+1050,was the patient ever seen for swelling of the right eyelid,True,True,unchanged,accepted
+1051,can i search my patient 's medical record for rounded calcific bodies in the dorsal soft tissues,False,False,unchanged,insufficient_evidence
+139,any mention of fracture fragments,True,True,unchanged,accepted
+140,any mention of intracranial hemorrhage,False,False,unchanged,accepted
+141,what is the patient 's intracranial hemorrhage history,True,True,unchanged,accepted
+142,was the patient ever seen for intracranial hemorrhage,False,False,unchanged,accepted
+143,any history of intracranial hemorrhage,True,False,regressed,accepted
+144,does the patient have a current lymphadenopathy in mediastinum,True,True,unchanged,accepted
+145,was the patient ever seen for lymphadenopathy,True,True,unchanged,accepted
+146,has been the patient ever been considered for lymphadenopathy in mediastinum,True,True,unchanged,accepted
+147,does the patient suffer from lymphadenopathy in mediastinum,True,True,unchanged,accepted
+148,can i search my patient 's medical record for lymphadenopathy in mediastinum in the past,True,True,unchanged,accepted
+1052,has the patient ever been considered for pulm lymph nodes,True,True,unchanged,accepted
+149,can i search my patient 's medical record for pulm lymph nodes in the past,True,True,unchanged,accepted
+150,what is the patient 's pulm lymphadenopathy status,False,False,unchanged,insufficient_evidence
+1053,does the patient have pulm lymphadenopathy,False,False,unchanged,insufficient_evidence
+151,any central cord syndrome history,True,True,unchanged,accepted
+1054,what is the effect of central cord syndrome,True,True,unchanged,accepted
+152,does the patient have a history of central cord syndrome,True,True,unchanged,accepted
+153,what is the patient 's history of central cord,True,True,unchanged,accepted
+1055,has been the patient ever been considered for central cord,True,True,unchanged,accepted
+1056,does the patient have any history of afebrile,True,True,unchanged,accepted
+1057,can i search my patient 's medical record for afebrile in the past,True,True,unchanged,accepted
+154,has she ever had afebrile before,True,True,unchanged,accepted
+155,what is the patient 's history of afebrile,True,True,unchanged,accepted
+156,has there been any history of known chronic low back pain,True,True,unchanged,accepted
+1058,has the patient had sciatica before,True,True,unchanged,accepted
+157,has there been any history of renal failure,True,True,unchanged,accepted
+158,has the patient ever gone into renal failure,True,True,unchanged,insufficient_evidence
+1059,why was the patient on lasix,True,True,unchanged,accepted
+159,does the patient suffer from renal distress,False,True,recovered,accepted
+1060,does the patient have incision,True,True,unchanged,accepted
+1061,what was the status of deltoid,True,True,unchanged,accepted
+1062,what was the status of the patient 's 3 cm incision,False,False,unchanged,insufficient_evidence
+1063,any mention of  incision,True,True,unchanged,accepted
+160,what is the patient 's history of 3 cm incision,True,True,unchanged,accepted
+1064,does the patient have a history of 3 cm incision,True,True,unchanged,accepted
+161,does the patient suffer from type 2 diabetes,True,True,unchanged,accepted
+162,how was the patient 's pain treated,True,True,unchanged,accepted
+163,is there a mention of afebrile in the records,True,True,unchanged,accepted
+1065,Why was lasix restarted,False,False,unchanged,insufficient_evidence
+164,how was renal failure treated,False,True,recovered,accepted
+1066,How long was the incision made,False,False,unchanged,insufficient_evidence
+165,did she have dysuria or sob when she had nausea,False,False,unchanged,accepted
+166,what surgeries has she undergone,False,False,unchanged,insufficient_evidence
+167,does she smoke,False,False,unchanged,insufficient_evidence
+168,has anyone in her family had breast cancer,True,True,unchanged,accepted
+169,what is her main diagnosis,False,True,recovered,accepted
+170,does the patient live with her family,False,False,unchanged,insufficient_evidence
+171,has she been diagnosed with any psychological condition in the past,False,True,recovered,accepted
+172,what chemotherapy drugs are being administered to the patient?,False,True,recovered,accepted
+173,what is the dosage of clonazepam,False,False,unchanged,accepted
+174,what kind of medication has she had for her nausea or insomnia,False,True,recovered,accepted
+175,what is the patients bright red hematemesis status,False,True,recovered,accepted
+1067,did the patient throw up with bright red hematemesis,False,False,unchanged,insufficient_evidence
+176,any mention of bright red hematemesis,False,False,unchanged,insufficient_evidence
+1068,does the patient have bright red hematemesis,False,False,unchanged,insufficient_evidence
+1069,any red hematemesis history,True,True,unchanged,accepted
+177,has she ever had small amount of bright red hematemesis before,True,False,regressed,insufficient_evidence
+178,has been the patient ever been considered for w / d seizures,False,False,unchanged,insufficient_evidence
+179,does the patient have any other history of seizures,True,True,unchanged,accepted
+180,does the patient have a current w / d seizures,False,False,unchanged,accepted
+181,is there mention of w / d seizures anywhere in the record,True,True,unchanged,accepted
+182,does the patient have any history of previous mild mid - epigastric tenderness,False,False,unchanged,insufficient_evidence
+1070,does the patient have a history of abd- soft,False,False,unchanged,accepted
+183,has she ever had mild mid - epigastric tenderness before,False,False,unchanged,insufficient_evidence
+184,what is the patient 's current mild mid - epigastric tenderness status,False,True,recovered,accepted
+1071,has telangiectasias been found in the past,False,False,unchanged,insufficient_evidence
+185,does the patient have a history of telangiectasias,True,True,unchanged,insufficient_evidence
+186,does the patient have any history of previous hypochloremic metabolic alkalosis,True,True,unchanged,accepted
+187,what is the patient 's history of hypochloremic metabolic alkalosis,True,True,unchanged,accepted
+188,has hypochloremic metabolic alkalosis been considered in the past,True,True,unchanged,accepted
+189,does the patient have a current hcl loss from vomiting,True,False,regressed,insufficient_evidence
+190,was the patient ever seen for chronic pancreatitis,True,True,unchanged,accepted
+191,what is the patient 's history of abd pain,True,True,unchanged,accepted
+1072,why did the patient get abd pain,True,True,unchanged,accepted
+192,was the patient ever seen for abd pain,True,True,unchanged,accepted
+193,can i search my patient 's medical record for chronic pancreatitis in the past,True,True,unchanged,accepted
+194,does the patient have a current chronic pancreatitis,True,True,unchanged,accepted
+195,does the patient have any history of gi bleeding,True,True,unchanged,accepted
+196,is there a mention of gi bleeding in the records,False,False,unchanged,accepted
+197,is there any mention of gi bleeding in the patient 's record,False,False,unchanged,accepted
+198,was the patient ever seen for gi bleeding,False,False,unchanged,accepted
+199,can i search my patient 's medical record for hematemesis in the past,True,True,unchanged,accepted
+200,what is the patient 's current hematemesis status,True,True,unchanged,accepted
+201,can i search my patient 's medical record for chest pain in the past,False,False,unchanged,accepted
+1073,can i search my patient 's medical record for shortness of breath in the past,True,False,regressed,accepted
+202,what is the patient 's history of nausea,True,False,regressed,accepted
+1074,does he have nausea,True,True,unchanged,accepted
+203,any mention of nausea,True,True,unchanged,accepted
+204,any mention of hypothyroidism,True,True,unchanged,accepted
+205,does hypothyroidism exist,True,True,unchanged,accepted
+206,can i search my patient 's medical record for hyperlipidemia in the past,True,True,unchanged,accepted
+207,does the patient have a current chronic pain,True,True,unchanged,accepted
+208,has the patient ever had any chronic pain,True,True,unchanged,accepted
+1075,what syptoms has the patient had for chronic pain,True,True,unchanged,accepted
+209,any mention of chronic pain,True,True,unchanged,accepted
+210,what is the patient 's current chronic pain status,True,True,unchanged,accepted
+1076,was the patient ever seen for grossly intact,True,True,unchanged,accepted
+1077,does the patient have any history of maew,True,True,unchanged,insufficient_evidence
+211,does the patient have a history of sleepy,True,True,unchanged,accepted
+212,any mention of sleepy,True,True,unchanged,accepted
+1078,has the patient ever had scant red blood,True,True,unchanged,accepted
+1079,does the patient have sclerosed appearing mucosa,True,True,unchanged,accepted
+213,what is the patient 's history of sclerosed appearing mucosa,True,True,unchanged,accepted
+1080,does the patient have any history of scant red blood,True,True,unchanged,accepted
+214,was the patient ever seen for bleeding lesion,True,False,regressed,insufficient_evidence
+215,does the patient have any history of bleeding lesion,False,False,unchanged,insufficient_evidence
+216,any mention of bleeding lesion,False,False,unchanged,insufficient_evidence
+217,has this patient ever had bleeding lesion,True,False,regressed,insufficient_evidence
+1081,does the patient have a history of upper lesions,True,False,regressed,accepted
+1082,what is the patient 's source of bleed status,True,True,unchanged,accepted
+1083,does the patient have esophagitis,True,True,unchanged,accepted
+218,was the patient ever seen for esophagitis,True,True,unchanged,accepted
+219,can i search my patient 's medical record for esophagitis in the past,True,True,unchanged,accepted
+220,has other upper lesions been considered in the past,True,True,unchanged,accepted
+221,does the patient have a current subcranial vein portal,False,False,unchanged,insufficient_evidence
+222,is there any mention of subcranial portal of entry in the patient 's record,False,False,unchanged,insufficient_evidence
+223,what is the patient 's history of subcranial angle portal history,False,False,unchanged,insufficient_evidence
+224,has been the patient ever been considered for varices,False,False,unchanged,insufficient_evidence
+225,what is the patient 's current fungemia status,True,True,unchanged,accepted
+1084,Does the patient have antifungal treatments,False,True,recovered,accepted
+226,has this patient ever had fungemia,True,True,unchanged,accepted
+227,does the patient have a history fungemia,True,True,unchanged,accepted
+228,does the patient have a current hypovolemic,True,True,unchanged,accepted
+229,has she ever had septic component before,True,False,regressed,
+230,does the patient have a history of hypotension,True,True,unchanged,accepted
+231,does the patient have any history of previous septic component,True,True,unchanged,accepted
+232,what is the patient 's current septic component status,False,True,recovered,accepted
+233,what treatments for insomnia has this patient tried,False,True,recovered,accepted
+234,has she ever had insomnia before,False,True,recovered,accepted
+235,any history of insomnia,True,True,unchanged,accepted
+1085,why does the patient take clonazepam,True,True,unchanged,accepted
+236,does the patient have a current significant irritation of the esophagus,True,True,unchanged,accepted
+237,what lab results does he have that are pertinent to significant irritation of the esophagus diagnosis,False,False,unchanged,insufficient_evidence
+238,what is the patient 's current significant irritation of the esophagus status,True,True,unchanged,accepted
+239,has the patient ever been positive for significant irritation of the esophagus .,True,True,unchanged,accepted
+240,can i search my patient 's medical record for significant irritation of the esophagus in the past,True,True,unchanged,accepted
+1086,has the patient ever had irritation of the esophagus,True,True,unchanged,accepted
+1087,why did the patient get irritation of the esophagus,True,True,unchanged,accepted
+241,what is the status of her insomnia,True,True,unchanged,insufficient_evidence
+1088,what was done to treat the patient 's insomnia,True,True,unchanged,accepted
+242,is the patient 's insomnia well - controlled,True,False,regressed,insufficient_evidence
+243,is there a mention of insomnia in the records,True,True,unchanged,accepted
+1089,does the patient have bloodstream infection,False,True,recovered,accepted
+244,what is the patients bloodstream infection history,False,False,unchanged,insufficient_evidence
+245,has the patient ever had bloodstream infection,False,True,recovered,accepted
+246,was the patient ever seen for gi bleeding,False,False,unchanged,accepted
+247,is there any mention of gi bleeding in the patient 's record,False,False,unchanged,accepted
+1090,"was the patient ever seen for nausea, vomiting or chest pain",True,False,regressed,accepted
+248,is the patient 's chest pain well controlled,True,True,unchanged,accepted
+249,was the patient ever seen for chronic pain,True,True,unchanged,accepted
+250,was the patient ever seen for bleeding lesion,True,False,regressed,insufficient_evidence
+1091,Is bleeding lesion seen?,True,False,regressed,insufficient_evidence
+1092,why did he receive antifungal treatments,True,True,unchanged,accepted
+1093,what is the dosage of the medication used for insomnia,False,False,unchanged,insufficient_evidence
+1094,why does the patient take clonazepam,True,True,unchanged,accepted
+251,how was the patient 's insomnia treated,True,True,unchanged,accepted
+1095,how is the patient 's insomnia treated,True,True,unchanged,accepted
+252,what is the patient 's seizures status,True,True,unchanged,accepted
+253,has been the patient ever been considered for seizures,True,True,unchanged,accepted
+254,has the patient ever gone into seizures,True,True,unchanged,accepted
+255,does the patient have any history of seizures,True,True,unchanged,accepted
+256,has seizures been considered in the past,True,True,unchanged,accepted
+257,does the patient have any history of previous spontaneous movements of all 4 extremities,False,False,unchanged,insufficient_evidence
+258,does the patient have any history of spontaneous movements of all four extremities,False,False,unchanged,insufficient_evidence
+259,does the patient have a current spontaneous movements of all 4 extremities,False,False,unchanged,insufficient_evidence
+260,what is the patient 's history of spontaneous movements of all four extremities,False,False,unchanged,insufficient_evidence
+261,was the patient ever seen for spontaneous movements of all 4 extremities,True,False,regressed,insufficient_evidence
+262,what is the patients hay fever status,True,True,unchanged,accepted
+1096,why was the patient on diphenhydramine,True,True,unchanged,accepted
+1097,has this patient have any history of rhinorrhea,True,True,unchanged,accepted
+263,is there a mention of hay fever in the records,True,True,unchanged,accepted
+1098,does the patient any history of hay fever,True,True,unchanged,accepted
+264,has there been any history of unsteady gait,True,True,unchanged,accepted
+265,is the patient 's prostate cancer well - controlled,False,False,unchanged,insufficient_evidence
+1099,does the patient have a history of prostate cancer,True,True,unchanged,accepted
+266,what is the patient 's history of prostate cancer,True,True,unchanged,accepted
+1100,does the patient have a history of unsteady gait,True,True,unchanged,accepted
+267,does the patient have any history of lymphadenopathy,True,True,unchanged,accepted
+268,has lymphadenopathy been considered in the past,False,False,unchanged,insufficient_evidence
+269,what is the patient 's history of hard to voice,False,False,unchanged,insufficient_evidence
+270,has the patient ever gone into sternal rub,True,True,unchanged,accepted
+1101,was the patient responding to sternal rub,False,False,unchanged,accepted
+271,is there mention of open to loud voice anywhere in the record,True,True,unchanged,accepted
+272,does the patient have a history of not open to loud voice,True,True,unchanged,accepted
+273,does the patient have any history of previous open to loud,True,False,regressed,accepted
+274,is the patient 's cough well - controlled,False,False,unchanged,insufficient_evidence
+275,can i search my patient 's medical record for cough in the past,True,True,unchanged,accepted
+276,what is the patient 's current cough status,True,True,unchanged,accepted
+277,does the patient have any history of previous completely pacer eeg,False,False,unchanged,insufficient_evidence
+278,what tests have been ordered for evaluation of encephalopathic previously,False,True,recovered,accepted
+279,has this patient ever had testing for encephalopathic .,True,True,unchanged,accepted
+280,can i search my patient 's medical record for seizure free in the past,True,True,unchanged,accepted
+281,is the patient 's seizure well controlled,True,True,unchanged,accepted
+282,does the patient have a current seizure free,False,True,recovered,accepted
+283,was the patient ever seen for seizure,True,True,unchanged,accepted
+284,what is the patient 's current sacral coccyx tissue breakdown status,True,True,unchanged,accepted
+285,has sacral coccyly been considered in the past,True,False,regressed,insufficient_evidence
+286,has this patient ever reported sacral exudative tissue breakdown,False,False,unchanged,insufficient_evidence
+287,what is the patient 's history of sacral coccylitis,False,False,unchanged,insufficient_evidence
+288,does the patient have a current sacral coccylorium,False,False,unchanged,insufficient_evidence
+289,has the patient ever had sacral coccyx tissue breakdown,True,True,unchanged,accepted
+290,does the patient have a history sacral coccyx tissue breakdown,True,True,unchanged,accepted
+291,has the patient ever had any fecal incontinence,True,True,unchanged,accepted
+1102,has this patient ever had pressure related breakdown,False,False,unchanged,accepted
+292,can i search my patient 's medical record for severe fungal rash in the past,True,True,unchanged,accepted
+293,does the patient have any history of severe fungal rash tolerance,True,False,regressed,insufficient_evidence
+294,does the patient have a history of streptococcus .,True,True,unchanged,accepted
+295,is the patient 's fevers well controlled,False,True,recovered,accepted
+296,does the patient have any history of previous fevers,True,True,unchanged,accepted
+297,has the patient ever gone into streptococcus,True,True,unchanged,accepted
+298,has the patient ever had any streptococcus .,False,True,recovered,accepted
+299,why was the patient on qam rhinorrhea,True,True,unchanged,accepted
+300,how was prolonged seizure managed,True,True,unchanged,accepted
+1103,when was the patient evaluated for encephalopathic,False,True,recovered,accepted
+301,is the patient 's seizure free well - controlled,False,True,recovered,accepted
+1104,what does patient's right eye look like,True,False,regressed,insufficient_evidence
+1105,has the patient ever had shingles over his right eye,True,True,unchanged,accepted
+302,does the patient have a history shingles over the right eye .,False,False,unchanged,insufficient_evidence
+1106,does the patient currently have shingles over his right eye,True,True,unchanged,accepted
+1107,has the patient ever had shingles over his right eye,True,False,regressed,insufficient_evidence
+303,does the patient have any history of previous sinus tenderness,False,False,unchanged,accepted
+304,what is the patient 's history of sinus tenderness,False,False,unchanged,accepted
+1108,has she ever had sinus tenderness before,False,False,unchanged,accepted
+305,any mention of sinus tenderness,False,False,unchanged,accepted
+306,has been the patient ever been considered for chronic renal insufficiency,True,True,unchanged,accepted
+307,has this patient ever had chronic renal insufficiency,True,True,unchanged,accepted
+308,is the patient 's lad well controlled,False,False,unchanged,insufficient_evidence
+309,does the patient have any history of lad,True,True,unchanged,accepted
+310,what is the patient 's current lad status,False,False,unchanged,accepted
+311,has the patient ever had lad,False,False,unchanged,insufficient_evidence
+312,has this patient ever had clubbing,False,True,recovered,accepted
+313,can i search my patient 's medical record for clubbing in the past,True,True,unchanged,accepted
+314,does the patient have a current cyanosis,False,True,recovered,accepted
+315,any history of cyanosis,True,True,unchanged,accepted
+316,does the patient have any history of previous parainfluenza virus,False,True,recovered,accepted
+317,has there been any history of parainfluenza virus,True,True,unchanged,accepted
+318,can i search my patient 's medical record for parainfluenza virus in the past,True,True,unchanged,accepted
+319,"what is the patient 's current paraincision status ,",False,False,unchanged,insufficient_evidence
+1109,did the patient test positive for parainfluenza virus,True,True,unchanged,accepted
+320,is there a mention of parainfluenza virus . in the record,True,True,unchanged,accepted
+1110,does the patient have a history of influenza,False,False,unchanged,insufficient_evidence
+1111,does the patient have any history of cabg,True,True,unchanged,accepted
+321,what is the patient 's history of mediastinal clips,True,True,unchanged,accepted
+322,has mediastinal click been considered in the past,False,False,unchanged,insufficient_evidence
+1112,can i search my patient 's medical record for cabg leads in the past,True,False,regressed,insufficient_evidence
+323,has been the patient ever been considered for pneumonia,False,False,unchanged,accepted
+324,what is the patient 's pneumonia history,False,False,unchanged,accepted
+325,any history of pneumonia,False,False,unchanged,accepted
+326,has pneumonia been considered in the past,False,False,unchanged,accepted
+327,what is the patient 's current focal parenchymal,True,True,unchanged,accepted
+328,does the patient have any history of previous focal parenchymal consolidation,True,True,unchanged,accepted
+329,has she ever had pneumonia before,False,False,unchanged,accepted
+330,does the patient have a current pneumonia,False,False,unchanged,accepted
+331,is the patient 's focal parenchymal consolidation well - controlled,True,True,unchanged,accepted
+332,has the patient ever had any focal parenchymal consolidation,False,True,recovered,accepted
+333,has this patient ever had persistently wheezy,True,True,unchanged,accepted
+1113,did the patient have any symptoms in pulmonary exam,True,True,unchanged,accepted
+334,does the patient have any history of previous persistently wheezy,True,True,unchanged,accepted
+1114,has there been any history of persistent wheezing,False,False,unchanged,insufficient_evidence
+335,what is the patient 's current persistently wheezy status,True,True,unchanged,accepted
+336,does the patient have any other history of asymptomatic,False,True,recovered,revision_failed
+337,has the patient ever had any other tachycardia,False,False,unchanged,insufficient_evidence
+338,does the patient have a current asymptomatic,True,True,unchanged,insufficient_evidence
+339,has other tachycardia been considered in the past,False,True,recovered,accepted
+340,can i search my patient 's medical record for asymptomatic in the past,True,True,unchanged,accepted
+341,does the patient have a history of other tachycardia,False,False,unchanged,accepted
+342,has acute on chronic kidney injury been considered in the past,False,True,recovered,accepted
+343,does the patient have a current acute on chronic kidney injury,True,True,unchanged,accepted
+344,does the patient have any history of low blood pressure,True,True,unchanged,accepted
+345,does difficulty breathing . exist,True,True,unchanged,accepted
+346,was the patient ever seen for low blood pressure,True,True,unchanged,accepted
+347,has been the patient ever been considered for difficulty breathing sounds,False,False,unchanged,insufficient_evidence
+348,is there mention of difficulty breathing anywhere in the record,True,True,unchanged,accepted
+349,does the patient have a history of difficulty breathing .,True,True,unchanged,accepted
+350,what is the patient 's history of difficulty breathing .,True,True,unchanged,accepted
+351,is there a mention of low blood pressure in the record,True,True,unchanged,accepted
+352,what is the patient 's low blood pressure status,True,True,unchanged,accepted
+353,can i search my patient 's medical record for low blood pressure in the past,True,True,unchanged,accepted
+1115,why did the patient have iv fluids,True,True,unchanged,accepted
+354,when was the patient evaluated for chronic renal insufficiency and what are baseline creatinine results,False,False,unchanged,revision_limit
+355,is there a mention of chronic renal insufficiency in the records,True,True,unchanged,accepted
+356,was the patient ever seen for clubbing,True,True,unchanged,accepted
+357,was the patient ever seen for pneumothorax,False,False,unchanged,insufficient_evidence
+1116,what happened when the patient was on pulmonary exam.,True,False,regressed,insufficient_evidence
+358,was the patient ever seen for acute on chronic kidney injury,True,True,unchanged,accepted
+359,is there a mention of chronic in chronic kidney injury in the records,True,True,unchanged,accepted
+360,is there a mention of pneumonia in the records,True,True,unchanged,accepted
+361,does the patient suffer from uncooperative,False,False,unchanged,insufficient_evidence
+362,does the patient have a history of responsive to touch,True,True,unchanged,accepted
+1117,was the patient responsive to touch,True,True,unchanged,accepted
+363,does the patient have grimaces,True,True,unchanged,accepted
+364,does the patient have any history of previous uncooperative,True,False,regressed,insufficient_evidence
+1118,does the patient have a history of hematoma,True,True,unchanged,accepted
+365,does the patient have any 6 cm hematoma on the r side,False,False,unchanged,insufficient_evidence
+366,does the patient have a history 6 cm hematoma on the r side,False,False,unchanged,insufficient_evidence
+1119,any history of hematoma on the right side,True,True,unchanged,accepted
+367,has she ever had 6 cm hematoma on the r side before,False,False,unchanged,insufficient_evidence
+368,is there mention 6 cm hematoma on the r side anywhere in the record,False,False,unchanged,insufficient_evidence
+369,what is the patient 's history of pseudomonal pneumonia,True,True,unchanged,accepted
+370,has been the patient ever been considered for pseudomonal pneumonia,True,True,unchanged,accepted
+371,does the patient have any history of previous pseudomonal pneumonia,False,True,recovered,accepted
+372,does the patient have a current pseudomonal pneumonia,True,True,unchanged,accepted
+373,any mention of pseudomonal pneumonia,True,True,unchanged,accepted
+1120,does the patient have any history of right hematoma,False,False,unchanged,insufficient_evidence
+374,does the patient have neck hematoma,True,True,unchanged,accepted
+375,does the patient have a current r hematoma,True,True,unchanged,accepted
+1121,was the patient ever seen for right hematoma,False,False,unchanged,insufficient_evidence
+376,has she ever had r hematoma before,True,True,unchanged,accepted
+1122,what is the patient's history of generalized cachexia,True,True,unchanged,accepted
+1123,does the patient have any history of generalized cachexia,True,True,unchanged,accepted
+377,does the patient have a current generalized cachexia,True,True,unchanged,accepted
+378,has there been any history of aids - wasting syndrome,False,False,unchanged,insufficient_evidence
+1124,any history of aids-wasting syndrome,True,True,unchanged,accepted
+379,does the patient have a current hiv encephalopathy,True,True,unchanged,accepted
+380,has mild cerebral atrophy been considered in the past,True,True,unchanged,accepted
+381,what is the patient 's current hiv encephalopathy status,True,True,unchanged,accepted
+382,is there mention of mild cerebral atrophy anywhere in the record,True,True,unchanged,accepted
+383,does the patient have any history of previous hiv encephalopathy,True,True,unchanged,accepted
+384,does the patient have a history of mild cerebral atrophy,True,True,unchanged,accepted
+385,has been the patient ever been considered for apparent infarction,True,True,unchanged,accepted
+386,does the patient have a history of meningitis,True,True,unchanged,accepted
+387,has the patient ever had any meningitis,True,True,unchanged,accepted
+388,does the patient have a current apparent infarction,True,True,unchanged,accepted
+389,what is the status of her apparent infarction,True,True,unchanged,accepted
+390,has hyperdynamic been considered in the past,True,True,unchanged,accepted
+391,does the patient have a current hyperdynamic,True,True,unchanged,accepted
+392,was the patient ever seen for left ventricular diastolic,False,False,unchanged,insufficient_evidence
+393,does the patient have any history of previous left ventricular diastolic collection,False,False,unchanged,insufficient_evidence
+394,what were the results of the patient 's last left ventricular systolic for his hyperdynamic,True,True,unchanged,accepted
+395,any history of pericardial effusion,True,True,unchanged,accepted
+396,has this patient ever had pericardial effusion,False,False,unchanged,insufficient_evidence
+397,what is the patient 's history of pericardial effusion,True,True,unchanged,accepted
+1125,has absence of oropharyngeal flora been considered in the past,False,False,unchanged,insufficient_evidence
+1126,does the patient have any history of absence of oropharyngeal flora,False,False,unchanged,insufficient_evidence
+1127,does the patient currently have orophargyngeal flora,False,False,unchanged,accepted
+398,has the patient ever gone into oropharyngeal acquired absent,False,False,unchanged,insufficient_evidence
+1128,what is the patients history of  absence of oropharyngeal flora,False,False,unchanged,insufficient_evidence
+1129,any hypercalcemia history,True,True,unchanged,accepted
+399,what is the patient 's history of r neck hematoma,True,True,unchanged,accepted
+400,any mention of r neck hematoma,True,True,unchanged,accepted
+1130,does the patient have a history of hypernatremia,True,True,unchanged,accepted
+401,does the patient have any history of previous r neck hematoma,True,False,regressed,accepted
+1131,does the patient have any history of elevated lactate,True,True,unchanged,accepted
+402,does the patient have a current hypernatremia,True,False,regressed,insufficient_evidence
+403,has there been any history of hypernatremia,True,True,unchanged,accepted
+404,what were the results of the patient 's last ct c - spine for his fracture,True,True,unchanged,accepted
+405,does the patient have a history of fracture,False,False,unchanged,accepted
+406,any prior fracture testing,True,True,unchanged,insufficient_evidence
+407,does the patient have any other history of pain,False,True,recovered,accepted
+408,was the patient ever seen for pain,True,True,unchanged,accepted
+1132,has there been any history of dehydration,True,True,unchanged,accepted
+409,does the patient have a current dehydration,True,True,unchanged,accepted
+410,has hypernatremia been considered in the past,True,True,unchanged,accepted
+411,what is the patient 's current dehydration status,True,True,unchanged,accepted
+412,has she ever had altered mental status before,True,True,unchanged,accepted
+413,what lab results does he have that are pertinent to altered mental status diagnosis,False,False,unchanged,accepted
+1133,has the patient had narcotics for pain before,False,True,recovered,accepted
+1134,is there a mention for taking narcotics for pain in the records,True,True,unchanged,accepted
+414,what is the patient 's current pain status,True,True,unchanged,accepted
+1135,does the doctor recommend using too much narcotics for pain,True,True,unchanged,accepted
+415,does pain exist,True,True,unchanged,accepted
+1136,How long is the hematoma on the right side,False,False,unchanged,insufficient_evidence
+1137,is there a mention of hematoma on the right side in the record,False,False,unchanged,insufficient_evidence
+416,was the patient ever seen for dislocation .,False,False,unchanged,accepted
+417,is the patient 's acute fracture well - controlled,False,False,unchanged,accepted
+1138,How long will afk take to grow,False,False,unchanged,insufficient_evidence
+418,is there a mention of afb in the records,True,False,regressed,insufficient_evidence
+1139,is narcotics recommended to use,False,True,recovered,accepted
+419,how was the patient 's pain treated,False,False,unchanged,insufficient_evidence
+420,is he allergic to anything,False,False,unchanged,insufficient_evidence
+421,does he take his medication,False,False,unchanged,accepted
+422,what was the patient's chief complaint,False,False,unchanged,insufficient_evidence
+423,has the patient been diagnosed with any pulmonary infectious disease,False,True,recovered,accepted
+424,is the patient immunocompromised,True,True,unchanged,accepted
+425,is the patient sexually active,True,True,unchanged,accepted
+426,was an edema found in the physical exam,False,False,unchanged,accepted
+427,was there any foci detected in his head mri,False,False,unchanged,insufficient_evidence
+428,what were the consequences of his acid fast smear,False,True,recovered,accepted
+429,what is his highest ck for his rhabdomylosis,True,True,unchanged,accepted
+430,how long did he need to continue on flagyl,False,False,unchanged,accepted
+431,how was his neck hematoma,True,True,unchanged,accepted
+432,what is his chief complaint,False,False,unchanged,insufficient_evidence
+433,were there any changes to his hypoglycemics recently,False,True,recovered,accepted
+434,what was his wbc count in the ed,False,False,unchanged,insufficient_evidence
+435,what is wrong with his left first metatarsal head (b-c),True,True,unchanged,accepted
+436,what was given to the patient for his left osteomyelitis and cellulitis,True,True,unchanged,accepted
+437,what was the treatment for his atrial fibrillation,False,True,recovered,insufficient_evidence
+438,what was his primary discharge diagnosis,False,True,recovered,accepted
+439,what surgeries has he undergone,False,False,unchanged,insufficient_evidence
+440,has anyone in his family had cancer,True,False,regressed,insufficient_evidence
+441,does he take his medication,True,True,unchanged,insufficient_evidence
+442,has there been any history of ruq - new liver masses,False,True,recovered,accepted
+1140,has the patient had a history of liver masses in ruq,False,True,recovered,accepted
+443,any mention of new liver masses / sacral / femoral,True,True,unchanged,accepted
+444,what is the patient 's history of new liver masses / sacral / iliac,True,True,unchanged,accepted
+445,does the patient have any other history of mets,False,True,recovered,accepted
+446,does the patient have a current new liver masses / sacral / iliac,True,True,unchanged,accepted
+447,does the patient have a history of ruq - new liver masses / sacral / iliac,False,True,recovered,accepted
+1141,what is the status of the patient's cva,False,False,unchanged,accepted
+448,any mention of mi,True,True,unchanged,accepted
+449,has been the patient ever been considered for cva,True,True,unchanged,accepted
+450,does the patient have a current mi,False,False,unchanged,insufficient_evidence
+451,has this patient ever reported cva,False,False,unchanged,accepted
+452,does the patient have any history of mi,False,True,recovered,accepted
+453,any continued severe right hydronephrosis history,True,True,unchanged,accepted
+454,was the patient ever seen for fixed severe right hydronephrosis,False,False,unchanged,insufficient_evidence
+455,what is the patient 's history of decreased severe right hydronephrosis,False,False,unchanged,accepted
+456,has been the patient ever been considered for unchanged severe right hydronephrosis,True,True,unchanged,accepted
+457,does severe right hydroureteronephrosis exist,True,True,unchanged,accepted
+1142,what is the patient's history of hydroureteronephrosis,True,True,unchanged,accepted
+1143,does the patient have any history of hydroureteronephrosis,True,True,unchanged,accepted
+458,does the patient have a current severe right hydroureteronephrosis,True,True,unchanged,accepted
+1144,has there been any history of pulmonary edema,True,True,unchanged,accepted
+459,what is the patient 's history of pulmonary edema,True,True,unchanged,accepted
+460,does the patient have any history of previous pulmonary edema,False,True,recovered,accepted
+461,has she ever had pulmonary edema before,True,True,unchanged,accepted
+462,any mention of pulmonary edema,True,True,unchanged,accepted
+463,does the patient have a current pulmonary edema,True,True,unchanged,accepted
+464,does the patient have a current atrial fibrillation,True,True,unchanged,accepted
+465,does the patient have any history of previous atrial fibrillation,False,True,recovered,accepted
+466,can i search my patient 's medical record for atrial fibrillation in the past,True,True,unchanged,accepted
+467,was the patient ever seen for atrial fibrillation,True,True,unchanged,accepted
+468,is the patient 's atrial fibrillation well controlled,False,False,unchanged,accepted
+469,is there a mention of tachycardia in the records,True,True,unchanged,accepted
+470,has she ever had tachycardia before,True,True,unchanged,insufficient_evidence
+471,does the patient have a current altered mental status,True,True,unchanged,accepted
+472,what is the patient 's history of altered mental status,True,True,unchanged,accepted
+473,has been the patient ever been considered for tachycardia,True,True,unchanged,accepted
+474,does the patient have any history of previous tachycardia,True,True,unchanged,accepted
+475,does the patient have a past history of afib,True,True,unchanged,insufficient_evidence
+476,has this patient ever reported afib,True,True,unchanged,accepted
+477,has afib been considered in the past,True,True,unchanged,insufficient_evidence
+478,can i search my patient 's medical record for afib in the past,True,True,unchanged,accepted
+479,is the patient 's thrombocytopenia well controlled,False,False,unchanged,insufficient_evidence
+480,has she ever had thrombocytopenia before,True,True,unchanged,revision_failed
+481,what is the status of her thrombocytopenia,True,True,unchanged,accepted
+482,does the patient have any history of bleeding,False,False,unchanged,insufficient_evidence
+483,has she ever had bleeding before,False,False,unchanged,insufficient_evidence
+484,what is the patient 's bleeding status,True,True,unchanged,insufficient_evidence
+485,has bleeding been considered in the past,False,False,unchanged,insufficient_evidence
+1145,does the patient have a decrease in tissue turgor,True,True,unchanged,accepted
+486,any history of decreased tissue gradient,False,False,unchanged,insufficient_evidence
+487,does the patient have any history of previous decreased tissue turgor,True,True,unchanged,accepted
+488,what is the status of her decreased tissue turgor,True,True,unchanged,accepted
+489,does the patient have a current decreased tissue tremors,False,False,unchanged,insufficient_evidence
+490,what is the patient 's decreased tissue gradient status,False,False,unchanged,insufficient_evidence
+491,has dry mucus membranes been considered in the past,True,True,unchanged,accepted
+492,was the patient ever seen for acute liver failure,True,True,unchanged,accepted
+493,does the patient have any other history of acute liver failure,False,True,recovered,accepted
+494,does the patient have a current acute liver failure,False,True,recovered,accepted
+495,has the patient ever had any acute liver failure,True,True,unchanged,accepted
+496,does the patient have any history of toxic - metabolic liver failure,False,False,unchanged,insufficient_evidence
+497,has the patient ever had any metabolic alkalosis,True,True,unchanged,accepted
+498,does the patient have any other history of volume depletion,False,True,recovered,accepted
+499,does the patient have any history of previous metabolic alkalosis,True,True,unchanged,insufficient_evidence
+500,is there any mention of respiratory failure in the patient 's record,True,True,unchanged,accepted
+501,has the patient ever had any respiratory failure,True,True,unchanged,accepted
+502,what is the patient 's respiratory failure status,True,True,unchanged,accepted
+503,has there been any history of respiratory failure,True,True,unchanged,accepted
+504,does the patient have any history of previous metastatic bladder cancer,False,True,recovered,accepted
+505,is there a mention of metastatic bladder cancer in the record,True,True,unchanged,accepted
+506,can i search my patient 's medical record for metastatic bladder cancer in the past,True,True,unchanged,accepted
+507,has the patient ever had any metastatic bladder cancer,True,True,unchanged,accepted
+508,has been the patient ever been considered for metastatic bladder cancer,True,True,unchanged,accepted
+1146,When did his father die,False,False,unchanged,insufficient_evidence
+509,was the patient ever seen for afib,True,True,unchanged,accepted
+1147,was the patient ever bleeding,False,False,unchanged,insufficient_evidence
+510,any mention of bleeding,False,False,unchanged,insufficient_evidence
+511,any cp history,False,False,unchanged,insufficient_evidence
+512,has this patient ever had cp,False,True,recovered,accepted
+513,any sob history,False,False,unchanged,accepted
+514,what is the patient 's current sob status,True,False,regressed,insufficient_evidence
+515,does the patient have a history of cp,False,False,unchanged,accepted
+516,does the patient have a current hypotension,True,True,unchanged,accepted
+517,has this patient ever had hypotension,False,True,recovered,accepted
+518,is there a mention of hypothermic in the records,True,True,unchanged,accepted
+519,what is the patient 's current hypothermic status,True,True,unchanged,accepted
+1148,is the patient hypothermic,False,True,recovered,accepted
+1149,can i search my patient 's medical record for ankle fractures in the past,True,True,unchanged,accepted
+1150,has the patient ever had any ankle fractures,True,True,unchanged,accepted
+1151,any mention of hypertension,True,True,unchanged,accepted
+520,was the patient ever seen for ankle fractures,True,True,unchanged,accepted
+521,has there been any history of hypertension,False,True,recovered,accepted
+522,does the patient have a current seizures,False,False,unchanged,insufficient_evidence
+523,has there been any history of seizures,False,True,recovered,insufficient_evidence
+1152,does the patient have a family history of strokes,True,True,unchanged,accepted
+524,can i search my patient 's medical record for seizures in the past,False,False,unchanged,insufficient_evidence
+525,does the patient have a past history of seizure,False,True,recovered,insufficient_evidence
+1153,does the patient have a slightly dry mucosa,False,False,unchanged,insufficient_evidence
+526,is there mention mucosa slightly dry anywhere in the record,True,True,unchanged,accepted
+1154,can i search my patient 's medical record for mildly icteric sclerae in the past,False,False,unchanged,insufficient_evidence
+1155,does the patient have a slightly dry mucosa,False,False,unchanged,insufficient_evidence
+1156,does the patient have a history of midly icteric sclerae,False,False,unchanged,insufficient_evidence
+527,does the patient have any history of previous nonspecific mesenteric stranding,True,True,unchanged,accepted
+1157,does  the patient have diffuse anasarca,True,True,unchanged,accepted
+528,does the patient have a current nonspecific mesenteric stranding,True,True,unchanged,accepted
+529,what is the patient 's ascites status,True,True,unchanged,accepted
+530,has she ever had nonspecific mesenteric stranding before,True,False,regressed,
+531,does the patient have any history of previous superficial tissue edema,False,False,unchanged,insufficient_evidence
+532,has the patient ever had any soft tissue edema,True,True,unchanged,accepted
+533,what is the patient 's history of nonspecific mesenteric stranding,True,True,unchanged,accepted
+534,what is the patient 's pneumothorax history,True,True,unchanged,accepted
+535,any history of pneumothorax in the suprapatellar pouch,False,False,unchanged,insufficient_evidence
+536,has there been any history of pneumothorax,False,True,recovered,accepted
+1158,does the patient have chf,False,False,unchanged,insufficient_evidence
+537,does the patient have a current ascites fluid,True,True,unchanged,accepted
+1159,does the patient show presence of ascites fluid,True,True,unchanged,accepted
+538,what lab results does he have that are pertinent to insufficicent pt pt diagnosis of ascites fluid diagnosis,False,False,unchanged,insufficient_evidence
+1160,what is the result of patient's abdominal u/s,True,True,unchanged,accepted
+539,has been the patient ever been considered for ascites,True,True,unchanged,accepted
+540,has been the patient ever been considered for new right posterior rib fracture,True,True,unchanged,accepted
+541,what is the patient 's history of new right posterior rib fracture,True,False,regressed,insufficient_evidence
+542,is there any mention of new right posterior rib fracture in the patient 's record,False,False,unchanged,insufficient_evidence
+543,has she ever had new right posterior rib fracture before,False,True,recovered,accepted
+544,is there any mention of pre - renal etiology in the patient 's record,True,True,unchanged,accepted
+545,any prior hepatorenal syndrome testing,False,True,recovered,accepted
+546,does the patient have any history of previous pre - renal etiology,True,True,unchanged,accepted
+1161,what is the patient 's history of hepatorenal syndrome,True,True,unchanged,accepted
+547,what is the patient 's history of pre - renal etiology,True,True,unchanged,accepted
+548,how was the patient 's pre - renal etiology diagnosed,True,True,unchanged,accepted
+1162,does the patient have any history of hepatorenal syndrome,True,True,unchanged,accepted
+549,does the patient have a current hepatorenal syndrome,True,True,unchanged,accepted
+1163,does the patient have a history of brbpr,True,True,unchanged,accepted
+550,does the patient have a current painless brbpr,True,True,unchanged,accepted
+551,does the patient have any history of previous painless episode,False,False,unchanged,insufficient_evidence
+1164,what is the patient's current brbpr status,False,True,recovered,accepted
+1165,is the patient's hct stable,False,False,unchanged,revision_limit
+552,has painless brbpr been considered in the past,True,True,unchanged,accepted
+553,does the patient have a history of very mild hypoxia,True,True,unchanged,accepted
+554,has she ever had abdominal distention before,True,True,unchanged,accepted
+555,does the patient have any history of previous abdominal distention,False,True,recovered,accepted
+556,any very mild hypoxia history,True,True,unchanged,accepted
+557,has the patient ever had any abdominal distention,True,True,unchanged,accepted
+1166,was the patient ever seen for hypothermia,True,True,unchanged,accepted
+558,was the patient ever seen for effusion,False,False,unchanged,insufficient_evidence
+559,what is the patient 's chronic cough status,True,True,unchanged,accepted
+560,does the patient have a current chronic cough,True,True,unchanged,accepted
+561,can i search my patient 's medical record for chronic cough in the past,True,True,unchanged,accepted
+562,was the patient ever seen for chronic cough,True,True,unchanged,accepted
+563,has there been any history of hematemesis,False,False,unchanged,accepted
+564,has the patient ever had hematemesis,False,False,unchanged,accepted
+565,what is the patient 's current hematemesis status,True,False,regressed,accepted
+566,has this patient ever had hematemesis,False,False,unchanged,accepted
+567,does the patient have a current nausea,True,True,unchanged,insufficient_evidence
+568,does the patient have any history of previous diffuse abdominal pain,False,True,recovered,accepted
+569,is there a mention of vomiting in the record,True,True,unchanged,accepted
+570,has she ever had nausea before,True,True,unchanged,insufficient_evidence
+571,does the patient have a current hemoptysis,False,False,unchanged,accepted
+572,was the patient ever seen for dvt,False,False,unchanged,insufficient_evidence
+573,what is the patient 's hypertension history,True,True,unchanged,accepted
+574,does the patient have a history of chronic dry cough,True,True,unchanged,accepted
+575,has she ever had hypertension before,True,True,unchanged,insufficient_evidence
+576,what is the patient 's current chronic dry cough status,True,True,unchanged,accepted
+577,is there a mention of chronic dry cough in the record,True,True,unchanged,accepted
+578,does the patient have any history of hyperlipidemia,True,True,unchanged,accepted
+579,does the patient have a current hypertension,True,False,regressed,insufficient_evidence
+580,can i search my patient 's medical record for mildly icteric sclera in the past,True,True,unchanged,accepted
+1167,what is the patient's history of icteric sclera,True,True,unchanged,accepted
+1168,does the patient have mildly icteric sclera,True,True,unchanged,accepted
+581,does the patient have any history of mildly icteric sclera,True,True,unchanged,accepted
+1169,was the patient ever seen for rhonchi,False,False,unchanged,insufficient_evidence
+582,does the patient have a current wheezing,False,False,unchanged,insufficient_evidence
+583,what is the status of the patient 's wheezing,False,False,unchanged,insufficient_evidence
+584,what is the patient 's current rhonchi status,True,True,unchanged,insufficient_evidence
+585,does the patient have a history of rales,True,True,unchanged,accepted
+586,does the patient have any history of previous wheezing,False,False,unchanged,insufficient_evidence
+587,is the patient 's wheezing well - controlled,False,False,unchanged,insufficient_evidence
+1170,does the patient have any history of vericose veins,False,False,unchanged,insufficient_evidence
+588,has been the patient ever been considered for midline area,True,True,unchanged,insufficient_evidence
+1171,what is the patient's history of vericose veins,False,False,unchanged,insufficient_evidence
+589,has been the patient ever been considered for non tender calf,True,True,unchanged,accepted
+590,what is the patient 's non tender calf history,True,True,unchanged,accepted
+591,does the patient have a current non tender calf or foot,False,True,recovered,insufficient_evidence
+592,is there a mention of non tender calf in the records,True,True,unchanged,accepted
+593,has this patient ever had testing for significant interval change in avl basal,False,False,unchanged,insufficient_evidence
+1172,is there any mention of significant interval change in basal and subpleural interstitial abnormalities,True,False,regressed,insufficient_evidence
+1173,does the patient have any history of pulmonary fibrosis,True,True,unchanged,accepted
+1174,what is the status of the patient's basal and subpleural interstitial abnormalities,True,True,unchanged,accepted
+594,is there a mention of significant interval change in predominantly basal and subpleural interstitial abnormalities in the record,True,False,regressed,accepted
+595,does the patient have any history of previous right - sided heart failure,True,True,unchanged,accepted
+596,has the patient ever gone into significant pulmonary hypertension,True,True,unchanged,accepted
+597,is the patient 's right - sided heart failure well controlled,False,False,unchanged,accepted
+598,does the patient have any other history of significant pulmonary hypertension,True,True,unchanged,insufficient_evidence
+599,has the patient ever had any chf,True,False,regressed,insufficient_evidence
+600,does the patient have a current right - sided heart failure,True,True,unchanged,accepted
+601,does the patient have a history of chf,True,True,unchanged,accepted
+602,what is the patient 's history of right - sided heart failure,True,True,unchanged,accepted
+603,what is the patient 's current right - sided heart failure status,True,True,unchanged,accepted
+1175,what is the patient's history of copd,True,True,unchanged,insufficient_evidence
+604,can i search my patient 's medical record for copd / interstitial lung in the past,True,True,unchanged,accepted
+605,does the patient have any history of previous copd / interstitial lung,False,True,recovered,insufficient_evidence
+606,has been the patient ever been considered for copd / interstitial lung,False,True,recovered,accepted
+607,what is the patient 's copd / interstitial lung status,True,True,unchanged,accepted
+608,does the patient have a current upper gib,True,True,unchanged,accepted
+1176,what is the patient 's history of coffee ground emesis in the ed,True,True,unchanged,accepted
+609,does the patient have any history of previous upper gib,True,False,regressed,insufficient_evidence
+610,does the patient have any history of previous coffee ground emesis in the ed,True,True,unchanged,accepted
+611,is there a mention of coffee ground emesis in the records,True,True,unchanged,accepted
+612,is the patient 's coffee ground emesis in the nc well - controlled,False,False,unchanged,accepted
+613,does the patient have any history of previous hepatic swelling,False,False,unchanged,insufficient_evidence
+614,does the patient have a current hepatic swelling,False,False,unchanged,insufficient_evidence
+615,has there been any history of coagulopathy,True,True,unchanged,accepted
+616,what is the patient 's current coagulopathy status,True,True,unchanged,accepted
+617,has been the patient ever been considered for coagulopathy,True,True,unchanged,accepted
+618,has she ever had coagulopathy before,True,True,unchanged,accepted
+619,what is the patient 's shortness of breath status,True,True,unchanged,accepted
+620,has there been any history of shortness of breath,True,True,unchanged,accepted
+621,has been the patient ever been considered for shortness of breath,True,True,unchanged,accepted
+1177,does the patient have fluid from abdomen,False,False,unchanged,insufficient_evidence
+1178,has the patient had fluid from abdomen before,False,False,unchanged,insufficient_evidence
+1179,what is the patient's history of fluid from abdomen,False,False,unchanged,insufficient_evidence
+1180,what was done to correct patient's fluid in the abdomen,False,False,unchanged,insufficient_evidence
+1181,how was patient's fluid in the abdomen treated,False,False,unchanged,insufficient_evidence
+622,does the patient have any history of previous fluid from the abdomen .,False,False,unchanged,insufficient_evidence
+623,was the patient ever seen for chronic cough,True,True,unchanged,accepted
+624,was the patient ever seen for hematemesis,False,False,unchanged,accepted
+1182,Why did the patient take zofran and ativan,True,True,unchanged,accepted
+625,is there a mention of coffee ground emesis in the records,True,True,unchanged,accepted
+626,why is the patient on pleurodesis,False,False,unchanged,accepted
+627,has left lower leg extremity ischemia been considered in the past,True,True,unchanged,accepted
+1183,any mention of left lower leg extremity ischemia,True,True,unchanged,accepted
+628,what is the patient 's left lower leg extremity ischemia status,True,True,unchanged,accepted
+1184,is the patient in any pain,True,True,unchanged,accepted
+629,does the patient have any history of previous acute distress,True,True,unchanged,accepted
+1185,is the patient in any acute distress,True,True,unchanged,accepted
+630,has the patient ever had any decreased appetite,True,True,unchanged,accepted
+1186,is the patient's appetite decreased,False,False,unchanged,insufficient_evidence
+1187,has the patient had a decreased appetite in the past,True,True,unchanged,accepted
+631,what treatments for pain has this patient tried,False,False,unchanged,insufficient_evidence
+632,what reaction does the patient have to pain,False,False,unchanged,accepted
+633,why was the patient on pain,True,False,regressed,accepted
+634,does the patient have a history sudden increase in pain,True,True,unchanged,accepted
+1188,is pain well - controlled,False,False,unchanged,insufficient_evidence
+635,what is the status of her bleeding,True,True,unchanged,accepted
+636,what methods has the patient tried to manage her bleeding,False,False,unchanged,insufficient_evidence
+637,any history of drainage,True,True,unchanged,accepted
+638,does the patient have a current bleeding,True,True,unchanged,accepted
+639,what interventions were done for the patient 's incisions,False,True,recovered,accepted
+640,was the patient ever seen for left lower leg extremity ischemia,True,True,unchanged,accepted
+641,why is the patient on pain,True,True,unchanged,accepted
+1189,does the patient's family have a history  of premature coronary artery,False,True,recovered,accepted
+642,was the patient ever seen for premature coronary artery,False,False,unchanged,accepted
+643,does the patient have any history of previous premature coronary artery,False,False,unchanged,accepted
+644,does the patient have a current premature coronary artery,False,False,unchanged,accepted
+645,can i search my patient 's medical record for thyromegaly in the past,False,True,recovered,accepted
+646,is the patient 's thyromegaly well - controlled,False,False,unchanged,insufficient_evidence
+647,does the patient have a past history of lymphadenopathy,False,False,unchanged,insufficient_evidence
+648,does the patient have any thyromegaly,False,False,unchanged,accepted
+649,has been the patient ever been considered for thyromegaly,False,False,unchanged,accepted
+1190,has the patient  ever been considered for hepatosplenomegaly,False,False,unchanged,accepted
+1191,has there been any history of hepatosplenomegaly,True,False,regressed,accepted
+650,does the patient have any history of previous small bilateral pleural effusions,False,True,recovered,accepted
+651,does subserosilar scarring at the right base exist,False,False,unchanged,insufficient_evidence
+652,what is the status of the patient 's partial bilateral pleural effusions,False,False,unchanged,insufficient_evidence
+653,has the patient ever had any scarring at the right base,True,True,unchanged,accepted
+654,does the patient have any history of previous subsegmental atelectasis,False,True,recovered,accepted
+655,what is the patient 's scarring at the right base history,True,True,unchanged,accepted
+656,does the patient have any other history of degenerative autonomic changes in the lumbar fields,False,False,unchanged,insufficient_evidence
+657,can i search my patient 's medical record for degenerative arthritic changes in the spine in the past,False,False,unchanged,insufficient_evidence
+658,does the patient have any history of degenerative arthritic changes in the spine,False,False,unchanged,insufficient_evidence
+659,does the patient have a current degenerative arthritic changes in the spine,False,False,unchanged,insufficient_evidence
+1192,does the patient have a history of degenerative changes in the spine,False,False,unchanged,insufficient_evidence
+660,was the patient ever seen for degenerative arthritis,False,False,unchanged,insufficient_evidence
+661,has been the patient ever been considered for degenerative positional changes in the spine,False,False,unchanged,insufficient_evidence
+662,any history of afib,True,True,unchanged,accepted
+663,is the patient 's afib well controlled,False,False,unchanged,accepted
+664,what methods has the patient tried to manage her afib,True,True,unchanged,accepted
+1193,does the patient have a history of supratherapeutic inr,False,False,unchanged,insufficient_evidence
+1194,what is the status of patient's inr,True,True,unchanged,accepted
+1195,has the patient's coumadin been held before,False,True,recovered,accepted
+1196,does the patient have a prior history of supratherapeutic inr,False,False,unchanged,insufficient_evidence
+1197,does the patient have a supratherapeutic inr,False,False,unchanged,insufficient_evidence
+1198,what is the patient's history of inr,True,True,unchanged,accepted
+1199,what methods have been tried to manage her supratherapeutic inr,True,False,regressed,accepted
+665,what treatment has the patient had for his wounds,True,True,unchanged,insufficient_evidence
+666,does the patient have a current wounds,True,True,unchanged,insufficient_evidence
+667,is the patient 's wounds well controlled,True,True,unchanged,insufficient_evidence
+668,does the patient have any history of previous wounds,True,True,unchanged,insufficient_evidence
+669,what is the patient 's sternal drainage history,True,True,unchanged,accepted
+670,has this patient ever had sternal drainage,True,True,unchanged,accepted
+671,can i search my patient 's medical record for sternal drainage in the past,True,True,unchanged,accepted
+672,does the patient have a current sternal drainage,True,True,unchanged,accepted
+673,how was the patient 's afib treated,True,True,unchanged,accepted
+1200,Why was her coumadin held,False,False,unchanged,insufficient_evidence
+674,how was the patients wounds managed,True,False,regressed,insufficient_evidence
+675,any history of vomiting,True,True,unchanged,accepted
+676,what is the patient 's history of ongoing nausea,True,True,unchanged,accepted
+677,is there a mention of ongoing nausea in the records,True,True,unchanged,accepted
+678,what is the patient 's current nausea status,True,True,unchanged,accepted
+679,is the patient 's vomiting well - controlled,False,False,unchanged,accepted
+680,does the patient have a history of ongoing nausea,True,True,unchanged,accepted
+681,any mention of diarrhea,False,False,unchanged,accepted
+682,was the patient ever seen for diarrhea,False,False,unchanged,accepted
+683,has diarrhea been considered in the past,False,False,unchanged,accepted
+684,does the patient have any history of diarrhea,False,False,unchanged,accepted
+1201,does the patient have a history of siadh,True,True,unchanged,accepted
+1202,has the patient had siadh before,True,True,unchanged,accepted
+685,does the patient have a history of siadh .,True,True,unchanged,accepted
+1203,can i search my patient 's medical record for siadh in the past,True,True,unchanged,accepted
+686,what is the patient 's current hypertension status,True,True,unchanged,accepted
+687,was the patient ever seen for major depression,True,True,unchanged,accepted
+688,any mention of hypertension,True,True,unchanged,accepted
+689,does the patient have any other history of hypertension,False,True,recovered,accepted
+690,can i search my patient 's medical record for hypertension in the past,True,True,unchanged,accepted
+1204,any mention of other sensory defect,True,True,unchanged,accepted
+691,does the patient have a current sensation defect,False,False,unchanged,insufficient_evidence
+692,has the patient ever gone into sensation defect,False,False,unchanged,insufficient_evidence
+693,has she ever had sensory defect before,True,True,unchanged,accepted
+1205,does the patient have gas distended loops of small bowel,True,True,unchanged,accepted
+1206,does the patient have gas distended loops of small bowel with air-fluid levels within the upper abdomen,False,False,unchanged,insufficient_evidence
+1207,does the patient have any history of abdominal distension,False,False,unchanged,insufficient_evidence
+1208,has there been any history of gas distended loops before,True,True,unchanged,accepted
+694,is there mention of air - fluid levels within the upper abdomen anywhere in the record,False,False,unchanged,insufficient_evidence
+695,what is the patient 's current air - fluid levels within the upper abdomen status,True,True,unchanged,accepted
+696,is there a mention of hyponatremia in the records,True,True,unchanged,accepted
+697,any history of dehydration,True,True,unchanged,accepted
+698,what is the patient 's history of dehydration,True,True,unchanged,accepted
+699,was the patient ever seen for vomiting,True,True,unchanged,accepted
+700,what is the patient 's current nausea status,True,True,unchanged,accepted
+701,does the patient have a current nausea / vomiting,False,True,recovered,accepted
+702,does the patient have any history of previous vomiting,True,True,unchanged,accepted
+703,can i search my patient 's medical record for nausea in the past,True,True,unchanged,accepted
+704,does the patient have a past history of vomiting,False,True,recovered,accepted
+705,how was the patient 's nausea treated,True,True,unchanged,accepted
+706,what is the patient 's suicidal ideation status,True,True,unchanged,accepted
+1209,did the patient have suicidal ideation,True,True,unchanged,accepted
+707,does the patient have a history suicidal ideation,True,False,regressed,accepted
+1210,is patient's suicidial ideation well-controlled,True,True,unchanged,accepted
+708,does the patient have any erythema of neck and back history,False,False,unchanged,insufficient_evidence
+709,what is the patients erythema of neck and back status,False,True,recovered,accepted
+710,does the patient have a current erythema of neck and back,False,False,unchanged,insufficient_evidence
+711,has she ever had erythema of neck and back before,False,False,unchanged,insufficient_evidence
+712,has been the patient ever been considered for anxiety,True,True,unchanged,accepted
+713,has there been any history of anxiety,True,True,unchanged,accepted
+714,has been the patient ever been considered for nausea,True,True,unchanged,accepted
+715,what was the indication for my patient 's tylenol,False,False,unchanged,insufficient_evidence
+716,is there a mention of nausea in the records,True,True,unchanged,accepted
+717,does the patient have any history of nausea,True,True,unchanged,accepted
+718,what is the patient 's current constipation status,True,True,unchanged,accepted
+719,what interventions were done for the patient 's constipation,True,True,unchanged,accepted
+720,any mention of constipation,True,True,unchanged,accepted
+721,does the patient have a current constipation,True,True,unchanged,accepted
+722,what methods has the patient tried to manage her constipation,True,True,unchanged,accepted
+723,was the patient ever seen for diarrhea,False,False,unchanged,accepted
+724,is the patient 's diarrhea well - controlled,False,False,unchanged,accepted
+1211,why was celexa stopped,False,False,unchanged,insufficient_evidence
+725,any mention of major depression,True,True,unchanged,accepted
+1212,why was hydrochlorothiazide discontinued,True,True,unchanged,accepted
+726,is there a mention of erythema of neck in the records,True,False,regressed,insufficient_evidence
+1213,any mention of erythema of neck and back,False,False,unchanged,insufficient_evidence
+727,how was the patient 's nausea treated,True,True,unchanged,accepted
+1214,why should the patient take colace,True,True,unchanged,accepted
+728,does the patient have a current decreased breath sounds bilaterally,True,True,unchanged,accepted
+729,does the patient have any history of previous crackles 1/4 up on left,False,False,unchanged,insufficient_evidence
+730,does decreased breath sounds bilaterally exist,True,True,unchanged,accepted
+731,does the patient have a history crackles halfway up on left,False,False,unchanged,insufficient_evidence
+1215,did the patient have a decrease in breath sounds,False,False,unchanged,insufficient_evidence
+1216,did the patient have crackles,True,True,unchanged,accepted
+732,any mention of edema,True,True,unchanged,accepted
+733,has the patient ever gone into edema,False,False,unchanged,insufficient_evidence
+734,has there been any history of prominence of the cardiomediastinal silhouette,True,True,unchanged,accepted
+735,does the patient have a current prominent of the cardiomediastinal silhouette,False,False,unchanged,insufficient_evidence
+1217,does the patient have a history of prominent cardiomediastinal silhouette,False,False,unchanged,insufficient_evidence
+1218,what is the patient's current pstatus of cardiomediastinal silhoutte,True,True,unchanged,accepted
+736,what is the status of her small bilateral effusions,False,True,recovered,accepted
+737,is the patient 's small bilateral effusions well - controlled,False,False,unchanged,insufficient_evidence
+738,any history of small bilateral effusions,False,False,unchanged,insufficient_evidence
+739,is there mention edema anywhere in the record,False,False,unchanged,accepted
+740,any known allergies history,False,False,unchanged,insufficient_evidence
+741,has been the patient ever been considered for known allergies,False,False,unchanged,insufficient_evidence
+742,does the patient have a prior history of dyspnea,True,True,unchanged,accepted
+1219,does the patient have a prior history of shortness of breath,True,True,unchanged,accepted
+743,has dyspnea been considered in the past,True,True,unchanged,accepted
+744,has the patient ever gone into dyspnea,True,True,unchanged,accepted
+745,any mention of dyspnea,True,True,unchanged,accepted
+746,does the patient have a current markedly worse dyspnea,True,True,unchanged,accepted
+747,what is the patient 's current markedly worse dyspnea status,True,True,unchanged,accepted
+748,does the patient have any history of previous markedly worse dyspnea,False,True,recovered,accepted
+749,any mention of dyspnea,True,True,unchanged,accepted
+1220,has the patient ever had any subjective chills at home,True,True,unchanged,accepted
+750,was the patient ever seen for subjective chills,True,True,unchanged,accepted
+1221,has the patient ever have a history of  subjective chills at home,True,True,unchanged,accepted
+751,does the patient have a current sick interaction,True,False,regressed,accepted
+1222,does the patient have any sick contacts,False,False,unchanged,insufficient_evidence
+752,can i search my patient 's medical record for sick interaction in the past,False,False,unchanged,insufficient_evidence
+753,was the patient ever seen for sick contacts,False,False,unchanged,insufficient_evidence
+754,is the patient 's small left pleural effusion well controlled,False,False,unchanged,accepted
+755,does the patient have any history of previous small left pleural effusion,True,True,unchanged,accepted
+756,has the patient ever been screened for small left pleural effusion,True,True,unchanged,accepted
+757,has small lung base atelectasis been considered in the past,False,False,unchanged,insufficient_evidence
+758,any prior left lung base atelectasis testing,True,False,regressed,insufficient_evidence
+759,any mention of numbness,True,True,unchanged,accepted
+760,does the patient have a past history of muscle weakness,True,True,unchanged,accepted
+1223,Does the patient have a history of muscle weakness,True,True,unchanged,accepted
+761,does the patient have a current pain in multiple joint,False,False,unchanged,insufficient_evidence
+762,has she ever had muscle weakness before,True,True,unchanged,accepted
+1224,why can not the patient walk any longer,True,True,unchanged,accepted
+763,what is the patient 's history of pain in multiple joint,False,False,unchanged,insufficient_evidence
+764,can i search my patient 's medical record for pain in the past,True,True,unchanged,accepted
+765,has the patient ever gone into hypertension,True,True,unchanged,accepted
+1225,has coronary artery disease been considered in the past,True,True,unchanged,accepted
+766,does the patient have a current hypertension,True,True,unchanged,accepted
+1226,is the patient's coronary artery disease well-controlled,False,False,unchanged,accepted
+767,has c / c / e been considered in the past,False,False,unchanged,insufficient_evidence
+768,does the patient have any history of c / c / e,False,False,unchanged,insufficient_evidence
+769,is there mention c / c / e anywhere in the record,False,False,unchanged,insufficient_evidence
+770,does the patient have any c / c / e,True,False,regressed,accepted
+771,can i search my patient 's medical record for c / c / e in the past,False,False,unchanged,accepted
+772,does the patient have a current c / c / e,True,False,regressed,accepted
+773,what is the patient 's c / c / e status,True,True,unchanged,accepted
+774,does the patient have a history c / c / e,False,False,unchanged,insufficient_evidence
+775,has been the patient ever been considered for depressed free wall contractility .,True,True,unchanged,accepted
+776,what is the patient 's current depressed free wall block status,False,False,unchanged,insufficient_evidence
+777,does the patient suffer from depressed free wall ventricular motion,False,False,unchanged,insufficient_evidence
+778,does the patient have a current depressed free wall motion motion,False,False,unchanged,insufficient_evidence
+779,is there any mention of depressed free wall contractility in the patient 's record,True,True,unchanged,accepted
+780,does the patient has any past depressed free wall contractility .,True,True,unchanged,accepted
+781,has she ever had right ventricular pressure systolic hypertension before,False,False,unchanged,insufficient_evidence
+782,does the patient have a history of right ventricular pressure overload,False,False,unchanged,insufficient_evidence
+783,what is the patient 's current right ventricular pressure overload status,False,False,unchanged,insufficient_evidence
+784,does the patient have any history of previous right ventricular pressure systolic hypertension,False,False,unchanged,insufficient_evidence
+785,has this patient ever had mild pulmonary edema,True,True,unchanged,accepted
+786,does the patient have any history of previous small left pleural effusion,False,True,recovered,accepted
+787,what is the patient 's small left pleural effusion status,True,True,unchanged,accepted
+788,has there been any history of small left pleural effusion,True,True,unchanged,accepted
+789,does the patient have a current mild pulmonary edema,True,True,unchanged,accepted
+790,is there a mention of small left pleural effusion in the record,True,True,unchanged,accepted
+791,has this patient ever had overt pulmonary edema,False,False,unchanged,insufficient_evidence
+792,what is the patient 's current overt pulmonary edema status,False,False,unchanged,accepted
+793,any mention of overt pulmonary edema,False,False,unchanged,insufficient_evidence
+1227,does the patient have any signs of overt pulmonary edema,False,False,unchanged,accepted
+794,is there mention of overt pulmonary edema anywhere in the record,False,False,unchanged,insufficient_evidence
+795,was the patient ever seen for asymmetric pulmonary edema,False,False,unchanged,insufficient_evidence
+796,does diastolic dysfunction exist,False,False,unchanged,insufficient_evidence
+797,what is the status of her diastolic dysfunction,False,False,unchanged,insufficient_evidence
+798,has diastolic dysfunction been considered in the past,False,False,unchanged,insufficient_evidence
+799,how was the patient 's diastolic dysfunction diagnosed,False,False,unchanged,insufficient_evidence
+1228,any mention of q waves,True,True,unchanged,insufficient_evidence
+800,does q waves on ekg exist,False,True,recovered,accepted
+801,has q waves been considered in the past,False,False,unchanged,insufficient_evidence
+802,does the patient have any history of q waves,True,True,unchanged,insufficient_evidence
+1229,is there any evidence of q waves on ekg,True,True,unchanged,accepted
+803,any mention of motion abnormalities,True,True,unchanged,accepted
+804,what is the patient 's history of motion abnormalities,True,False,regressed,insufficient_evidence
+805,does the patient have any history of motion abnormalities,True,True,unchanged,accepted
+806,has the patient ever gone into motion abnormalities,False,True,recovered,insufficient_evidence
+807,is there a mention of motion abnormalities in the records,True,True,unchanged,accepted
+808,is there a mention of atrial fibrillation in the records,True,True,unchanged,accepted
+809,what is the patient 's atrial fibrillation history,True,True,unchanged,accepted
+810,has this patient ever reported atrial fibrillation,True,True,unchanged,accepted
+811,does the patient have a history of atrial fibrillation,True,True,unchanged,accepted
+812,is the patient 's atrial fibrillation well - controlled,False,False,unchanged,accepted
+1230,what is chief complaint,False,False,unchanged,insufficient_evidence
+813,any mention of dyspnea,True,True,unchanged,accepted
+1231,any mention of sick contact,False,False,unchanged,insufficient_evidence
+1232,What was her pulse,False,True,recovered,accepted
+1233,is the patient 's pause irregular,False,False,unchanged,insufficient_evidence
+1234,any mention of irregular pulse,False,False,unchanged,insufficient_evidence
+1235,was the patient ever seen for pain in joints,False,False,unchanged,insufficient_evidence
+1236,any mention of pain in muscle weakness,True,True,unchanged,accepted
+1237,any mention of overt pulmonary edema,False,False,unchanged,insufficient_evidence
+1238,How was diastolic dysfunction confirmed,False,False,unchanged,insufficient_evidence
+1239,is the patient 's diastolic dysfunction confirmed,False,False,unchanged,insufficient_evidence
+814,does the patient have a history of chest pain,False,False,unchanged,accepted
+1240,how long was the patient on chest pain and pressure,False,True,recovered,accepted
+1241,when did the patient develop chest pain and pressure,False,True,recovered,accepted
+815,has been the patient ever been considered for chest pain,False,False,unchanged,accepted
+816,is there any mention of pressure in the patient 's record,True,True,unchanged,accepted
+817,is there a mention of known cad in the record,False,False,unchanged,accepted
+818,does the patient have a history of known cad,False,False,unchanged,accepted
+819,what is the patient 's history of nausea,True,True,unchanged,accepted
+820,is there a mention of nausea in the records,True,True,unchanged,accepted
+821,is there any mention of nausea in the patient 's record,True,True,unchanged,accepted
+1242,what is her grandmother medical history,True,True,unchanged,accepted
+822,does pallor exist,False,False,unchanged,accepted
+823,does the patient have a current pallor,True,True,unchanged,accepted
+824,does cyanosis exist,False,True,recovered,accepted
+825,does the patient have any history of previous cyanosis of the oral m .,False,False,unchanged,insufficient_evidence
+826,what is the patient 's history of cyanosis,True,True,unchanged,accepted
+827,what is the patient 's current cyanosis status,True,True,unchanged,accepted
+828,does the patient have a history of m / r / g,False,False,unchanged,insufficient_evidence
+829,what is the status of her m / r / g,False,True,recovered,accepted
+830,has been the patient ever been considered for m / r / g,False,False,unchanged,accepted
+831,any history of m / r / g,True,True,unchanged,accepted
+832,does the patient have a current m / r / g,False,True,recovered,accepted
+1243,does the patient have thrills?,True,True,unchanged,accepted
+833,does the patient have any m / r / g,True,True,unchanged,accepted
+834,what is the patient 's current pe status,False,True,recovered,accepted
+835,does the patient have a history of pe,False,False,unchanged,insufficient_evidence
+836,is the patient 's pe well controlled,False,False,unchanged,accepted
+837,any history of pe,True,True,unchanged,accepted
+838,has this patient ever reported acute aortic syndrome,True,True,unchanged,accepted
+839,is there a mention of persantine side effects in the records,True,True,unchanged,accepted
+840,does the patient have any history of previous persantine side effects,True,True,unchanged,accepted
+1244,has she ever had mid segment stenosis before,True,True,unchanged,insufficient_evidence
+1245,what is the patient 's history of mid segment stenosis,True,True,unchanged,accepted
+1246,what is the patient 's mid segment stenosis status,True,True,unchanged,accepted
+841,does the patient have any history of a previous 40 % mid lesion,True,True,unchanged,accepted
+1247,what is the patient 's mid lesion and proxima lesion status,True,True,unchanged,accepted
+1248,is there a mention of mid lesion in the record,True,True,unchanged,accepted
+842,can i search my patient 's medical record for 40 % proximal lesion in the past,True,True,unchanged,accepted
+843,does the patient have any history of previous mild focal left ventricular systolic dysfunction,True,True,unchanged,accepted
+844,has mild symmetric left ventricular systolic dysfunction been considered in the past,False,False,unchanged,insufficient_evidence
+845,can i search my patient 's medical record for mild focal left ventricular systolic dysfunction in the past,True,True,unchanged,accepted
+846,does the patient have a current mild focal left ventricular systolic dysfunction,True,True,unchanged,accepted
+847,does the patient have any history of previous chest pain,False,True,recovered,accepted
+848,what treatments for chest pain has this patient tried,False,True,recovered,accepted
+849,what is the patient 's history of chest pain,True,True,unchanged,accepted
+850,what interventions were done for the patient 's pressure,True,True,unchanged,accepted
+1249,did the patient have chest pain,True,True,unchanged,accepted
+851,has the patient ever gone into shoulder pain,True,True,unchanged,accepted
+852,any mention of shoulder pain,True,True,unchanged,accepted
+853,does the patient have any history of previous shoulder pain,True,True,unchanged,accepted
+1250,did the patient have oxygen desaturations overnight,False,True,recovered,accepted
+854,does the patient have a history oxygen desaturation on the bases,False,False,unchanged,insufficient_evidence
+855,any mention of oxygen desaturations,False,False,unchanged,insufficient_evidence
+856,does the patient have any history of oxygen desaturations overnight on the floor,False,False,unchanged,insufficient_evidence
+857,does the patient have a current oxygen desaturations,False,False,unchanged,insufficient_evidence
+858,was the patient ever seen for oxygen desaturations overnight,False,False,unchanged,insufficient_evidence
+859,what is the patient 's current right shoulder pain status,True,True,unchanged,accepted
+860,why was the patient on change vicodin,True,True,unchanged,accepted
+861,has there been any history of right shoulder pain,True,True,unchanged,accepted
+862,why did the patient need vicodin,True,True,unchanged,accepted
+863,did the patient receive inject into the muscle,False,True,recovered,insufficient_evidence
+864,what treatment has the patient had for his severe hypoglycemia,False,True,recovered,insufficient_evidence
+865,is there any mention of severe hypoglycemia in the patient 's record,True,True,unchanged,insufficient_evidence
+866,does the patient have any history of previous chest pain,False,True,recovered,accepted
+867,has this patient ever had chest pain,True,True,unchanged,accepted
+868,was the patient ever seen for chest pain,True,True,unchanged,accepted
+1251,how was the patient's chest pain developed,True,True,unchanged,accepted
+869,what treatment has the patient had for his constipation,False,True,recovered,accepted
+870,did the patient receive tylenol for constipation,False,False,unchanged,insufficient_evidence
+871,is there any mention of right shoulder pain in the patient 's record,True,True,unchanged,accepted
+872,has right shoulder pain been considered in the past,True,True,unchanged,accepted
+873,is the patient 's right shoulder pain well - controlled,False,False,unchanged,accepted
+1252,why did she die,True,True,unchanged,accepted
+1253,Why did she die,True,True,unchanged,accepted
+1254,why did the patient die,True,True,unchanged,insufficient_evidence
+1255,When did her grandmother have an mi,False,True,recovered,accepted
+874,has mi been considered in the past,True,True,unchanged,accepted
+875,has acute aortic syndrome been considered in the past,True,True,unchanged,accepted
+876,any mention of perdialteural,False,False,unchanged,insufficient_evidence
+1256,is there mention of 30 % mid segment stenosis anywhere in the record,False,True,recovered,accepted
+1257,is there a mention of 40 % proximal lesion in the record,False,False,unchanged,insufficient_evidence
+877,is there a mention of mild focal left ventricular systolic dysfunction in the records,True,True,unchanged,accepted
+1258,how was the patient 's chest pain and pressure treated at home,False,True,recovered,accepted
+1259,has chest pain and pressure been considered in the past,False,True,recovered,accepted
+878,has shoulder pain been considered in the past,True,True,unchanged,accepted
+1260,Why does the patient have vicodin,True,True,unchanged,accepted
+879,how was the patient 's right shoulder pain treated,True,True,unchanged,accepted
+880,what treatments for severe hyperglycemia has this patient tried,False,False,unchanged,insufficient_evidence
+1261,how was the patient 's severe hypoglycemia treated,True,False,regressed,insufficient_evidence
+1262,why was the patient on packet daily,False,False,unchanged,insufficient_evidence
+881,what treatment has the patient had for his constipation,False,True,recovered,accepted
+1263,Why does the patient take vicodin 1 tablet every four hours,True,True,unchanged,accepted
+1264,How often does the patient take vicodin,False,True,recovered,insufficient_evidence
+1265,how is the patient 's right shoulder pain treated,True,True,unchanged,accepted
+882,has the patient ever had diarrhea,True,True,unchanged,accepted
+1266,when did the patient develop diarrhea,True,True,unchanged,accepted
+883,what is the patients diarrhea status,True,True,unchanged,accepted
+884,does the patient have any diarrhea,True,True,unchanged,accepted
+885,can i search my patient 's medical record for diarrhea in the past,True,True,unchanged,accepted
+1267,was the patient ever hypotensive,True,True,unchanged,accepted
+1268,what is patient's response to sbp,False,False,unchanged,insufficient_evidence
+1269,did the patient become acutely hypotensive to sbp of 80s-90s,False,False,unchanged,
+1270,has acute hypotensiveness to sbp been considered in the past,False,False,unchanged,
+1271,any mention of acute hypotensivess,False,False,unchanged,insufficient_evidence
+1272,what is the status of patient's hypotensiveness,False,False,unchanged,insufficient_evidence
+886,has modest anemia been considered in the past,False,False,unchanged,insufficient_evidence
+887,any mention of pernicious anemia,True,True,unchanged,accepted
+888,does the patient have any history of previous aplastic anemia,False,False,unchanged,insufficient_evidence
+1273,does the patient have a family history of congestive heart failure,False,False,unchanged,insufficient_evidence
+1274,did the patient's mother have congestive heart failure,False,False,unchanged,insufficient_evidence
+1275,does the patient have a family history of lung cancer,False,False,unchanged,insufficient_evidence
+1276,did the patient's father have lung cancer,True,True,unchanged,accepted
+889,is there mention of lung cancer anywhere in the record,True,True,unchanged,accepted
+890,any congestive heart failure history,False,False,unchanged,insufficient_evidence
+891,has been the patient ever been considered for cellulitis,True,True,unchanged,accepted
+892,does the patient have a current cellulitis,True,True,unchanged,accepted
+893,does the patient have any history of previous cellulitis,False,True,recovered,accepted
+894,does the patient have a history of edema,False,False,unchanged,accepted
+895,is there a mention of edema in the records,False,False,unchanged,accepted
+896,any history of edema,False,False,unchanged,accepted
+897,does the patient have any edema,False,False,unchanged,accepted
+898,can i search my patient 's medical record for edema in the past,False,False,unchanged,accepted
+899,what is the patient 's history of edema,False,False,unchanged,insufficient_evidence
+900,any mention of renal abnormalities,False,False,unchanged,accepted
+901,does the patient have a prior history of renal abnormalities,False,True,recovered,insufficient_evidence
+902,has the patient ever had any renal abnormalities,False,True,recovered,insufficient_evidence
+903,is the patient 's large volume abdominal pelvic ascites well controlled,True,True,unchanged,accepted
+904,has she ever had large volume abdominal pelvic ascites before,True,True,unchanged,accepted
+905,has large volume abdominal pelvic ascites been considered in the past,True,True,unchanged,accepted
+906,does the patient has any past large amount abdominal pelvic ascites,True,True,unchanged,accepted
+907,does the patient have a current atelectasis,True,True,unchanged,accepted
+908,any unchanged bilateral pleural effusions history,True,True,unchanged,accepted
+909,has been the patient ever been considered for associated atelectasis,True,True,unchanged,accepted
+910,has she ever had atelectasis before,True,True,unchanged,accepted
+911,what is the patient 's unchanged atelectasis status,True,True,unchanged,accepted
+1277,does the patient have any evidence of diarrhea,False,False,unchanged,accepted
+912,does the patient have any other history of diarrhea,False,False,unchanged,
+1278,what is the patient's status in his abdominal exam,False,False,unchanged,insufficient_evidence
+913,has there been any history of bilateral hand tremors,True,True,unchanged,accepted
+914,does the patient have a history of bilateral hand tremor,True,True,unchanged,accepted
+915,has been the patient ever been considered for bilateral hand tremors,True,True,unchanged,accepted
+916,what is the patients bilateral hand tremors history,True,True,unchanged,accepted
+917,has she ever had aspiration before,True,True,unchanged,accepted
+918,is the patient 's aspiration well controlled,False,True,recovered,accepted
+1279,does the patient have aspiration,True,True,unchanged,accepted
+919,has the patient ever been screened for aspiration,True,True,unchanged,accepted
+1280,when was neurology service consulted,False,False,unchanged,accepted
+1281,When did he begin taking diarrhea,False,True,recovered,insufficient_evidence
+1282,What time did he become acutely hypotensive,False,False,unchanged,accepted
+1283,when did he become acutely hypotensive,False,True,recovered,accepted
+1284,when did his heart rate go up to 90s,False,False,unchanged,revision_limit
+920,has pernicious anemia been considered in the past,True,True,unchanged,accepted
+921,has gastroesophageal reflux been considered in the past,True,True,unchanged,accepted
+1285,what is his family history?,False,False,unchanged,insufficient_evidence
+922,has congestive heart failure been considered in the past,False,False,unchanged,insufficient_evidence
+923,what methods has the patient tried to manage her cellulitis,True,True,unchanged,accepted
+924,is there any mention of renal abnormalities in the patient 's record,False,True,recovered,insufficient_evidence
+925,has renal abnormalities been considered in the past,True,True,unchanged,accepted
+1286,Why was a speech and swallow evaluation conducted,True,True,unchanged,accepted
+926,when was the patient evaluated for aspiration made,False,True,recovered,accepted
+1287,when does the patient take the tablet,False,False,unchanged,accepted
+927,any mention of llq pain,True,True,unchanged,accepted
+1288,has abdominal pain considered in the past,True,True,unchanged,accepted
+1289,any mention of band like abdominal pain across his lower abdomen,False,False,unchanged,insufficient_evidence
+928,was the patient ever seen for cough,False,False,unchanged,accepted
+929,is the patient 's cough well - controlled,True,True,unchanged,accepted
+1290,When and why did his brother die,True,True,unchanged,insufficient_evidence
+1291,Why did his fathter die,False,True,recovered,insufficient_evidence
+1292,When did his brother die,False,True,recovered,accepted
+930,was the patient ever seen for cardiogenic shock,False,False,unchanged,accepted
+1293,what caused his mother's death,True,False,regressed,insufficient_evidence
+931,has cardiogenic shock been considered in the past,True,True,unchanged,accepted
+1294,is the patient's lung normal,True,False,regressed,accepted
+932,has stable left adrenal nodule been considered in the past,True,True,unchanged,accepted
+933,when was the patient evaluated for colonic mass made,False,True,recovered,accepted
+934,what treatments for colonic mass has this patient tried,False,True,recovered,accepted
+1295,was there any new lung abnormality,False,False,unchanged,insufficient_evidence
+935,is there a mention of new lung abnormalities in the records,True,True,unchanged,accepted
+936,has old blood and clots been considered in the past,False,True,recovered,accepted
+1296,any mention of acute blood loss anemia,True,True,unchanged,accepted
+937,has dementia been considered in the past,True,True,unchanged,accepted
+938,is there any mention of bleeding in the patient 's record,True,True,unchanged,accepted
+939,was the patient ever seen for difficulty with shortness of breath,True,False,regressed,accepted
+940,is there a mention of difficulty with shortness of breath in the record,True,False,regressed,accepted
+941,has amrsosis been considered in the past,False,False,unchanged,insufficient_evidence
+942,any history of amyrosis,True,True,unchanged,accepted
+1297,What led to his father's death,True,True,unchanged,insufficient_evidence
+1298,any mention of family death due to heart disease,False,False,unchanged,insufficient_evidence
+943,has pulmonary vascular resistance been considered in the past,True,True,unchanged,accepted
+944,has moderate / severe mitral valve prolapse been considered in the past,True,True,unchanged,accepted
+945,has moderate 2 + tricuspid regurgitation been considered in the past,True,True,unchanged,accepted
+1299,when was the pateint first on coumadin,False,True,recovered,insufficient_evidence
+1300,How long does the patient have coumadin,False,True,recovered,accepted
+1301,How long does the patient have coumadin,False,True,recovered,accepted
+1302,any history of coumadin,False,True,recovered,accepted
+946,what treatments for peripheral neuropathy has this patient tried,False,True,recovered,accepted
+947,has dyslipidemia been considered in the past,True,True,unchanged,accepted
+948,what methods has the patient tried to manage her elevated serum drug level,False,False,unchanged,insufficient_evidence
+1303,what is the chief complaint,False,False,unchanged,insufficient_evidence
+949,has syncope been considered in the past,True,True,unchanged,accepted
+1304,What are his sig risk factors,True,True,unchanged,accepted
+1305,what are sig risk factors,True,True,unchanged,accepted
+950,has asymptomatic been considered in the past,True,True,unchanged,accepted
+951,what methods has the patient tried to manage her diabetes mellitus,True,False,regressed,insufficient_evidence
+1306,How was diabetes mellitus controlled,False,False,unchanged,insufficient_evidence
+1307,How is the patient 's diabetes mellitus controlled,False,True,recovered,accepted
+952,how was the patient 's diabetes mellitus diagnosed,True,True,unchanged,accepted
+953,has cholangitis been considered in the past,True,True,unchanged,accepted
+1308,When did the patient's mother die,False,False,unchanged,insufficient_evidence
+954,is there a mention of focal 60 % lesion in the records,False,True,recovered,accepted
+955,has severe chronic obstructive pulmonary been considered in the past,False,True,recovered,accepted
+1309,why is the patient on diet and glyburide.,True,True,unchanged,accepted
+1310,How is diabetes mellitus controlled,True,True,unchanged,accepted
+956,how was the patient 's diabetes mellitus treated,True,False,regressed,insufficient_evidence
+1311,When did he get percutaneous drain,False,False,unchanged,accepted
+957,does patient have a past medical history of orthopnea,True,True,unchanged,accepted
+958,any prior bilious return testing,False,False,unchanged,insufficient_evidence
+959,what is the patient's current acute diverticulitis status,True,True,unchanged,insufficient_evidence
+960,how was the diagnosis of acute cholecystitis made,True,True,unchanged,accepted
+961,does the patient have a family history of liver carcinoma,False,False,unchanged,insufficient_evidence
+962,what was the indication for the most recent endoscopy,True,False,regressed,accepted
+963,has the patient had diagnostics for ocular abnormalities,False,False,unchanged,accepted
+964,what is the patient's family history,True,True,unchanged,accepted
+965,what were the results of the patient's last pelvic ultrasound for his thickened endometrium,False,False,unchanged,insufficient_evidence
+966,what was the major procedure she underwent,False,False,unchanged,insufficient_evidence
+967,does the patient have medical history of cardiac disease,False,False,unchanged,insufficient_evidence
+968,has anybody in her family had cancer,False,False,unchanged,insufficient_evidence
+969,what was her atrial pressure in the recent echo,True,True,unchanged,accepted
+970,what was given to the patient after surgery,True,True,unchanged,accepted
+971,how long did she need to continue on antibiotics,False,True,recovered,accepted
+972,why did the patient have a cholecystectomy,True,True,unchanged,accepted
+973,has there been any history of diabetes,True,True,unchanged,accepted
+974,how was atrial fibrillation diagnosed,False,False,unchanged,accepted

@@ -1,4 +1,4 @@
-"""Cost-safe execution for GoogleSQL against local DuckDB or BigQuery."""
+"""Execution for GoogleSQL against local DuckDB or directly against BigQuery."""
 
 import os
 import traceback
@@ -18,8 +18,19 @@ class RuntimeConfig:
     bigquery_dataset: str | None
     maximum_bytes_billed: int
 
+    bigquery_location: str | None = None
+    large_table_maximum_bytes_billed: int = 30_000_000_000
+
+    @property
+    def dataset_id(self) -> str:
+        dataset = self.bigquery_dataset or ""
+        return dataset if "." in dataset else f"{self.bigquery_project}.{dataset}"
+
     @classmethod
     def from_env(cls) -> "RuntimeConfig":
+        from utils.config import load_project_env
+
+        load_project_env()
         environment = os.getenv("MIMIC_ENV", "local").lower()
         if environment not in {"local", "cloud"}:
             raise ValueError("MIMIC_ENV must be either 'local' or 'cloud'")
@@ -28,8 +39,12 @@ class RuntimeConfig:
             local_database=Path(os.getenv("MIMIC_LOCAL_DB", "mimic4.duckdb")),
             bigquery_project=os.getenv("BIGQUERY_PROJECT"),
             bigquery_dataset=os.getenv("BIGQUERY_DATASET"),
+            large_table_maximum_bytes_billed=int(
+                os.getenv("BIGQUERY_LARGE_TABLE_MAXIMUM_BYTES_BILLED", "30000000000")
+            ),
+            bigquery_location=os.getenv("BIGQUERY_LOCATION") or None,
             maximum_bytes_billed=int(
-                os.getenv("BIGQUERY_MAXIMUM_BYTES_BILLED", "1000000000")
+                os.getenv("BIGQUERY_MAXIMUM_BYTES_BILLED", "12000000000")
             ),
         )
 
@@ -91,56 +106,94 @@ def _run_local(sql: str, config: RuntimeConfig) -> dict:
     }
 
 
+def query_scan_limit(sql: str, config: RuntimeConfig) -> int:
+    """Select budget from physical table references, excluding CTE aliases."""
+    import sqlglot
+    from sqlglot import exp
+    from sqlglot.optimizer.scope import traverse_scope
+
+    expression = sqlglot.parse_one(sql, read="bigquery")
+    physical_tables = {
+        source.name.lower()
+        for scope in traverse_scope(expression)
+        for source in scope.sources.values()
+        if isinstance(source, exp.Table)
+    }
+    if physical_tables & {"noteevents", "chartevents"}:
+        return config.large_table_maximum_bytes_billed
+    return config.maximum_bytes_billed
+
+
 def _run_cloud(sql: str, config: RuntimeConfig) -> dict:
     if not config.bigquery_project or not config.bigquery_dataset:
         raise RuntimeError(
             "BIGQUERY_PROJECT and BIGQUERY_DATASET are required in cloud mode"
         )
 
+    # PhysioNet hosts notes separately from the structured clinical tables.
+    import re
+    if re.search(r"\bnoteevents\b", sql, re.IGNORECASE):
+        import sqlglot
+        from sqlglot import exp
+        expression = sqlglot.parse_one(sql, read="bigquery")
+        notes_dataset = os.getenv("BIGQUERY_NOTES_DATASET", "physionet-data.mimiciii_notes")
+        project, dataset = notes_dataset.split(".", 1)
+        ctes = {cte.alias_or_name.lower() for cte in expression.find_all(exp.CTE)}
+        for table in expression.find_all(exp.Table):
+            if table.name.lower() == "noteevents" and not table.db and table.name.lower() not in ctes:
+                table.meta["quoted_table"] = True
+                table.set("this", exp.to_identifier(table.name, quoted=True))
+                table.set("catalog", exp.to_identifier(project, quoted=True))
+                table.set("db", exp.to_identifier(dataset, quoted=True))
+        sql = expression.sql(dialect="bigquery")
+
+    maximum_bytes_billed = query_scan_limit(sql, config)
+
     from google.cloud import bigquery
 
-    client = bigquery.Client(project=config.bigquery_project)
-    dry_run_config = bigquery.QueryJobConfig(dry_run=True, use_query_cache=False)
+    client = bigquery.Client(project=config.bigquery_project, location=config.bigquery_location)
+    dry_run_config = bigquery.QueryJobConfig(
+        dry_run=True, use_query_cache=False, use_legacy_sql=False,
+        default_dataset=config.dataset_id,
+    )
     dry_run = client.query(sql, job_config=dry_run_config)
     estimated_bytes = dry_run.total_bytes_processed
-    if estimated_bytes > config.maximum_bytes_billed:
+    if estimated_bytes > maximum_bytes_billed:
         raise RuntimeError(
             f"Query would process {estimated_bytes} bytes, exceeding the "
-            f"configured limit of {config.maximum_bytes_billed} bytes"
+            f"configured limit of {maximum_bytes_billed} bytes"
         )
 
     job_config = bigquery.QueryJobConfig(
-        default_dataset=f"{config.bigquery_project}.{config.bigquery_dataset}",
-        maximum_bytes_billed=config.maximum_bytes_billed,
+        default_dataset=config.dataset_id,
+        use_legacy_sql=False,
+        maximum_bytes_billed=maximum_bytes_billed,
         use_query_cache=True,
     )
-    rows = [dict(row.items()) for row in client.query(sql, job_config=job_config)]
+    rows = [dict(row.items()) for row in client.query(sql, job_config=job_config).result()]
     return {
         "success": True,
         "rows": rows,
         "runtime": "cloud",
         "estimated_bytes": estimated_bytes,
+        "maximum_bytes_billed": maximum_bytes_billed,
         "executed_sql": sql,
     }
 
 
 def run_sql(sql: str, params=None, config: RuntimeConfig | None = None):
-    """Validate GoogleSQL locally, then optionally execute it on BigQuery."""
+    """Execute in the selected runtime; cloud mode requires no local database."""
     del params
-    config = config or RuntimeConfig.from_env()
     try:
+        config = config or RuntimeConfig.from_env()
         validate_scan_guards(sql)
-        local_result = _run_local(sql, config)
         if config.environment == "local":
-            return local_result
-
-        cloud_result = _run_cloud(sql, config)
-        cloud_result["sandbox_sql"] = local_result["executed_sql"]
-        return cloud_result
+            return _run_local(sql, config)
+        return _run_cloud(sql, config)
     except Exception as error:
         return {
             "success": False,
             "error": str(error),
             "traceback": traceback.format_exc(),
-            "runtime": config.environment,
+            "runtime": config.environment if config else "configuration",
         }

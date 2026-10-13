@@ -1,0 +1,2 @@
+﻿id,question,template,gold_answer,predicted_answer,predicted_sql,correct,completed,difficulty,prompt_tokens,completion_tokens,total_tokens,llm_calls,elapsed_seconds,error
+0d92a1f6eab9515735f242f4,what is lidocaine 5% ointment's way of ingesting it?,what is the intake method of lidocaine 5% ointment?,"[""('tp',)""]","[""('tp',)""]",select distinct prescriptions.route from prescriptions where prescriptions.drug = 'lidocaine 5% ointment',True,True,1,1841,20,1861,1,1.436,

@@ -1,0 +1,108 @@
+{
+  "groups": [
+    {
+      "key": "level_1",
+      "label": "Level 1",
+      "table_rule": "1 table",
+      "questions": 99,
+      "correct": 92,
+      "incorrect": 7,
+      "accuracy_percent": 92.92929292929293,
+      "executable": 95,
+      "abstained": 4
+    },
+    {
+      "key": "level_2",
+      "label": "Level 2",
+      "table_rule": "2 tables",
+      "questions": 235,
+      "correct": 213,
+      "incorrect": 22,
+      "accuracy_percent": 90.63829787234043,
+      "executable": 231,
+      "abstained": 4
+    },
+    {
+      "key": "level_3",
+      "label": "Level 3",
+      "table_rule": "3 tables",
+      "questions": 201,
+      "correct": 178,
+      "incorrect": 23,
+      "accuracy_percent": 88.55721393034825,
+      "executable": 197,
+      "abstained": 3
+    },
+    {
+      "key": "level_4",
+      "label": "Level 4",
+      "table_rule": "4+ tables",
+      "questions": 225,
+      "correct": 195,
+      "incorrect": 30,
+      "accuracy_percent": 86.66666666666667,
+      "executable": 223,
+      "abstained": 2
+    },
+    {
+      "key": "unanswerable",
+      "label": "Unanswerable",
+      "table_rule": "gold SQL = null",
+      "questions": 362,
+      "correct": 322,
+      "incorrect": 40,
+      "accuracy_percent": 88.95027624309392,
+      "executable": 39,
+      "abstained": 322
+    }
+  ],
+  "ehragent_paper_comparison": {
+    "current_subset_questions": 581,
+    "current_subset_correct": 530,
+    "current_subset_success_rate": 91.22203098106712,
+    "current_subset_completion_rate": 98.2788296041308,
+    "paper_questions": 580,
+    "paper_success_rate": 58.97,
+    "paper_completion_rate": 85.86,
+    "levels": [
+      {
+        "level": 1,
+        "questions": 95,
+        "correct": 90,
+        "ours": 94.73684210526316,
+        "paper": 71.58,
+        "delta": 23.156842105263166
+      },
+      {
+        "level": 2,
+        "questions": 202,
+        "correct": 187,
+        "ours": 92.57425742574257,
+        "paper": 66.34,
+        "delta": 26.23425742574257
+      },
+      {
+        "level": 3,
+        "questions": 167,
+        "correct": 146,
+        "ours": 87.42514970059881,
+        "paper": 49.7,
+        "delta": 37.725149700598806
+      },
+      {
+        "level": 4,
+        "questions": 117,
+        "correct": 107,
+        "ours": 91.45299145299145,
+        "paper": 49.14,
+        "delta": 42.312991452991454
+      }
+    ],
+    "warning": "Near-matched data, not yet a controlled head-to-head: current released subset has 581 rather than 580 questions, and model, input text, retrieval, interaction, and grading protocols differ."
+  },
+  "total": 1122,
+  "correct": 1000,
+  "overall_accuracy_percent": 89.12655971479501,
+  "generated_at": "2026-10-13T07:27:20.701225+00:00",
+  "difficulty_basis": "Distinct physical tables in gold SQL; CTE aliases and repeated references count once. Unanswerable questions have no SQL and are shown separately."
+}

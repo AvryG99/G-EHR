@@ -88,3 +88,27 @@ tmp/
 temp/
 *.tmp
 *.temp
+
+# Local evaluation outputs and fetched clinical notes
+evaluation/note_mapping_candidates.json
+evaluation/note_mapping.json
+evaluation/bigquery_results.jsonl
+evaluation/bigquery_summary.json
+evaluation/array_results.jsonl
+evaluation/array_results.csv
+evaluation/array_summary.json
+evaluation/array_comparison_reviews.json
+# Separate batch/pilot evaluation artifacts
+evaluation/*_results.jsonl
+evaluation/*_results.csv
+evaluation/*_summary.json
+evaluation/*_comparison_reviews.json
+
+# Clinical datasets (MIMIC/eICU, PhysioNet license), cloned third-party repo, generated artifacts
+ehrsql-ehragent/
+EHRAgent/
+ehr-venv/
+test.final.json
+ehrsql/*.npy
+evaluation/*.jsonl
+evaluation/*.log

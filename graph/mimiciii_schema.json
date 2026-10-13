@@ -1,0 +1,2138 @@
+{
+  "admissions": {
+    "description": "Hospital admissions associated with an ICU stay.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Primary key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "admittime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time of admission to the hospital.",
+        "nullable": false
+      },
+      "dischtime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time of discharge from the hospital.",
+        "nullable": false
+      },
+      "deathtime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time of death.",
+        "nullable": true
+      },
+      "admission_type": {
+        "datatype": "VARCHAR(50)",
+        "description": "Type of admission, for example emergency or elective.",
+        "nullable": false
+      },
+      "admission_location": {
+        "datatype": "VARCHAR(50)",
+        "description": "Admission location.",
+        "nullable": false
+      },
+      "discharge_location": {
+        "datatype": "VARCHAR(50)",
+        "description": "Discharge location",
+        "nullable": false
+      },
+      "insurance": {
+        "datatype": "VARCHAR(255)",
+        "description": "Insurance type.",
+        "nullable": false
+      },
+      "language": {
+        "datatype": "VARCHAR(10)",
+        "description": "Language.",
+        "nullable": true
+      },
+      "religion": {
+        "datatype": "VARCHAR(50)",
+        "description": "Religon.",
+        "nullable": true
+      },
+      "marital_status": {
+        "datatype": "VARCHAR(50)",
+        "description": "Marital status.",
+        "nullable": true
+      },
+      "ethnicity": {
+        "datatype": "VARCHAR(200)",
+        "description": "Ethnicity.",
+        "nullable": false
+      },
+      "edregtime": {
+        "datatype": "TIMESTAMP",
+        "description": "edregtime",
+        "nullable": true
+      },
+      "edouttime": {
+        "datatype": "TIMESTAMP",
+        "description": "edouttime",
+        "nullable": true
+      },
+      "diagnosis": {
+        "datatype": "VARCHAR(255)",
+        "description": "Diagnosis.",
+        "nullable": true
+      },
+      "hospital_expire_flag": {
+        "datatype": "SMALLINT",
+        "description": "hospital expire flag",
+        "nullable": true
+      },
+      "has_chartevents_data": {
+        "datatype": "SMALLINT",
+        "description": "Hospital admission has at least one observation in the CHARTEVENTS table.",
+        "nullable": false
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      }
+    ]
+  },
+  "callout": {
+    "description": "Record of when patients were ready for discharge (called out), and the actual time of their discharge (or more generally, their outcome).",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "submit_wardid": {
+        "datatype": "INTEGER",
+        "description": "Identifies the ward where the call out request was submitted.",
+        "nullable": true
+      },
+      "submit_careunit": {
+        "datatype": "VARCHAR(15)",
+        "description": "If the ward where the call was submitted was an ICU, the ICU type is listed here.",
+        "nullable": true
+      },
+      "curr_wardid": {
+        "datatype": "INTEGER",
+        "description": "Identifies the ward where the patient is currently residing.",
+        "nullable": true
+      },
+      "curr_careunit": {
+        "datatype": "VARCHAR(15)",
+        "description": "If the ward where the patient is currently residing is an ICU, the ICU type is listed here.",
+        "nullable": true
+      },
+      "callout_wardid": {
+        "datatype": "INTEGER",
+        "description": "Identifies the ward where the patient is to be discharged to. A value of 1 indicates the first available ward. A value of 0 indicates home.",
+        "nullable": true
+      },
+      "callout_service": {
+        "datatype": "VARCHAR(10)",
+        "description": "Identifies the service that the patient is called out to.",
+        "nullable": false
+      },
+      "request_tele": {
+        "datatype": "SMALLINT",
+        "description": "Indicates if special precautions are required.",
+        "nullable": false
+      },
+      "request_resp": {
+        "datatype": "SMALLINT",
+        "description": "Indicates if special precautions are required.",
+        "nullable": false
+      },
+      "request_cdiff": {
+        "datatype": "SMALLINT",
+        "description": "Indicates if special precautions are required.",
+        "nullable": false
+      },
+      "request_mrsa": {
+        "datatype": "SMALLINT",
+        "description": "Indicates if special precautions are required.",
+        "nullable": false
+      },
+      "request_vre": {
+        "datatype": "SMALLINT",
+        "description": "Indicates if special precautions are required.",
+        "nullable": false
+      },
+      "callout_status": {
+        "datatype": "VARCHAR(20)",
+        "description": "Current status of the call out request.",
+        "nullable": false
+      },
+      "callout_outcome": {
+        "datatype": "VARCHAR(20)",
+        "description": "The result of the call out request; either a cancellation or a discharge.",
+        "nullable": false
+      },
+      "discharge_wardid": {
+        "datatype": "INTEGER",
+        "description": "The ward to which the patient was discharged.",
+        "nullable": true
+      },
+      "acknowledge_status": {
+        "datatype": "VARCHAR(20)",
+        "description": "The status of the response to the call out request.",
+        "nullable": false
+      },
+      "createtime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time at which the call out request was created.",
+        "nullable": false
+      },
+      "updatetime": {
+        "datatype": "TIMESTAMP",
+        "description": "Last time at which the call out request was updated.",
+        "nullable": false
+      },
+      "acknowledgetime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time at which the call out request was acknowledged.",
+        "nullable": true
+      },
+      "outcometime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time at which the outcome (cancelled or discharged) occurred.",
+        "nullable": false
+      },
+      "firstreservationtime": {
+        "datatype": "TIMESTAMP",
+        "description": "First time at which a ward was reserved for the call out request.",
+        "nullable": true
+      },
+      "currentreservationtime": {
+        "datatype": "TIMESTAMP",
+        "description": "Latest time at which a ward was reserved for the call out request.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      }
+    ]
+  },
+  "caregivers": {
+    "description": "List of caregivers associated with an ICU stay.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "cgid": {
+        "datatype": "INTEGER",
+        "description": "Unique caregiver identifier.",
+        "nullable": false
+      },
+      "label": {
+        "datatype": "VARCHAR(15)",
+        "description": "Title of the caregiver, for example MD or RN.",
+        "nullable": true
+      },
+      "description": {
+        "datatype": "VARCHAR(30)",
+        "description": "More detailed description of the caregiver, if available.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": []
+  },
+  "chartevents": {
+    "description": "Events occuring on a patient chart.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": true
+      },
+      "icustay_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the ICU stay.",
+        "nullable": true
+      },
+      "itemid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the charted item.",
+        "nullable": true
+      },
+      "charttime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event occured.",
+        "nullable": true
+      },
+      "storetime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event was recorded in the system.",
+        "nullable": true
+      },
+      "cgid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the caregiver.",
+        "nullable": true
+      },
+      "value": {
+        "datatype": "VARCHAR(255)",
+        "description": "Value of the event as a text string.",
+        "nullable": true
+      },
+      "valuenum": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Value of the event as a number.",
+        "nullable": true
+      },
+      "valueuom": {
+        "datatype": "VARCHAR(50)",
+        "description": "Unit of measurement.",
+        "nullable": true
+      },
+      "warning": {
+        "datatype": "INTEGER",
+        "description": "Flag to highlight that the value has triggered a warning.",
+        "nullable": true
+      },
+      "error": {
+        "datatype": "INTEGER",
+        "description": "Flag to highlight an error with the event.",
+        "nullable": true
+      },
+      "resultstatus": {
+        "datatype": "VARCHAR(50)",
+        "description": "Result status of lab data.",
+        "nullable": true
+      },
+      "stopped": {
+        "datatype": "VARCHAR(50)",
+        "description": "Text string indicating the stopped status of an event (i.e. stopped, not stopped).",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icustay_id",
+        "table": "icustays",
+        "references": "icustay_id"
+      },
+      {
+        "column": "itemid",
+        "table": "d_items",
+        "references": "itemid"
+      },
+      {
+        "column": "cgid",
+        "table": "caregivers",
+        "references": "cgid"
+      }
+    ]
+  },
+  "cptevents": {
+    "description": "Events recorded in Current Procedural Terminology.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "costcenter": {
+        "datatype": "VARCHAR(10)",
+        "description": "Center recording the code, for example the ICU or the respiratory unit.",
+        "nullable": false
+      },
+      "chartdate": {
+        "datatype": "TIMESTAMP",
+        "description": "Date when the event occured, if available.",
+        "nullable": true
+      },
+      "cpt_cd": {
+        "datatype": "VARCHAR(10)",
+        "description": "Current Procedural Terminology code.",
+        "nullable": false
+      },
+      "cpt_number": {
+        "datatype": "INTEGER",
+        "description": "Numerical element of the Current Procedural Terminology code.",
+        "nullable": true
+      },
+      "cpt_suffix": {
+        "datatype": "VARCHAR(5)",
+        "description": "Text element of the Current Procedural Terminology, if any. Indicates code category.",
+        "nullable": true
+      },
+      "ticket_id_seq": {
+        "datatype": "INTEGER",
+        "description": "Sequence number of the event, derived from the ticket ID.",
+        "nullable": true
+      },
+      "sectionheader": {
+        "datatype": "VARCHAR(50)",
+        "description": "High-level section of the Current Procedural Terminology code.",
+        "nullable": true
+      },
+      "subsectionheader": {
+        "datatype": "VARCHAR(255)",
+        "description": "Subsection of the Current Procedural Terminology code.",
+        "nullable": true
+      },
+      "description": {
+        "datatype": "VARCHAR(200)",
+        "description": "Description of the Current Procedural Terminology, if available.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      }
+    ]
+  },
+  "d_cpt": {
+    "description": "High-level dictionary of the Current Procedural Terminology.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "category": {
+        "datatype": "SMALLINT",
+        "description": "Code category.",
+        "nullable": false
+      },
+      "sectionrange": {
+        "datatype": "VARCHAR(100)",
+        "description": "Range of codes within the high-level section.",
+        "nullable": false
+      },
+      "sectionheader": {
+        "datatype": "VARCHAR(50)",
+        "description": "Section header.",
+        "nullable": false
+      },
+      "subsectionrange": {
+        "datatype": "VARCHAR(100)",
+        "description": "Range of codes within the subsection.",
+        "nullable": false
+      },
+      "subsectionheader": {
+        "datatype": "VARCHAR(255)",
+        "description": "Subsection header.",
+        "nullable": false
+      },
+      "codesuffix": {
+        "datatype": "VARCHAR(5)",
+        "description": "Text element of the Current Procedural Terminology, if any.",
+        "nullable": true
+      },
+      "mincodeinsubsection": {
+        "datatype": "INTEGER",
+        "description": "Minimum code within the subsection.",
+        "nullable": false
+      },
+      "maxcodeinsubsection": {
+        "datatype": "INTEGER",
+        "description": "Maximum code within the subsection.",
+        "nullable": false
+      }
+    },
+    "foreign_keys": []
+  },
+  "d_icd_diagnoses": {
+    "description": "Dictionary of the International Classification of Diseases, 9th Revision (Diagnoses).",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "icd9_code": {
+        "datatype": "VARCHAR(10)",
+        "description": "ICD9 code - note that this is a fixed length character field, as whitespaces are important in uniquely identifying ICD-9 codes.",
+        "nullable": false
+      },
+      "short_title": {
+        "datatype": "VARCHAR(50)",
+        "description": "Short title associated with the code.",
+        "nullable": false
+      },
+      "long_title": {
+        "datatype": "VARCHAR(255)",
+        "description": "Long title associated with the code.",
+        "nullable": false
+      }
+    },
+    "foreign_keys": []
+  },
+  "d_icd_procedures": {
+    "description": "Dictionary of the International Classification of Diseases, 9th Revision (Procedures).",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "icd9_code": {
+        "datatype": "VARCHAR(10)",
+        "description": "ICD9 code - note that this is a fixed length character field, as whitespaces are important in uniquely identifying ICD-9 codes.",
+        "nullable": false
+      },
+      "short_title": {
+        "datatype": "VARCHAR(50)",
+        "description": "Short title associated with the code.",
+        "nullable": false
+      },
+      "long_title": {
+        "datatype": "VARCHAR(255)",
+        "description": "Long title associated with the code.",
+        "nullable": false
+      }
+    },
+    "foreign_keys": []
+  },
+  "d_items": {
+    "description": "Dictionary of non-laboratory-related charted items.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "itemid": {
+        "datatype": "INTEGER",
+        "description": "Primary key. Identifies the charted item.",
+        "nullable": false
+      },
+      "label": {
+        "datatype": "VARCHAR(200)",
+        "description": "Label identifying the item.",
+        "nullable": true
+      },
+      "abbreviation": {
+        "datatype": "VARCHAR(100)",
+        "description": "Abbreviation associated with the item.",
+        "nullable": true
+      },
+      "dbsource": {
+        "datatype": "VARCHAR(20)",
+        "description": "Source database of the item.",
+        "nullable": true
+      },
+      "linksto": {
+        "datatype": "VARCHAR(50)",
+        "description": "Table which contains data for the given ITEMID.",
+        "nullable": true
+      },
+      "category": {
+        "datatype": "VARCHAR(100)",
+        "description": "Category of data which the concept falls under.",
+        "nullable": true
+      },
+      "unitname": {
+        "datatype": "VARCHAR(100)",
+        "description": "Unit associated with the item.",
+        "nullable": true
+      },
+      "param_type": {
+        "datatype": "VARCHAR(30)",
+        "description": "Type of item, for example solution or ingredient.",
+        "nullable": true
+      },
+      "conceptid": {
+        "datatype": "INTEGER",
+        "description": "Identifier used to harmonize concepts identified by multiple ITEMIDs. CONCEPTIDs are planned but not yet implemented (all values are NULL).",
+        "nullable": true
+      }
+    },
+    "foreign_keys": []
+  },
+  "d_labitems": {
+    "description": "Dictionary of laboratory-related items.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "itemid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the charted item.",
+        "nullable": false
+      },
+      "label": {
+        "datatype": "VARCHAR(100)",
+        "description": "Label identifying the item.",
+        "nullable": false
+      },
+      "fluid": {
+        "datatype": "VARCHAR(100)",
+        "description": "Fluid associated with the item, for example blood or urine.",
+        "nullable": false
+      },
+      "category": {
+        "datatype": "VARCHAR(100)",
+        "description": "Category of item, for example chemistry or hematology.",
+        "nullable": false
+      },
+      "loinc_code": {
+        "datatype": "VARCHAR(100)",
+        "description": "Logical Observation Identifiers Names and Codes (LOINC) mapped to the item, if available.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": []
+  },
+  "datetimeevents": {
+    "description": "Events relating to a datetime.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": true
+      },
+      "icustay_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the ICU stay.",
+        "nullable": true
+      },
+      "itemid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the charted item.",
+        "nullable": false
+      },
+      "charttime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event occured.",
+        "nullable": false
+      },
+      "storetime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event was recorded in the system.",
+        "nullable": false
+      },
+      "cgid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the caregiver.",
+        "nullable": false
+      },
+      "value": {
+        "datatype": "TIMESTAMP",
+        "description": "Value of the event as a text string.",
+        "nullable": true
+      },
+      "valueuom": {
+        "datatype": "VARCHAR(50)",
+        "description": "Unit of measurement.",
+        "nullable": false
+      },
+      "warning": {
+        "datatype": "SMALLINT",
+        "description": "Flag to highlight that the value has triggered a warning.",
+        "nullable": true
+      },
+      "error": {
+        "datatype": "SMALLINT",
+        "description": "Flag to highlight an error with the event.",
+        "nullable": true
+      },
+      "resultstatus": {
+        "datatype": "VARCHAR(50)",
+        "description": "Result status of lab data.",
+        "nullable": true
+      },
+      "stopped": {
+        "datatype": "VARCHAR(50)",
+        "description": "Event was explicitly marked as stopped. Infrequently used by caregivers.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icustay_id",
+        "table": "icustays",
+        "references": "icustay_id"
+      },
+      {
+        "column": "itemid",
+        "table": "d_items",
+        "references": "itemid"
+      },
+      {
+        "column": "cgid",
+        "table": "caregivers",
+        "references": "cgid"
+      }
+    ]
+  },
+  "diagnoses_icd": {
+    "description": "Diagnoses relating to a hospital admission coded using the ICD9 system.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "seq_num": {
+        "datatype": "INTEGER",
+        "description": "Priority of the code. Sequence 1 is the primary code.",
+        "nullable": true
+      },
+      "icd9_code": {
+        "datatype": "VARCHAR(10)",
+        "description": "ICD9 code for the diagnosis.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icd9_code",
+        "table": "d_icd_diagnoses",
+        "references": "icd9_code"
+      }
+    ]
+  },
+  "drgcodes": {
+    "description": "Hospital stays classified using the Diagnosis-Related Group system.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "drg_type": {
+        "datatype": "VARCHAR(20)",
+        "description": "Type of Diagnosis-Related Group, for example APR is All Patient Refined",
+        "nullable": false
+      },
+      "drg_code": {
+        "datatype": "VARCHAR(20)",
+        "description": "Diagnosis-Related Group code",
+        "nullable": false
+      },
+      "description": {
+        "datatype": "VARCHAR(255)",
+        "description": "Description of the Diagnosis-Related Group",
+        "nullable": true
+      },
+      "drg_severity": {
+        "datatype": "SMALLINT",
+        "description": "Relative severity, available for type APR only.",
+        "nullable": true
+      },
+      "drg_mortality": {
+        "datatype": "SMALLINT",
+        "description": "Relative mortality, available for type APR only.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      }
+    ]
+  },
+  "icustays": {
+    "description": "List of ICU admissions.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "icustay_id": {
+        "datatype": "INTEGER",
+        "description": "Primary key. Identifies the ICU stay.",
+        "nullable": false
+      },
+      "dbsource": {
+        "datatype": "VARCHAR(20)",
+        "description": "Source database of the item.",
+        "nullable": false
+      },
+      "first_careunit": {
+        "datatype": "VARCHAR(20)",
+        "description": "First careunit associated with the ICU stay.",
+        "nullable": false
+      },
+      "last_careunit": {
+        "datatype": "VARCHAR(20)",
+        "description": "Last careunit associated with the ICU stay.",
+        "nullable": false
+      },
+      "first_wardid": {
+        "datatype": "SMALLINT",
+        "description": "Identifier for the first ward the patient was located in.",
+        "nullable": false
+      },
+      "last_wardid": {
+        "datatype": "SMALLINT",
+        "description": "Identifier for the last ward the patient is located in.",
+        "nullable": false
+      },
+      "intime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time of admission to the ICU.",
+        "nullable": false
+      },
+      "outtime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time of discharge from the ICU.",
+        "nullable": true
+      },
+      "los": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Length of stay in the ICU in fractional days.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      }
+    ]
+  },
+  "inputevents_cv": {
+    "description": "Events relating to fluid input for patients whose data was originally stored in the CareVue database.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": true
+      },
+      "icustay_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the ICU stay.",
+        "nullable": true
+      },
+      "charttime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time of that the input was started or received.",
+        "nullable": true
+      },
+      "itemid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the charted item.",
+        "nullable": true
+      },
+      "amount": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Amount of the item administered to the patient.",
+        "nullable": true
+      },
+      "amountuom": {
+        "datatype": "VARCHAR(30)",
+        "description": "Unit of measurement for the amount.",
+        "nullable": true
+      },
+      "rate": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Rate at which the item is being administered to the patient.",
+        "nullable": true
+      },
+      "rateuom": {
+        "datatype": "VARCHAR(30)",
+        "description": "Unit of measurement for the rate.",
+        "nullable": true
+      },
+      "storetime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event was recorded in the system.",
+        "nullable": true
+      },
+      "cgid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the caregiver.",
+        "nullable": true
+      },
+      "orderid": {
+        "datatype": "INTEGER",
+        "description": "Identifier linking items which are grouped in a solution.",
+        "nullable": true
+      },
+      "linkorderid": {
+        "datatype": "INTEGER",
+        "description": "Identifier linking orders across multiple administrations. LINKORDERID is always equal to the first occuring ORDERID of the series.",
+        "nullable": true
+      },
+      "stopped": {
+        "datatype": "VARCHAR(30)",
+        "description": "Event was explicitly marked as stopped. Infrequently used by caregivers.",
+        "nullable": true
+      },
+      "newbottle": {
+        "datatype": "INTEGER",
+        "description": "Indicates when a new bottle of the solution was hung at the bedside.",
+        "nullable": true
+      },
+      "originalamount": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Amount of the item which was originally charted.",
+        "nullable": true
+      },
+      "originalamountuom": {
+        "datatype": "VARCHAR(30)",
+        "description": "Unit of measurement for the original amount.",
+        "nullable": true
+      },
+      "originalroute": {
+        "datatype": "VARCHAR(30)",
+        "description": "Route of administration originally chosen for the item.",
+        "nullable": true
+      },
+      "originalrate": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Rate of administration originally chosen for the item.",
+        "nullable": true
+      },
+      "originalrateuom": {
+        "datatype": "VARCHAR(30)",
+        "description": "Unit of measurement for the rate originally chosen.",
+        "nullable": true
+      },
+      "originalsite": {
+        "datatype": "VARCHAR(30)",
+        "description": "Anatomical site for the original administration of the item.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icustay_id",
+        "table": "icustays",
+        "references": "icustay_id"
+      },
+      {
+        "column": "cgid",
+        "table": "caregivers",
+        "references": "cgid"
+      }
+    ]
+  },
+  "inputevents_mv": {
+    "description": "Events relating to fluid input for patients whose data was originally stored in the MetaVision database.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": true
+      },
+      "icustay_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the ICU stay.",
+        "nullable": true
+      },
+      "starttime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event started.",
+        "nullable": true
+      },
+      "endtime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event ended.",
+        "nullable": true
+      },
+      "itemid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the charted item.",
+        "nullable": true
+      },
+      "amount": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Amount of the item administered to the patient.",
+        "nullable": true
+      },
+      "amountuom": {
+        "datatype": "VARCHAR(30)",
+        "description": "Unit of measurement for the amount.",
+        "nullable": true
+      },
+      "rate": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Rate at which the item is being administered to the patient.",
+        "nullable": true
+      },
+      "rateuom": {
+        "datatype": "VARCHAR(30)",
+        "description": "Unit of measurement for the rate.",
+        "nullable": true
+      },
+      "storetime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event was recorded in the system.",
+        "nullable": true
+      },
+      "cgid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the caregiver.",
+        "nullable": true
+      },
+      "orderid": {
+        "datatype": "INTEGER",
+        "description": "Identifier linking items which are grouped in a solution.",
+        "nullable": true
+      },
+      "linkorderid": {
+        "datatype": "INTEGER",
+        "description": "Identifier linking orders across multiple administrations. LINKORDERID is always equal to the first occuring ORDERID of the series.",
+        "nullable": true
+      },
+      "ordercategoryname": {
+        "datatype": "VARCHAR(100)",
+        "description": "A group which the item corresponds to.",
+        "nullable": true
+      },
+      "secondaryordercategoryname": {
+        "datatype": "VARCHAR(100)",
+        "description": "A secondary group for those items with more than one grouping possible.",
+        "nullable": true
+      },
+      "ordercomponenttypedescription": {
+        "datatype": "VARCHAR(200)",
+        "description": "The role of the item administered in the order.",
+        "nullable": true
+      },
+      "ordercategorydescription": {
+        "datatype": "VARCHAR(50)",
+        "description": "The type of item administered.",
+        "nullable": true
+      },
+      "patientweight": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "For drugs dosed by weight, the value of the weight used in the calculation.",
+        "nullable": true
+      },
+      "totalamount": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "The total amount in the solution for the given item.",
+        "nullable": true
+      },
+      "totalamountuom": {
+        "datatype": "VARCHAR(50)",
+        "description": "Unit of measurement for the total amount in the solution.",
+        "nullable": true
+      },
+      "isopenbag": {
+        "datatype": "SMALLINT",
+        "description": "Indicates whether the bag containing the solution is open.",
+        "nullable": true
+      },
+      "continueinnextdept": {
+        "datatype": "SMALLINT",
+        "description": "Indicates whether the item will be continued in the next department where the patient is transferred to.",
+        "nullable": true
+      },
+      "cancelreason": {
+        "datatype": "SMALLINT",
+        "description": "Reason for cancellation, if cancelled.",
+        "nullable": true
+      },
+      "statusdescription": {
+        "datatype": "VARCHAR(30)",
+        "description": "The current status of the order: stopped, rewritten, running or cancelled.",
+        "nullable": true
+      },
+      "comments_editedby": {
+        "datatype": "VARCHAR(30)",
+        "description": "The title of the caregiver who edited the order.",
+        "nullable": true
+      },
+      "comments_canceledby": {
+        "datatype": "VARCHAR(40)",
+        "description": "The title of the caregiver who canceled the order.",
+        "nullable": true
+      },
+      "comments_date": {
+        "datatype": "TIMESTAMP",
+        "description": "Time at which the caregiver edited or cancelled the order.",
+        "nullable": true
+      },
+      "originalamount": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Amount of the item which was originally charted.",
+        "nullable": true
+      },
+      "originalrate": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Rate of administration originally chosen for the item.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icustay_id",
+        "table": "icustays",
+        "references": "icustay_id"
+      },
+      {
+        "column": "itemid",
+        "table": "d_items",
+        "references": "itemid"
+      },
+      {
+        "column": "cgid",
+        "table": "caregivers",
+        "references": "cgid"
+      }
+    ]
+  },
+  "labevents": {
+    "description": "Events relating to laboratory tests.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": true
+      },
+      "itemid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the charted item.",
+        "nullable": false
+      },
+      "charttime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event occured.",
+        "nullable": true
+      },
+      "value": {
+        "datatype": "VARCHAR(200)",
+        "description": "Value of the event as a text string.",
+        "nullable": true
+      },
+      "valuenum": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Value of the event as a number.",
+        "nullable": true
+      },
+      "valueuom": {
+        "datatype": "VARCHAR(20)",
+        "description": "Unit of measurement.",
+        "nullable": true
+      },
+      "flag": {
+        "datatype": "VARCHAR(20)",
+        "description": "Flag indicating whether the lab test value is considered abnormal (null if the test was normal).",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "itemid",
+        "table": "d_labitems",
+        "references": "itemid"
+      }
+    ]
+  },
+  "microbiologyevents": {
+    "description": "Events relating to microbiology tests.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": true
+      },
+      "chartdate": {
+        "datatype": "TIMESTAMP",
+        "description": "Date when the event occured.",
+        "nullable": true
+      },
+      "charttime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the event occured, if available.",
+        "nullable": true
+      },
+      "spec_itemid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the specimen.",
+        "nullable": true
+      },
+      "spec_type_desc": {
+        "datatype": "VARCHAR(100)",
+        "description": "Description of the specimen.",
+        "nullable": true
+      },
+      "org_itemid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the organism.",
+        "nullable": true
+      },
+      "org_name": {
+        "datatype": "VARCHAR(100)",
+        "description": "Name of the organism.",
+        "nullable": true
+      },
+      "isolate_num": {
+        "datatype": "SMALLINT",
+        "description": "Isolate number associated with the test.",
+        "nullable": true
+      },
+      "ab_itemid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the antibody.",
+        "nullable": true
+      },
+      "ab_name": {
+        "datatype": "VARCHAR(30)",
+        "description": "Name of the antibody used.",
+        "nullable": true
+      },
+      "dilution_text": {
+        "datatype": "VARCHAR(10)",
+        "description": "The dilution amount tested for and the comparison which was made against it (e.g. <=4).",
+        "nullable": true
+      },
+      "dilution_comparison": {
+        "datatype": "VARCHAR(20)",
+        "description": "The comparison component of DILUTION_TEXT: either <= (less than or equal), = (equal), or >= (greater than or equal), or null when not available.",
+        "nullable": true
+      },
+      "dilution_value": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "The value component of DILUTION_TEXT: must be a floating point number.",
+        "nullable": true
+      },
+      "interpretation": {
+        "datatype": "VARCHAR(5)",
+        "description": "Interpretation of the test.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "spec_itemid",
+        "table": "d_items",
+        "references": "itemid"
+      },
+      {
+        "column": "org_itemid",
+        "table": "d_items",
+        "references": "itemid"
+      },
+      {
+        "column": "ab_itemid",
+        "table": "d_items",
+        "references": "itemid"
+      }
+    ]
+  },
+  "noteevents": {
+    "description": "Notes associated with hospital stays.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": true
+      },
+      "chartdate": {
+        "datatype": "TIMESTAMP",
+        "description": "Date when the note was charted.",
+        "nullable": true
+      },
+      "charttime": {
+        "datatype": "TIMESTAMP",
+        "description": "Date and time when the note was charted. Note that some notes (e.g. discharge summaries) do not have a time associated with them: these notes have NULL in this column.",
+        "nullable": true
+      },
+      "storetime": {
+        "datatype": "TIMESTAMP",
+        "description": "storetime",
+        "nullable": true
+      },
+      "category": {
+        "datatype": "VARCHAR(50)",
+        "description": "Category of the note, e.g. Discharge summary.",
+        "nullable": true
+      },
+      "description": {
+        "datatype": "VARCHAR(255)",
+        "description": "A more detailed categorization for the note, sometimes entered by free-text.",
+        "nullable": true
+      },
+      "cgid": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the caregiver.",
+        "nullable": true
+      },
+      "iserror": {
+        "datatype": "BPCHAR",
+        "description": "Flag to highlight an error with the note.",
+        "nullable": true
+      },
+      "text": {
+        "datatype": "TEXT",
+        "description": "Content of the note.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "cgid",
+        "table": "caregivers",
+        "references": "cgid"
+      }
+    ]
+  },
+  "outputevents": {
+    "description": "",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "row id",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "subject id",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "hadm id",
+        "nullable": true
+      },
+      "icustay_id": {
+        "datatype": "INTEGER",
+        "description": "icustay id",
+        "nullable": true
+      },
+      "charttime": {
+        "datatype": "TIMESTAMP",
+        "description": "charttime",
+        "nullable": true
+      },
+      "itemid": {
+        "datatype": "INTEGER",
+        "description": "itemid",
+        "nullable": true
+      },
+      "value": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "value",
+        "nullable": true
+      },
+      "valueuom": {
+        "datatype": "VARCHAR(30)",
+        "description": "valueuom",
+        "nullable": true
+      },
+      "storetime": {
+        "datatype": "TIMESTAMP",
+        "description": "storetime",
+        "nullable": true
+      },
+      "cgid": {
+        "datatype": "INTEGER",
+        "description": "cgid",
+        "nullable": true
+      },
+      "stopped": {
+        "datatype": "VARCHAR(30)",
+        "description": "stopped",
+        "nullable": true
+      },
+      "newbottle": {
+        "datatype": "BPCHAR",
+        "description": "newbottle",
+        "nullable": true
+      },
+      "iserror": {
+        "datatype": "INTEGER",
+        "description": "iserror",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icustay_id",
+        "table": "icustays",
+        "references": "icustay_id"
+      },
+      {
+        "column": "itemid",
+        "table": "d_items",
+        "references": "itemid"
+      },
+      {
+        "column": "cgid",
+        "table": "caregivers",
+        "references": "cgid"
+      }
+    ]
+  },
+  "patients": {
+    "description": "Patients associated with an admission to the ICU.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Primary key. Identifies the patient.",
+        "nullable": false
+      },
+      "gender": {
+        "datatype": "VARCHAR(5)",
+        "description": "Gender.",
+        "nullable": false
+      },
+      "dob": {
+        "datatype": "TIMESTAMP",
+        "description": "Date of birth.",
+        "nullable": false
+      },
+      "dod": {
+        "datatype": "TIMESTAMP",
+        "description": "Date of death. Null if the patient was alive at least 90 days post hospital discharge.",
+        "nullable": true
+      },
+      "dod_hosp": {
+        "datatype": "TIMESTAMP",
+        "description": "Date of death recorded in the hospital records.",
+        "nullable": true
+      },
+      "dod_ssn": {
+        "datatype": "TIMESTAMP",
+        "description": "Date of death recorded in the social security records.",
+        "nullable": true
+      },
+      "expire_flag": {
+        "datatype": "INTEGER",
+        "description": "Flag indicating that the patient has died.",
+        "nullable": false
+      }
+    },
+    "foreign_keys": []
+  },
+  "prescriptions": {
+    "description": "Medicines prescribed.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "icustay_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the ICU stay.",
+        "nullable": true
+      },
+      "startdate": {
+        "datatype": "TIMESTAMP",
+        "description": "Date when the prescription started.",
+        "nullable": true
+      },
+      "enddate": {
+        "datatype": "TIMESTAMP",
+        "description": "Date when the prescription ended.",
+        "nullable": true
+      },
+      "drug_type": {
+        "datatype": "VARCHAR(100)",
+        "description": "Type of drug.",
+        "nullable": false
+      },
+      "drug": {
+        "datatype": "VARCHAR(100)",
+        "description": "Name of the drug.",
+        "nullable": false
+      },
+      "drug_name_poe": {
+        "datatype": "VARCHAR(100)",
+        "description": "Name of the drug on the Provider Order Entry interface.",
+        "nullable": true
+      },
+      "drug_name_generic": {
+        "datatype": "VARCHAR(100)",
+        "description": "Generic drug name.",
+        "nullable": true
+      },
+      "formulary_drug_cd": {
+        "datatype": "VARCHAR(120)",
+        "description": "Formulary drug code.",
+        "nullable": true
+      },
+      "gsn": {
+        "datatype": "VARCHAR(200)",
+        "description": "Generic Sequence Number.",
+        "nullable": true
+      },
+      "ndc": {
+        "datatype": "VARCHAR(120)",
+        "description": "National Drug Code.",
+        "nullable": true
+      },
+      "prod_strength": {
+        "datatype": "VARCHAR(120)",
+        "description": "Strength of the drug (product).",
+        "nullable": true
+      },
+      "dose_val_rx": {
+        "datatype": "VARCHAR(120)",
+        "description": "Dose of the drug prescribed.",
+        "nullable": true
+      },
+      "dose_unit_rx": {
+        "datatype": "VARCHAR(120)",
+        "description": "Unit of measurement associated with the dose.",
+        "nullable": true
+      },
+      "form_val_disp": {
+        "datatype": "VARCHAR(120)",
+        "description": "Amount of the formulation dispensed.",
+        "nullable": true
+      },
+      "form_unit_disp": {
+        "datatype": "VARCHAR(120)",
+        "description": "Unit of measurement associated with the formulation.",
+        "nullable": true
+      },
+      "route": {
+        "datatype": "VARCHAR(120)",
+        "description": "Route of administration, for example intravenous or oral.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icustay_id",
+        "table": "icustays",
+        "references": "icustay_id"
+      }
+    ]
+  },
+  "procedureevents_mv": {
+    "description": "",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "row id",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "subject id",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "hadm id",
+        "nullable": false
+      },
+      "icustay_id": {
+        "datatype": "INTEGER",
+        "description": "icustay id",
+        "nullable": true
+      },
+      "starttime": {
+        "datatype": "TIMESTAMP",
+        "description": "starttime",
+        "nullable": true
+      },
+      "endtime": {
+        "datatype": "TIMESTAMP",
+        "description": "endtime",
+        "nullable": true
+      },
+      "itemid": {
+        "datatype": "INTEGER",
+        "description": "itemid",
+        "nullable": true
+      },
+      "value": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "value",
+        "nullable": true
+      },
+      "valueuom": {
+        "datatype": "VARCHAR(30)",
+        "description": "valueuom",
+        "nullable": true
+      },
+      "location": {
+        "datatype": "VARCHAR(30)",
+        "description": "location",
+        "nullable": true
+      },
+      "locationcategory": {
+        "datatype": "VARCHAR(30)",
+        "description": "locationcategory",
+        "nullable": true
+      },
+      "storetime": {
+        "datatype": "TIMESTAMP",
+        "description": "storetime",
+        "nullable": true
+      },
+      "cgid": {
+        "datatype": "INTEGER",
+        "description": "cgid",
+        "nullable": true
+      },
+      "orderid": {
+        "datatype": "INTEGER",
+        "description": "orderid",
+        "nullable": true
+      },
+      "linkorderid": {
+        "datatype": "INTEGER",
+        "description": "linkorderid",
+        "nullable": true
+      },
+      "ordercategoryname": {
+        "datatype": "VARCHAR(100)",
+        "description": "ordercategoryname",
+        "nullable": true
+      },
+      "secondaryordercategoryname": {
+        "datatype": "VARCHAR(100)",
+        "description": "secondaryordercategoryname",
+        "nullable": true
+      },
+      "ordercategorydescription": {
+        "datatype": "VARCHAR(50)",
+        "description": "ordercategorydescription",
+        "nullable": true
+      },
+      "isopenbag": {
+        "datatype": "SMALLINT",
+        "description": "isopenbag",
+        "nullable": true
+      },
+      "continueinnextdept": {
+        "datatype": "SMALLINT",
+        "description": "continueinnextdept",
+        "nullable": true
+      },
+      "cancelreason": {
+        "datatype": "SMALLINT",
+        "description": "cancelreason",
+        "nullable": true
+      },
+      "statusdescription": {
+        "datatype": "VARCHAR(30)",
+        "description": "statusdescription",
+        "nullable": true
+      },
+      "comments_editedby": {
+        "datatype": "VARCHAR(30)",
+        "description": "comments editedby",
+        "nullable": true
+      },
+      "comments_canceledby": {
+        "datatype": "VARCHAR(30)",
+        "description": "comments canceledby",
+        "nullable": true
+      },
+      "comments_date": {
+        "datatype": "TIMESTAMP",
+        "description": "comments date",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icustay_id",
+        "table": "icustays",
+        "references": "icustay_id"
+      },
+      {
+        "column": "itemid",
+        "table": "d_items",
+        "references": "itemid"
+      },
+      {
+        "column": "cgid",
+        "table": "caregivers",
+        "references": "cgid"
+      }
+    ]
+  },
+  "procedures_icd": {
+    "description": "Procedures relating to a hospital admission coded using the ICD9 system.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "seq_num": {
+        "datatype": "INTEGER",
+        "description": "Lower procedure numbers occurred earlier.",
+        "nullable": false
+      },
+      "icd9_code": {
+        "datatype": "VARCHAR(10)",
+        "description": "ICD9 code associated with the procedure.",
+        "nullable": false
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icd9_code",
+        "table": "d_icd_procedures",
+        "references": "icd9_code"
+      }
+    ]
+  },
+  "services": {
+    "description": "Hospital services that patients were under during their hospital stay.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "transfertime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the transfer occured.",
+        "nullable": false
+      },
+      "prev_service": {
+        "datatype": "VARCHAR(20)",
+        "description": "Previous service type.",
+        "nullable": true
+      },
+      "curr_service": {
+        "datatype": "VARCHAR(20)",
+        "description": "Current service type.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      }
+    ]
+  },
+  "transfers": {
+    "description": "Location of patients during their hospital stay.",
+    "primary_key": "row_id",
+    "attributes": {
+      "row_id": {
+        "datatype": "INTEGER",
+        "description": "Unique row identifier.",
+        "nullable": false
+      },
+      "subject_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the patient.",
+        "nullable": false
+      },
+      "hadm_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the hospital stay.",
+        "nullable": false
+      },
+      "icustay_id": {
+        "datatype": "INTEGER",
+        "description": "Foreign key. Identifies the ICU stay.",
+        "nullable": true
+      },
+      "dbsource": {
+        "datatype": "VARCHAR(20)",
+        "description": "Source database of the item.",
+        "nullable": true
+      },
+      "eventtype": {
+        "datatype": "VARCHAR(20)",
+        "description": "Type of event, for example admission or transfer.",
+        "nullable": true
+      },
+      "prev_careunit": {
+        "datatype": "VARCHAR(20)",
+        "description": "Previous careunit.",
+        "nullable": true
+      },
+      "curr_careunit": {
+        "datatype": "VARCHAR(20)",
+        "description": "Current careunit.",
+        "nullable": true
+      },
+      "prev_wardid": {
+        "datatype": "SMALLINT",
+        "description": "Identifier for the previous ward the patient was located in.",
+        "nullable": true
+      },
+      "curr_wardid": {
+        "datatype": "SMALLINT",
+        "description": "Identifier for the current ward the patient is located in.",
+        "nullable": true
+      },
+      "intime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the patient was transferred into the unit.",
+        "nullable": true
+      },
+      "outtime": {
+        "datatype": "TIMESTAMP",
+        "description": "Time when the patient was transferred out of the unit.",
+        "nullable": true
+      },
+      "los": {
+        "datatype": "DOUBLE PRECISION",
+        "description": "Length of stay in the unit in minutes.",
+        "nullable": true
+      }
+    },
+    "foreign_keys": [
+      {
+        "column": "subject_id",
+        "table": "patients",
+        "references": "subject_id"
+      },
+      {
+        "column": "hadm_id",
+        "table": "admissions",
+        "references": "hadm_id"
+      },
+      {
+        "column": "icustay_id",
+        "table": "icustays",
+        "references": "icustay_id"
+      }
+    ]
+  }
+}

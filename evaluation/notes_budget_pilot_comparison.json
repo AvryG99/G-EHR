@@ -1,0 +1,10 @@
+{
+  "sample_size": 30,
+  "old_correct": 0,
+  "new_correct": 16,
+  "old_execution_success": 20,
+  "new_execution_success": 30,
+  "previous_budget_failures": 10,
+  "budget_cases_now_executed": 10,
+  "budget_cases_now_correct": 6
+}

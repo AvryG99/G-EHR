@@ -1,0 +1,18 @@
+% Preliminary cross-paper comparison. Do not present as a controlled
+% head-to-head result until both methods use the same 580 questions, inputs,
+% base model, demonstrations, interaction budget, and evaluator.
+\begin{table}[t]
+\centering
+\caption{Preliminary comparison with EHRAgent on cleaned MIMIC-III. Success rate (SR) is reported in percent. Our current released subset contains 581 questions, whereas EHRAgent reports 580.}
+\label{tab:ehragent_comparison}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & Level I & Level II & Level III & Level IV & All \\
+\midrule
+EHRAgent & 71.58 & 66.34 & 49.70 & 49.14 & 58.97 \\
+Proposed method (Ours) & \textbf{94.74} & \textbf{92.57} & \textbf{87.43} & \textbf{91.45} & \textbf{91.22} \\
+\midrule
+$\Delta$ (percentage points) & +23.16 & +26.23 & +37.73 & +42.31 & +32.25 \\
+\bottomrule
+\end{tabular}
+\end{table}

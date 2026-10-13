@@ -1,0 +1,52 @@
+{
+  "total": 1287,
+  "previous_correct": 778,
+  "current_correct": 856,
+  "accuracy_gain_percentage_points": 6.0606060606060606,
+  "recovered": 136,
+  "regressed": 58,
+  "unchanged_correct": 720,
+  "unchanged_incorrect": 373,
+  "review_statuses": {
+    "accepted": 940,
+    "insufficient_evidence": 336,
+    "not_reviewed": 6,
+    "revision_failed": 2,
+    "revision_limit": 3
+  },
+  "questions_with_revision_attempts": 9,
+  "revised_questions_correct": 2,
+  "execution_errors": [
+    {
+      "id": "1040",
+      "question": "does the patient have any other history of acute ischemic",
+      "error": "400 POST https://bigquery.googleapis.com/bigquery/v2/projects/gehr-511502/jobs?prettyPrint=false: Unrecognized name: chartdate at [1:349]\n\nLocation: US\nJob ID: 69c291f3-e119-450d-ac1a-3ca3f91af2bb\n"
+    },
+    {
+      "id": "229",
+      "question": "has she ever had septic component before",
+      "error": "SELECT DISTINCT requires ORDER BY expressions in the selected columns."
+    },
+    {
+      "id": "530",
+      "question": "has she ever had nonspecific mesenteric stranding before",
+      "error": "400 POST https://bigquery.googleapis.com/bigquery/v2/projects/gehr-511502/jobs?prettyPrint=false: Unrecognized name: subject_id at [1:351]\n\nLocation: US\nJob ID: c7d1d18c-08d6-499b-91e6-9c781b4503c3\n"
+    },
+    {
+      "id": "1269",
+      "question": "did the patient become acutely hypotensive to sbp of 80s-90s",
+      "error": "High-volume table(s) chartevents require an itemid constraint resolved through a lookup table/value."
+    },
+    {
+      "id": "1270",
+      "question": "has acute hypotensiveness to sbp been considered in the past",
+      "error": "SELECT DISTINCT requires ORDER BY expressions in the selected columns."
+    },
+    {
+      "id": "912",
+      "question": "does the patient have any other history of diarrhea",
+      "error": "400 POST https://bigquery.googleapis.com/bigquery/v2/projects/gehr-511502/jobs?prettyPrint=false: Unrecognized name: ne at [1:335]\n\nLocation: US\nJob ID: 0301120c-ee43-4641-bf73-3bd7e4ae2c57\n"
+    }
+  ],
+  "causal_note": "Changes include narrative context/rules and self-debugging, plus model variability. This comparison does not isolate the causal benefit of self-debugging."
+}

@@ -1,365 +1,1141 @@
 {
-    "subject_id": {
-    "description": "Patient identifier. Unique number assigned to each individual patient across all their hospital admissions and ICU stays. Used to track all healthcare encounters and medical history for a single patient over time. Also referred to as patient ID, patient number, medical record number (MRN), or patient reference. This identifier remains constant for a patient across multiple hospital admissions, allowing longitudinal analysis of patient care. Essential for tracking patient demographics, outcomes, and historical medical information.",
+  "row_id": {
+    "description": " admissions.row_id: Unique row identifier. (INTEGER). callout.row_id: Unique row identifier. (INTEGER). caregivers.row_id: Unique row identifier. (INTEGER). chartevents.row_id: Unique row identifier. (INTEGER). cptevents.row_id: Unique row identifier. (INTEGER). d_cpt.row_id: Unique row identifier. (INTEGER). d_icd_diagnoses.row_id: Unique row identifier. (INTEGER). d_icd_procedures.row_id: Unique row identifier. (INTEGER). d_items.row_id: Unique row identifier. (INTEGER). d_labitems.row_id: Unique row identifier. (INTEGER). datetimeevents.row_id: Unique row identifier. (INTEGER). diagnoses_icd.row_id: Unique row identifier. (INTEGER). drgcodes.row_id: Unique row identifier. (INTEGER). icustays.row_id: Unique row identifier. (INTEGER). inputevents_cv.row_id: Unique row identifier. (INTEGER). inputevents_mv.row_id: Unique row identifier. (INTEGER). labevents.row_id: Unique row identifier. (INTEGER). microbiologyevents.row_id: Unique row identifier. (INTEGER). noteevents.row_id: Unique row identifier. (INTEGER). outputevents.row_id: row id (INTEGER). patients.row_id: Unique row identifier. (INTEGER). prescriptions.row_id: Unique row identifier. (INTEGER). procedureevents_mv.row_id: row id (INTEGER). procedures_icd.row_id: Unique row identifier. (INTEGER). services.row_id: Unique row identifier. (INTEGER). transfers.row_id: Unique row identifier. (INTEGER).",
     "tables": [
       "admissions",
-      "patients",
-      "icustays",
-      "diagnoses_icd",
-      "procedures_icd",
-      "prescriptions",
-      "labevents",
+      "callout",
+      "caregivers",
       "chartevents",
+      "cptevents",
+      "d_cpt",
+      "d_icd_diagnoses",
+      "d_icd_procedures",
+      "d_items",
+      "d_labitems",
+      "datetimeevents",
+      "diagnoses_icd",
+      "drgcodes",
+      "icustays",
       "inputevents_cv",
-      "outputevents",
+      "inputevents_mv",
+      "labevents",
       "microbiologyevents",
-      "transfers",
-      "cost"
-    ],
-    "data_type": "number"
+      "noteevents",
+      "outputevents",
+      "patients",
+      "prescriptions",
+      "procedureevents_mv",
+      "procedures_icd",
+      "services",
+      "transfers"
+    ]
+  },
+  "subject_id": {
+    "description": " admissions.subject_id: Foreign key. Identifies the patient. (INTEGER). callout.subject_id: Foreign key. Identifies the patient. (INTEGER). chartevents.subject_id: Foreign key. Identifies the patient. (INTEGER). cptevents.subject_id: Foreign key. Identifies the patient. (INTEGER). datetimeevents.subject_id: Foreign key. Identifies the patient. (INTEGER). diagnoses_icd.subject_id: Foreign key. Identifies the patient. (INTEGER). drgcodes.subject_id: Foreign key. Identifies the patient. (INTEGER). icustays.subject_id: Foreign key. Identifies the patient. (INTEGER). inputevents_cv.subject_id: Foreign key. Identifies the patient. (INTEGER). inputevents_mv.subject_id: Foreign key. Identifies the patient. (INTEGER). labevents.subject_id: Foreign key. Identifies the patient. (INTEGER). microbiologyevents.subject_id: Foreign key. Identifies the patient. (INTEGER). noteevents.subject_id: Foreign key. Identifies the patient. (INTEGER). outputevents.subject_id: subject id (INTEGER). patients.subject_id: Primary key. Identifies the patient. (INTEGER). prescriptions.subject_id: Foreign key. Identifies the patient. (INTEGER). procedureevents_mv.subject_id: subject id (INTEGER). procedures_icd.subject_id: Foreign key. Identifies the patient. (INTEGER). services.subject_id: Foreign key. Identifies the patient. (INTEGER). transfers.subject_id: Foreign key. Identifies the patient. (INTEGER).",
+    "tables": [
+      "admissions",
+      "callout",
+      "chartevents",
+      "cptevents",
+      "datetimeevents",
+      "diagnoses_icd",
+      "drgcodes",
+      "icustays",
+      "inputevents_cv",
+      "inputevents_mv",
+      "labevents",
+      "microbiologyevents",
+      "noteevents",
+      "outputevents",
+      "patients",
+      "prescriptions",
+      "procedureevents_mv",
+      "procedures_icd",
+      "services",
+      "transfers"
+    ]
   },
   "hadm_id": {
-    "description": "Hospital admission identifier. Unique number assigned to each hospital admission or hospital stay. Used to track a patient's specific visit to the hospital. Also referred to as admission ID, admission number, hospitalization ID, or encounter ID. This identifier links all clinical events, procedures, diagnoses, medications, and observations that occurred during a single hospital admission. Multiple patients can have different admission IDs, and the same patient can have multiple admission IDs for different hospital visits.",
+    "description": " admissions.hadm_id: Primary key. Identifies the hospital stay. (INTEGER). callout.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). chartevents.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). cptevents.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). datetimeevents.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). diagnoses_icd.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). drgcodes.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). icustays.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). inputevents_cv.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). inputevents_mv.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). labevents.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). microbiologyevents.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). noteevents.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). outputevents.hadm_id: hadm id (INTEGER). prescriptions.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). procedureevents_mv.hadm_id: hadm id (INTEGER). procedures_icd.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). services.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER). transfers.hadm_id: Foreign key. Identifies the hospital stay. (INTEGER).",
     "tables": [
       "admissions",
-      "icustays",
-      "diagnoses_icd",
-      "procedures_icd",
-      "prescriptions",
-      "labevents",
+      "callout",
       "chartevents",
-      "outputevents",
+      "cptevents",
+      "datetimeevents",
+      "diagnoses_icd",
+      "drgcodes",
+      "icustays",
+      "inputevents_cv",
+      "inputevents_mv",
+      "labevents",
       "microbiologyevents",
+      "noteevents",
+      "outputevents",
+      "prescriptions",
+      "procedureevents_mv",
+      "procedures_icd",
+      "services",
       "transfers"
-    ], 
-    "data_type": "number"
+    ]
   },
   "admittime": {
-    "description": "Hospital admission timestamp. The exact date and time when a patient was admitted to or entered the hospital. Marks the beginning of a hospital stay or hospitalization episode. Used to calculate length of stay, time to events, and admission patterns. Also referred to as admission date, admission datetime, hospital entry time, or time of admission. Format is typically datetime with year, month, day, hour, and minute. Critical for temporal analysis and understanding the timeline of patient care.",
+    "description": " admissions.admittime: Time of admission to the hospital. (TIMESTAMP).",
     "tables": [
       "admissions"
-    ],
-    "data_type": "number"
+    ]
   },
   "dischtime": {
-    "description": "Hospital discharge timestamp. The exact date and time when a patient was discharged from or left the hospital. Marks the end of a hospital stay or hospitalization episode. Used to calculate length of stay, hospital utilization, and discharge patterns. Also referred to as discharge date, discharge datetime, hospital exit time, or time of discharge. Format is typically datetime with year, month, day, hour, and minute. Essential for determining total hospitalization duration and patient flow analysis.",
+    "description": " admissions.dischtime: Time of discharge from the hospital. (TIMESTAMP).",
     "tables": [
       "admissions"
-    ],
-    "data_type":"number"
+    ]
+  },
+  "deathtime": {
+    "description": " admissions.deathtime: Time of death. (TIMESTAMP).",
+    "tables": [
+      "admissions"
+    ]
   },
   "admission_type": {
-    "description": "Type or category of hospital admission. Indicates how urgent the admission was and whether it was planned or unplanned. Common values include EMERGENCY (urgent unplanned admission), ELECTIVE (scheduled planned admission), URGENT (semi-urgent admission), and NEWBORN (admission of newborn infant). Also referred to as admission category, admission classification, or admission urgency. Used to analyze admission patterns, resource utilization, and patient acuity. Emergency admissions typically indicate more acute illness compared to elective admissions.",
+    "description": " admissions.admission_type: Type of admission, for example emergency or elective. (VARCHAR(50)).",
     "tables": [
       "admissions"
-    ],
-    "data_type": "text"
+    ]
   },
   "admission_location": {
-    "description": "Location or source from which the patient was admitted to the hospital. Indicates where the patient came from immediately before hospital admission. Common values include EMERGENCY ROOM (admitted via ER), PHYSICIAN REFERRAL (referred by doctor), TRANSFER FROM HOSPITAL (from another hospital), TRANSFER FROM SKILLED NURSING FACILITY (from nursing home), CLINIC REFERRAL, and others. Also referred to as admission source, patient origin, admission point of entry, or referring location. Used to understand patient pathways and referral patterns.",
+    "description": " admissions.admission_location: Admission location. (VARCHAR(50)).",
     "tables": [
       "admissions"
-    ],
-    "data_type": "text"
+    ]
   },
   "discharge_location": {
-    "description": "Location or destination to which the patient was discharged from the hospital. Indicates where the patient went immediately after hospital discharge. Common values include HOME (discharged home), HOME HEALTH CARE (home with services), SKILLED NURSING FACILITY (nursing home), REHAB/DISTINCT PART HOSPITAL (rehabilitation facility), SHORT TERM HOSPITAL (transferred to another hospital), DEAD/EXPIRED (died in hospital), and others. Also referred to as discharge destination, discharge disposition, discharge to location, or post-discharge location. Used to analyze discharge planning, care transitions, and patient outcomes.",
+    "description": " admissions.discharge_location: Discharge location (VARCHAR(50)).",
     "tables": [
       "admissions"
-    ],
-    "data_type": "text"
+    ]
   },
   "insurance": {
-    "description": "Type of health insurance or payment method for the hospital admission. Indicates the primary payer or insurance coverage. Common values include MEDICARE (federal insurance for elderly/disabled), MEDICAID (state insurance for low-income), PRIVATE (commercial insurance), GOVERNMENT (other government insurance), and SELF PAY (uninsured). Also referred to as insurance type, payer, insurance provider, insurance coverage, or payment source. Used to analyze healthcare financing, access to care, and socioeconomic factors in patient care.",
+    "description": " admissions.insurance: Insurance type. (VARCHAR(255)).",
     "tables": [
       "admissions"
-    ],
-    "data_type": "text"
+    ]
   },
   "language": {
-    "description": "Primary language spoken by the patient. The language the patient uses for communication with healthcare providers. Common values include ENGLISH (English speaker), SPANISH (Spanish speaker), and various other languages. Also referred to as patient language, spoken language, preferred language, or language preference. Important for ensuring appropriate language services, interpreters, and culturally competent care. May affect health literacy and patient-provider communication.",
+    "description": " admissions.language: Language. (VARCHAR(10)).",
     "tables": [
       "admissions"
-    ],
-    "data_type": "text"
+    ]
+  },
+  "religion": {
+    "description": " admissions.religion: Religon. (VARCHAR(50)).",
+    "tables": [
+      "admissions"
+    ]
   },
   "marital_status": {
-    "description": "Marital or relationship status of the patient. Indicates whether the patient is married or in a relationship. Common values include MARRIED, SINGLE, DIVORCED, WIDOWED, SEPARATED, LIFE PARTNER, and UNKNOWN. Also referred to as marriage status, relationship status, or civil status. Used to understand social support systems, family dynamics, emergency contacts, and social determinants of health. May affect care planning and discharge disposition.",
+    "description": " admissions.marital_status: Marital status. (VARCHAR(50)).",
     "tables": [
       "admissions"
-    ],
-    "data_type": "text"
+    ]
   },
   "ethnicity": {
-    "description": "Ethnic background, race, or ancetexty of the patient. Self-reported or documented ethnic/racial category. Common values include WHITE, BLACK/AFRICAN AMERICAN, HISPANIC/LATINO, ASIAN, AMERICAN INDIAN/ALASKA NATIVE, NATIVE HAWAIIAN/PACIFIC ISLANDER, OTHER, and UNKNOWN. Also referred to as race, ethnic group, ethnicity category, racial background, or ancetexty. Important for studying health disparities, population health, and ensuring equitable care delivery. Used in epidemiological research and quality improvement initiatives.",
+    "description": " admissions.ethnicity: Ethnicity. (VARCHAR(200)).",
     "tables": [
       "admissions"
-    ],
-    "data_type": "text"
+    ]
   },
-  "age": {
-    "description": "The age column records how old a patient is, usually calculated from the patient’s date of birth relative to a defined event or timestamp (e.g., hospital admission, encounter date, or data extraction date)",
+  "edregtime": {
+    "description": " admissions.edregtime: edregtime (TIMESTAMP).",
     "tables": [
-        "admissions"
-    ],
-    "data_type": "number"
+      "admissions"
+    ]
   },
-  "icustay_id": {
-    "description": "Intensive Care Unit stay identifier. Unique number assigned to each ICU admission or ICU stay. Used to track a patient's specific visit to the ICU. Also referred to as ICU ID, ICU stay number, ICU encounter ID, or intensive care stay identifier. A single hospital admission (hadm_id) may have multiple ICU stays if the patient is transferred in and out of the ICU. Links all ICU-specific events, monitoring data, procedures, and treatments during one continuous ICU episode. Essential for analyzing critical care interventions and outcomes.",
+  "edouttime": {
+    "description": " admissions.edouttime: edouttime (TIMESTAMP).",
     "tables": [
-      "icustays",
-      "prescriptions",
-      "chartevents",
-      "inputevents_cv",
-      "outputevents",
+      "admissions"
+    ]
+  },
+  "diagnosis": {
+    "description": " admissions.diagnosis: Diagnosis. (VARCHAR(255)).",
+    "tables": [
+      "admissions"
+    ]
+  },
+  "hospital_expire_flag": {
+    "description": " admissions.hospital_expire_flag: hospital expire flag (SMALLINT).",
+    "tables": [
+      "admissions"
+    ]
+  },
+  "has_chartevents_data": {
+    "description": " admissions.has_chartevents_data: Hospital admission has at least one observation in the CHARTEVENTS table. (SMALLINT).",
+    "tables": [
+      "admissions"
+    ]
+  },
+  "submit_wardid": {
+    "description": " callout.submit_wardid: Identifies the ward where the call out request was submitted. (INTEGER).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "submit_careunit": {
+    "description": " callout.submit_careunit: If the ward where the call was submitted was an ICU, the ICU type is listed here. (VARCHAR(15)).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "curr_wardid": {
+    "description": " callout.curr_wardid: Identifies the ward where the patient is currently residing. (INTEGER). transfers.curr_wardid: Identifier for the current ward the patient is located in. (SMALLINT).",
+    "tables": [
+      "callout",
       "transfers"
-    ],
-     "data_type": "number"
+    ]
   },
-  "itemid": {
-    "description": "Item identifier for laboratory tests, vital signs, medications, procedures, or other clinical measurements. Unique numeric code that identifies a specific type of measurement, observation, or intervention in the database. Links to descriptive dictionaries (d_labitems, d_items) to get the name and details of what was measured or performed. Also referred to as lab item ID, measurement ID, parameter ID, observation ID, or test identifier. Different itemid values represent different types of data (e.g., itemid 50820 = pH, itemid 220045 = heart rate). Essential for identifying and querying specific clinical measurements, lab tests, vital signs, or interventions. Used across multiple tables to standardize clinical data representation.",
+  "curr_careunit": {
+    "description": " callout.curr_careunit: If the ward where the patient is currently residing is an ICU, the ICU type is listed here. (VARCHAR(15)). transfers.curr_careunit: Current careunit. (VARCHAR(20)).",
     "tables": [
-      "labevents",
-      "d_labitems",
+      "callout",
+      "transfers"
+    ]
+  },
+  "callout_wardid": {
+    "description": " callout.callout_wardid: Identifies the ward where the patient is to be discharged to. A value of 1 indicates the first available ward. A value of 0 indicates home. (INTEGER).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "callout_service": {
+    "description": " callout.callout_service: Identifies the service that the patient is called out to. (VARCHAR(10)).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "request_tele": {
+    "description": " callout.request_tele: Indicates if special precautions are required. (SMALLINT).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "request_resp": {
+    "description": " callout.request_resp: Indicates if special precautions are required. (SMALLINT).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "request_cdiff": {
+    "description": " callout.request_cdiff: Indicates if special precautions are required. (SMALLINT).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "request_mrsa": {
+    "description": " callout.request_mrsa: Indicates if special precautions are required. (SMALLINT).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "request_vre": {
+    "description": " callout.request_vre: Indicates if special precautions are required. (SMALLINT).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "callout_status": {
+    "description": " callout.callout_status: Current status of the call out request. (VARCHAR(20)).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "callout_outcome": {
+    "description": " callout.callout_outcome: The result of the call out request; either a cancellation or a discharge. (VARCHAR(20)).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "discharge_wardid": {
+    "description": " callout.discharge_wardid: The ward to which the patient was discharged. (INTEGER).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "acknowledge_status": {
+    "description": " callout.acknowledge_status: The status of the response to the call out request. (VARCHAR(20)).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "createtime": {
+    "description": " callout.createtime: Time at which the call out request was created. (TIMESTAMP).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "updatetime": {
+    "description": " callout.updatetime: Last time at which the call out request was updated. (TIMESTAMP).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "acknowledgetime": {
+    "description": " callout.acknowledgetime: Time at which the call out request was acknowledged. (TIMESTAMP).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "outcometime": {
+    "description": " callout.outcometime: Time at which the outcome (cancelled or discharged) occurred. (TIMESTAMP).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "firstreservationtime": {
+    "description": " callout.firstreservationtime: First time at which a ward was reserved for the call out request. (TIMESTAMP).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "currentreservationtime": {
+    "description": " callout.currentreservationtime: Latest time at which a ward was reserved for the call out request. (TIMESTAMP).",
+    "tables": [
+      "callout"
+    ]
+  },
+  "cgid": {
+    "description": " caregivers.cgid: Unique caregiver identifier. (INTEGER). chartevents.cgid: Foreign key. Identifies the caregiver. (INTEGER). datetimeevents.cgid: Foreign key. Identifies the caregiver. (INTEGER). inputevents_cv.cgid: Foreign key. Identifies the caregiver. (INTEGER). inputevents_mv.cgid: Foreign key. Identifies the caregiver. (INTEGER). noteevents.cgid: Foreign key. Identifies the caregiver. (INTEGER). outputevents.cgid: cgid (INTEGER). procedureevents_mv.cgid: cgid (INTEGER).",
+    "tables": [
+      "caregivers",
       "chartevents",
+      "datetimeevents",
       "inputevents_cv",
+      "inputevents_mv",
+      "noteevents",
       "outputevents",
-      "d_items"
-    ],
-     "data_type": "number"
-  },
-  "charttime": {
-    "description": "Timestamp when clinical data was charted, recorded, or collected. The exact date and time when a measurement was taken, observation was made, specimen was collected, or event was documented. Marks when the clinical data point occurred. Also referred to as measurement time, observation time, collection time, documentation time, test time, recording datetime, or event timestamp. Format is datetime with year, month, day, hour, and minute. Used to establish temporal relationships between clinical events, track disease progression over time, and analyze time-series data. Critical for understanding the chronological sequence of patient care and clinical status changes.",
-    "tables": [
-      "labevents",
-      "chartevents",
-      "inputevents_cv",
-      "outputevents",
-      "microbiologyevents",
-      "cost"
-    ],
-     "data_type": "time"
-  },
-  "valuenum": {
-    "description": "Numeric clinical measurement value. The laboratory test or vital sign result converted to or stored as a numeric value for quantitative analysis. Only populated when the measurement is numeric (not for text or qualitative results). Also referred to as numeric value, numerical result, quantitative value, numeric lab result, or measurement number. Examples: 7.35 (pH), 98.6 (temperature), 120 (heart rate), 140 (blood pressure), patients weight. Used for statistical analysis, trend analysis, abnormality detection, and mathematical calculations. Critical for quantitative research, plotting vital sign trends, and automated clinical decision support. NULL when result is non-numeric.",
-    "tables": [
-      "labevents",
-      "chartevents"
-    ],
-     "data_type": "number"
-  },
-  "valueuom": {
-    "description": "Unit of measurement for the clinical value. The specific unit in which the laboratory test or vital sign is measured or reported. Common units include mg/dL (milligrams per deciliter), mmol/L (millimoles per liter), mmHg (millimeters of mercury), bpm (beats per minute), Celsius, Fahrenheit, %, and many others. Also referred to as measurement unit, value unit, result unit, test unit, or unit of measure. Examples: 'mg/dL' for glucose, 'mmHg' for blood pressure, 'bpm' for heart rate. Essential for proper interpretation of numeric values and unit conversion. Used to ensure measurements are compared using consistent units.",
-    "tables": [
-      "labevents",
-      "chartevents",
-      "outputevents"
-    ],
-     "data_type": "text"
-  },
-  "event_type": {
-    "description": "Type of transfer or location change event. Categorizes the nature of the patient location change or care unit transition. Indicates what kind of movement or status change occurred. Common values include 'admit' (patient admitted to unit), 'transfer' (patient moved between units), 'discharge' (patient left unit or hospital), and potentially other event types depending on the system. Also referred to as transfer type, event category, movement type, location change type, or transfer classification. Used to distinguish between different types of patient movement events. Essential for accurately tracking patient flow, calculating length of stay in specific units, and understanding admission and discharge patterns. Critical for determining when patients enter and exit ICU versus floor units. Helps identify true ICU admissions versus intra-ICU transfers. Important for properly calculating unit-specific occupancy and turnover rates.",
-    "tables": [
-      "transfers",
-      "cost"
-    ],
-    "data_type":"text"
-  },
-  "EVENT_ID": {
-    "description": "This table stores individual clinical events recorded for patients, where each row represents a single observation, measurement, or action. The event_id uniquely identifies each event within the table and is linked to patients and encounters through identifiers such as subject_id and hadm_id",
-    "tables": [
-        "cost"
-    ],
-    "data_type": "number"
-  },
-  "icd9_code": {
-    "description": "ICD-9-CM code for diagnosis or procedure. International Classification of Diseases, 9th Revision, Clinical Modification code used to classify diseases, conditions, injuries, and medical procedures. Alphanumeric code (e.g., 410.71, V45.81, 99.04) standardized for billing, research, and epidemiology. Also referred to as diagnosis code, procedure code, ICD9 code, disease code, condition code, or medical classification code. Each code corresponds to a specific diagnosis or procedure with varying levels of detail. Used for analyzing disease prevalence, comorbidities, treatment patterns, and healthcare utilization. Links to d_icd_diagnoses or d_icd_procedures tables for code descriptions.",
-    "tables": [
-      "diagnoses_icd",
-      "d_icd_diagnoses",
-      "procedures_icd",
-      "d_icd_procedures"
-    ],
-     "data_type": "text"
-  },
-  "short_title": {
-    "description": "Abbreviated or shortened description of an ICD-9 diagnosis or procedure code. Brief clinical name or title for the medical condition or procedure, typically 20-30 characters. More concise than long_title but less detailed. Also referred to as short diagnosis name, abbreviated diagnosis, brief description, short procedure name, or diagnosis abbreviation. Examples: 'CHF NOS' for congestive heart failure, 'Acute MI NOS' for myocardial infarction, 'Mech vent <96 hrs' for mechanical ventilation. Used for space-contextained displays and quick reference. Provides human-readable interpretation of numeric ICD codes.",
-    "tables": [
-      "d_icd_diagnoses",
-      "d_icd_procedures"
-    ],
-     "data_type": "text"
-  },
-  "long_title": {
-    "description": "Complete or full description of an ICD-9 diagnosis or procedure code. Comprehensive clinical name or detailed title for the medical condition or procedure, providing maximum specificity. More detailed and explicit than short_title. Also referred to as full diagnosis description, complete diagnosis name, detailed diagnosis, long procedure name, or full code description. Examples: 'Congestive heart failure, unspecified', 'Acute myocardial infarction of other specified sites, initial episode of care', 'Continuous invasive mechanical ventilation for less than 96 consecutive hours'. Used for accurate clinical documentation and detailed disease classification. Provides complete human-readable interpretation of ICD codes.",
-    "tables": [
-      "d_icd_diagnoses",
-      "d_icd_procedures"
-    ],
-     "data_type": "text"
+      "procedureevents_mv"
+    ]
   },
   "label": {
-    "description": "Descriptive name or label for a laboratory test or clinical item. The human-readable name that identifies what measurement, test, or observation is being recorded. Also referred to as test name, item name, parameter name, measurement name, observation label, or test description. Examples: 'Glucose', 'White Blood Cells', 'Blood Pressure', 'Heart Rate', 'pH', 'Creatinine', 'Temperature'. Used to understand what clinical data is being captured without needing to look up item codes. Links itemid codes to clinically meaningful names. Essential for data interpretation and clinical relevance assessment.",
+    "description": " caregivers.label: Title of the caregiver, for example MD or RN. (VARCHAR(15)). d_items.label: Label identifying the item. (VARCHAR(200)). d_labitems.label: Label identifying the item. (VARCHAR(100)).",
     "tables": [
+      "caregivers",
+      "d_items",
+      "d_labitems"
+    ]
+  },
+  "description": {
+    "description": " caregivers.description: More detailed description of the caregiver, if available. (VARCHAR(30)). cptevents.description: Description of the Current Procedural Terminology, if available. (VARCHAR(200)). drgcodes.description: Description of the Diagnosis-Related Group (VARCHAR(255)). noteevents.description: A more detailed categorization for the note, sometimes entered by free-text. (VARCHAR(255)).",
+    "tables": [
+      "caregivers",
+      "cptevents",
+      "drgcodes",
+      "noteevents"
+    ]
+  },
+  "icustay_id": {
+    "description": " chartevents.icustay_id: Foreign key. Identifies the ICU stay. (INTEGER). datetimeevents.icustay_id: Foreign key. Identifies the ICU stay. (INTEGER). icustays.icustay_id: Primary key. Identifies the ICU stay. (INTEGER). inputevents_cv.icustay_id: Foreign key. Identifies the ICU stay. (INTEGER). inputevents_mv.icustay_id: Foreign key. Identifies the ICU stay. (INTEGER). outputevents.icustay_id: icustay id (INTEGER). prescriptions.icustay_id: Foreign key. Identifies the ICU stay. (INTEGER). procedureevents_mv.icustay_id: icustay id (INTEGER). transfers.icustay_id: Foreign key. Identifies the ICU stay. (INTEGER).",
+    "tables": [
+      "chartevents",
+      "datetimeevents",
+      "icustays",
+      "inputevents_cv",
+      "inputevents_mv",
+      "outputevents",
+      "prescriptions",
+      "procedureevents_mv",
+      "transfers"
+    ]
+  },
+  "itemid": {
+    "description": " chartevents.itemid: Foreign key. Identifies the charted item. (INTEGER). d_items.itemid: Primary key. Identifies the charted item. (INTEGER). d_labitems.itemid: Foreign key. Identifies the charted item. (INTEGER). datetimeevents.itemid: Foreign key. Identifies the charted item. (INTEGER). inputevents_cv.itemid: Foreign key. Identifies the charted item. (INTEGER). inputevents_mv.itemid: Foreign key. Identifies the charted item. (INTEGER). labevents.itemid: Foreign key. Identifies the charted item. (INTEGER). outputevents.itemid: itemid (INTEGER). procedureevents_mv.itemid: itemid (INTEGER).",
+    "tables": [
+      "chartevents",
+      "d_items",
       "d_labitems",
+      "datetimeevents",
+      "inputevents_cv",
+      "inputevents_mv",
+      "labevents",
+      "outputevents",
+      "procedureevents_mv"
+    ]
+  },
+  "charttime": {
+    "description": " chartevents.charttime: Time when the event occured. (TIMESTAMP). datetimeevents.charttime: Time when the event occured. (TIMESTAMP). inputevents_cv.charttime: Time of that the input was started or received. (TIMESTAMP). labevents.charttime: Time when the event occured. (TIMESTAMP). microbiologyevents.charttime: Time when the event occured, if available. (TIMESTAMP). noteevents.charttime: Date and time when the note was charted. Note that some notes (e.g. discharge summaries) do not have a time associated with them: these notes have NULL in this column. (TIMESTAMP). outputevents.charttime: charttime (TIMESTAMP).",
+    "tables": [
+      "chartevents",
+      "datetimeevents",
+      "inputevents_cv",
+      "labevents",
+      "microbiologyevents",
+      "noteevents",
+      "outputevents"
+    ]
+  },
+  "storetime": {
+    "description": " chartevents.storetime: Time when the event was recorded in the system. (TIMESTAMP). datetimeevents.storetime: Time when the event was recorded in the system. (TIMESTAMP). inputevents_cv.storetime: Time when the event was recorded in the system. (TIMESTAMP). inputevents_mv.storetime: Time when the event was recorded in the system. (TIMESTAMP). noteevents.storetime: storetime (TIMESTAMP). outputevents.storetime: storetime (TIMESTAMP). procedureevents_mv.storetime: storetime (TIMESTAMP).",
+    "tables": [
+      "chartevents",
+      "datetimeevents",
+      "inputevents_cv",
+      "inputevents_mv",
+      "noteevents",
+      "outputevents",
+      "procedureevents_mv"
+    ]
+  },
+  "value": {
+    "description": " chartevents.value: Value of the event as a text string. (VARCHAR(255)). datetimeevents.value: Value of the event as a text string. (TIMESTAMP). labevents.value: Value of the event as a text string. (VARCHAR(200)). outputevents.value: value (DOUBLE PRECISION). procedureevents_mv.value: value (DOUBLE PRECISION).",
+    "tables": [
+      "chartevents",
+      "datetimeevents",
+      "labevents",
+      "outputevents",
+      "procedureevents_mv"
+    ]
+  },
+  "valuenum": {
+    "description": " chartevents.valuenum: Value of the event as a number. (DOUBLE PRECISION). labevents.valuenum: Value of the event as a number. (DOUBLE PRECISION).",
+    "tables": [
+      "chartevents",
+      "labevents"
+    ]
+  },
+  "valueuom": {
+    "description": " chartevents.valueuom: Unit of measurement. (VARCHAR(50)). datetimeevents.valueuom: Unit of measurement. (VARCHAR(50)). labevents.valueuom: Unit of measurement. (VARCHAR(20)). outputevents.valueuom: valueuom (VARCHAR(30)). procedureevents_mv.valueuom: valueuom (VARCHAR(30)).",
+    "tables": [
+      "chartevents",
+      "datetimeevents",
+      "labevents",
+      "outputevents",
+      "procedureevents_mv"
+    ]
+  },
+  "warning": {
+    "description": " chartevents.warning: Flag to highlight that the value has triggered a warning. (INTEGER). datetimeevents.warning: Flag to highlight that the value has triggered a warning. (SMALLINT).",
+    "tables": [
+      "chartevents",
+      "datetimeevents"
+    ]
+  },
+  "error": {
+    "description": " chartevents.error: Flag to highlight an error with the event. (INTEGER). datetimeevents.error: Flag to highlight an error with the event. (SMALLINT).",
+    "tables": [
+      "chartevents",
+      "datetimeevents"
+    ]
+  },
+  "resultstatus": {
+    "description": " chartevents.resultstatus: Result status of lab data. (VARCHAR(50)). datetimeevents.resultstatus: Result status of lab data. (VARCHAR(50)).",
+    "tables": [
+      "chartevents",
+      "datetimeevents"
+    ]
+  },
+  "stopped": {
+    "description": " chartevents.stopped: Text string indicating the stopped status of an event (i.e. stopped, not stopped). (VARCHAR(50)). datetimeevents.stopped: Event was explicitly marked as stopped. Infrequently used by caregivers. (VARCHAR(50)). inputevents_cv.stopped: Event was explicitly marked as stopped. Infrequently used by caregivers. (VARCHAR(30)). outputevents.stopped: stopped (VARCHAR(30)).",
+    "tables": [
+      "chartevents",
+      "datetimeevents",
+      "inputevents_cv",
+      "outputevents"
+    ]
+  },
+  "costcenter": {
+    "description": " cptevents.costcenter: Center recording the code, for example the ICU or the respiratory unit. (VARCHAR(10)).",
+    "tables": [
+      "cptevents"
+    ]
+  },
+  "chartdate": {
+    "description": " cptevents.chartdate: Date when the event occured, if available. (TIMESTAMP). microbiologyevents.chartdate: Date when the event occured. (TIMESTAMP). noteevents.chartdate: Date when the note was charted. (TIMESTAMP).",
+    "tables": [
+      "cptevents",
+      "microbiologyevents",
+      "noteevents"
+    ]
+  },
+  "cpt_cd": {
+    "description": " cptevents.cpt_cd: Current Procedural Terminology code. (VARCHAR(10)).",
+    "tables": [
+      "cptevents"
+    ]
+  },
+  "cpt_number": {
+    "description": " cptevents.cpt_number: Numerical element of the Current Procedural Terminology code. (INTEGER).",
+    "tables": [
+      "cptevents"
+    ]
+  },
+  "cpt_suffix": {
+    "description": " cptevents.cpt_suffix: Text element of the Current Procedural Terminology, if any. Indicates code category. (VARCHAR(5)).",
+    "tables": [
+      "cptevents"
+    ]
+  },
+  "ticket_id_seq": {
+    "description": " cptevents.ticket_id_seq: Sequence number of the event, derived from the ticket ID. (INTEGER).",
+    "tables": [
+      "cptevents"
+    ]
+  },
+  "sectionheader": {
+    "description": " cptevents.sectionheader: High-level section of the Current Procedural Terminology code. (VARCHAR(50)). d_cpt.sectionheader: Section header. (VARCHAR(50)).",
+    "tables": [
+      "cptevents",
+      "d_cpt"
+    ]
+  },
+  "subsectionheader": {
+    "description": " cptevents.subsectionheader: Subsection of the Current Procedural Terminology code. (VARCHAR(255)). d_cpt.subsectionheader: Subsection header. (VARCHAR(255)).",
+    "tables": [
+      "cptevents",
+      "d_cpt"
+    ]
+  },
+  "category": {
+    "description": " d_cpt.category: Code category. (SMALLINT). d_items.category: Category of data which the concept falls under. (VARCHAR(100)). d_labitems.category: Category of item, for example chemistry or hematology. (VARCHAR(100)). noteevents.category: Category of the note, e.g. Discharge summary. (VARCHAR(50)).",
+    "tables": [
+      "d_cpt",
+      "d_items",
+      "d_labitems",
+      "noteevents"
+    ]
+  },
+  "sectionrange": {
+    "description": " d_cpt.sectionrange: Range of codes within the high-level section. (VARCHAR(100)).",
+    "tables": [
+      "d_cpt"
+    ]
+  },
+  "subsectionrange": {
+    "description": " d_cpt.subsectionrange: Range of codes within the subsection. (VARCHAR(100)).",
+    "tables": [
+      "d_cpt"
+    ]
+  },
+  "codesuffix": {
+    "description": " d_cpt.codesuffix: Text element of the Current Procedural Terminology, if any. (VARCHAR(5)).",
+    "tables": [
+      "d_cpt"
+    ]
+  },
+  "mincodeinsubsection": {
+    "description": " d_cpt.mincodeinsubsection: Minimum code within the subsection. (INTEGER).",
+    "tables": [
+      "d_cpt"
+    ]
+  },
+  "maxcodeinsubsection": {
+    "description": " d_cpt.maxcodeinsubsection: Maximum code within the subsection. (INTEGER).",
+    "tables": [
+      "d_cpt"
+    ]
+  },
+  "icd9_code": {
+    "description": " d_icd_diagnoses.icd9_code: ICD9 code - note that this is a fixed length character field, as whitespaces are important in uniquely identifying ICD-9 codes. (VARCHAR(10)). d_icd_procedures.icd9_code: ICD9 code - note that this is a fixed length character field, as whitespaces are important in uniquely identifying ICD-9 codes. (VARCHAR(10)). diagnoses_icd.icd9_code: ICD9 code for the diagnosis. (VARCHAR(10)). procedures_icd.icd9_code: ICD9 code associated with the procedure. (VARCHAR(10)).",
+    "tables": [
+      "d_icd_diagnoses",
+      "d_icd_procedures",
+      "diagnoses_icd",
+      "procedures_icd"
+    ]
+  },
+  "short_title": {
+    "description": " d_icd_diagnoses.short_title: Short title associated with the code. (VARCHAR(50)). d_icd_procedures.short_title: Short title associated with the code. (VARCHAR(50)).",
+    "tables": [
+      "d_icd_diagnoses",
+      "d_icd_procedures"
+    ]
+  },
+  "long_title": {
+    "description": " d_icd_diagnoses.long_title: Long title associated with the code. (VARCHAR(255)). d_icd_procedures.long_title: Long title associated with the code. (VARCHAR(255)).",
+    "tables": [
+      "d_icd_diagnoses",
+      "d_icd_procedures"
+    ]
+  },
+  "abbreviation": {
+    "description": " d_items.abbreviation: Abbreviation associated with the item. (VARCHAR(100)).",
+    "tables": [
       "d_items"
-    ],
-     "data_type": "text"
+    ]
+  },
+  "dbsource": {
+    "description": " d_items.dbsource: Source database of the item. (VARCHAR(20)). icustays.dbsource: Source database of the item. (VARCHAR(20)). transfers.dbsource: Source database of the item. (VARCHAR(20)).",
+    "tables": [
+      "d_items",
+      "icustays",
+      "transfers"
+    ]
   },
   "linksto": {
-    "description": "Database table linkage indicator for clinical items. Specifies which clinical data table(s) contain actual recorded values for this item. Indicates where to find the measurement data associated with this itemid. Common values include 'chartevents' (bedside charted data and vital signs), 'labevents' (laboratory test results), 'inputevents_cv'(medication and fluid inputs), 'outputevents' (patient outputs), 'procedureevents_mv' (procedures performed). Also referred to as links to table, data table reference, source table, or table connection. Used to determine which table to query when searching for specific measurements or clinical data. Essential for database navigation and understanding data architecture. Helps researchers efficiently locate relevant clinical information. Critical for properly joining tables and contextucting queries across the MIMIC database textucture.",
+    "description": " d_items.linksto: Table which contains data for the given ITEMID. (VARCHAR(50)).",
     "tables": [
       "d_items"
-    ],
-    "data_type":"text"
+    ]
+  },
+  "unitname": {
+    "description": " d_items.unitname: Unit associated with the item. (VARCHAR(100)).",
+    "tables": [
+      "d_items"
+    ]
+  },
+  "param_type": {
+    "description": " d_items.param_type: Type of item, for example solution or ingredient. (VARCHAR(30)).",
+    "tables": [
+      "d_items"
+    ]
+  },
+  "conceptid": {
+    "description": " d_items.conceptid: Identifier used to harmonize concepts identified by multiple ITEMIDs. CONCEPTIDs are planned but not yet implemented (all values are NULL). (INTEGER).",
+    "tables": [
+      "d_items"
+    ]
+  },
+  "fluid": {
+    "description": " d_labitems.fluid: Fluid associated with the item, for example blood or urine. (VARCHAR(100)).",
+    "tables": [
+      "d_labitems"
+    ]
+  },
+  "loinc_code": {
+    "description": " d_labitems.loinc_code: Logical Observation Identifiers Names and Codes (LOINC) mapped to the item, if available. (VARCHAR(100)).",
+    "tables": [
+      "d_labitems"
+    ]
+  },
+  "seq_num": {
+    "description": " diagnoses_icd.seq_num: Priority of the code. Sequence 1 is the primary code. (INTEGER). procedures_icd.seq_num: Lower procedure numbers occurred earlier. (INTEGER).",
+    "tables": [
+      "diagnoses_icd",
+      "procedures_icd"
+    ]
+  },
+  "drg_type": {
+    "description": " drgcodes.drg_type: Type of Diagnosis-Related Group, for example APR is All Patient Refined (VARCHAR(20)).",
+    "tables": [
+      "drgcodes"
+    ]
+  },
+  "drg_code": {
+    "description": " drgcodes.drg_code: Diagnosis-Related Group code (VARCHAR(20)).",
+    "tables": [
+      "drgcodes"
+    ]
+  },
+  "drg_severity": {
+    "description": " drgcodes.drg_severity: Relative severity, available for type APR only. (SMALLINT).",
+    "tables": [
+      "drgcodes"
+    ]
+  },
+  "drg_mortality": {
+    "description": " drgcodes.drg_mortality: Relative mortality, available for type APR only. (SMALLINT).",
+    "tables": [
+      "drgcodes"
+    ]
   },
   "first_careunit": {
-    "description": "First or initial ICU type where the patient was admitted. The specific type of intensive care unit where the patient first entered during this ICU stay. Common values include MICU (Medical ICU), SICU (Surgical ICU), CCU (Coronary Care Unit), CSRU (Cardiac Surgery Recovery Unit), TSICU (Trauma/Surgical ICU), NICU (Neonatal ICU), and others. Also referred to as initial ICU, starting ICU type, first ICU unit, or admission ICU. Used to analyze ICU admission patterns and specialty care needs. Patient may be transferred to different ICU types during their stay.",
+    "description": " icustays.first_careunit: First careunit associated with the ICU stay. (VARCHAR(20)).",
     "tables": [
       "icustays"
-    ],
-     "data_type": "text"
+    ]
   },
   "last_careunit": {
-    "description": "Last or final ICU type where the patient was located. The specific type of intensive care unit where the patient was situated at the end of their ICU stay before discharge or transfer out. Common values include MICU, SICU, CCU, CSRU, TSICU, NICU, and others. Also referred to as final ICU, ending ICU type, discharge ICU, or last ICU unit. Used to analyze ICU transfer patterns and patient care pathways. May differ from first_careunit if patient was transferred between ICU types during their critical care stay.",
+    "description": " icustays.last_careunit: Last careunit associated with the ICU stay. (VARCHAR(20)).",
     "tables": [
       "icustays"
-    ],
-     "data_type": "text"
+    ]
   },
   "first_wardid": {
-    "description": "first_wardid records the identifier of the hospital ward where the patient was initially admitted at the start of the hospital or ICU stay.",
+    "description": " icustays.first_wardid: Identifier for the first ward the patient was located in. (SMALLINT).",
     "tables": [
       "icustays"
-    ],
-    "data_type": "number"
+    ]
   },
   "last_wardid": {
-    "description": "last_wardid records the identifier of the hospital ward where the patient was located at the end of the hospital or ICU stay.",
+    "description": " icustays.last_wardid: Identifier for the last ward the patient is located in. (SMALLINT).",
     "tables": [
-        "icustays"
-    ],
-    "data_type": "number"
+      "icustays"
+    ]
   },
   "intime": {
-    "description": "ICU admission timestamp or ICU entry time. The exact date and time when a patient was admitted to or transferred into the intensive care unit. Marks the beginning of an ICU stay or critical care episode. Also referred to as ICU in time, ICU admission datetime, ICU entry timestamp, ICU start time, or time entered ICU. Used to calculate ICU length of stay, time to ICU admission from hospital admission, and ICU utilization patterns. Format is datetime with year, month, day, hour, and minute. Critical for analyzing timing of critical care interventions.",
+    "description": " icustays.intime: Time of admission to the ICU. (TIMESTAMP). transfers.intime: Time when the patient was transferred into the unit. (TIMESTAMP).",
     "tables": [
       "icustays",
       "transfers"
-    ],
-    "date_type": "time"
+    ]
   },
   "outtime": {
-    "description": "ICU discharge timestamp or ICU exit time. The exact date and time when a patient was discharged from or transferred out of the intensive care unit. Marks the end of an ICU stay or critical care episode. Also referred to as ICU out time, ICU discharge datetime, ICU exit timestamp, ICU end time, or time left ICU. Used to calculate ICU length of stay and ICU discharge patterns. Format is datetime with year, month, day, hour, and minute. Essential for determining ICU utilization and patient flow analysis.",
+    "description": " icustays.outtime: Time of discharge from the ICU. (TIMESTAMP). transfers.outtime: Time when the patient was transferred out of the unit. (TIMESTAMP).",
     "tables": [
       "icustays",
       "transfers"
-    ],
-     "data_type": "time"
+    ]
+  },
+  "los": {
+    "description": " icustays.los: Length of stay in the ICU in fractional days. (DOUBLE PRECISION). transfers.los: Length of stay in the unit in minutes. (DOUBLE PRECISION).",
+    "tables": [
+      "icustays",
+      "transfers"
+    ]
   },
   "amount": {
-    "description": "Total volume or quantity of fluid or medication administered. The cumulative amount of intravenous fluid, medication infusion, nutrition, or other input given to the patient during a specific time period. Also referred to as total volume, administered amount, infusion volume, given quantity, or intake amount. Measured in units specified by amountuom field. Examples: 1000 (mL of normal saline), 50 (mL of antibiotic infusion), 500 (mL of blood product). Used to calculate fluid balance, medication exposure, and hemodynamic management. Critical for intensive care monitoring and fluid resuscitation analysis. Represents total delivered volume, not rate of adminitextation.",
+    "description": " inputevents_cv.amount: Amount of the item administered to the patient. (DOUBLE PRECISION). inputevents_mv.amount: Amount of the item administered to the patient. (DOUBLE PRECISION).",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ]
+  },
+  "amountuom": {
+    "description": " inputevents_cv.amountuom: Unit of measurement for the amount. (VARCHAR(30)). inputevents_mv.amountuom: Unit of measurement for the amount. (VARCHAR(30)).",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ]
+  },
+  "rate": {
+    "description": " inputevents_cv.rate: Rate at which the item is being administered to the patient. (DOUBLE PRECISION). inputevents_mv.rate: Rate at which the item is being administered to the patient. (DOUBLE PRECISION).",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ]
+  },
+  "rateuom": {
+    "description": " inputevents_cv.rateuom: Unit of measurement for the rate. (VARCHAR(30)). inputevents_mv.rateuom: Unit of measurement for the rate. (VARCHAR(30)).",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ]
+  },
+  "orderid": {
+    "description": " inputevents_cv.orderid: Identifier linking items which are grouped in a solution. (INTEGER). inputevents_mv.orderid: Identifier linking items which are grouped in a solution. (INTEGER). procedureevents_mv.orderid: orderid (INTEGER).",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "linkorderid": {
+    "description": " inputevents_cv.linkorderid: Identifier linking orders across multiple administrations. LINKORDERID is always equal to the first occuring ORDERID of the series. (INTEGER). inputevents_mv.linkorderid: Identifier linking orders across multiple administrations. LINKORDERID is always equal to the first occuring ORDERID of the series. (INTEGER). procedureevents_mv.linkorderid: linkorderid (INTEGER).",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "newbottle": {
+    "description": " inputevents_cv.newbottle: Indicates when a new bottle of the solution was hung at the bedside. (INTEGER). outputevents.newbottle: newbottle (BPCHAR).",
+    "tables": [
+      "inputevents_cv",
+      "outputevents"
+    ]
+  },
+  "originalamount": {
+    "description": " inputevents_cv.originalamount: Amount of the item which was originally charted. (DOUBLE PRECISION). inputevents_mv.originalamount: Amount of the item which was originally charted. (DOUBLE PRECISION).",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ]
+  },
+  "originalamountuom": {
+    "description": " inputevents_cv.originalamountuom: Unit of measurement for the original amount. (VARCHAR(30)).",
     "tables": [
       "inputevents_cv"
-    ],
-     "data_type": "number"
+    ]
+  },
+  "originalroute": {
+    "description": " inputevents_cv.originalroute: Route of administration originally chosen for the item. (VARCHAR(30)).",
+    "tables": [
+      "inputevents_cv"
+    ]
+  },
+  "originalrate": {
+    "description": " inputevents_cv.originalrate: Rate of administration originally chosen for the item. (DOUBLE PRECISION). inputevents_mv.originalrate: Rate of administration originally chosen for the item. (DOUBLE PRECISION).",
+    "tables": [
+      "inputevents_cv",
+      "inputevents_mv"
+    ]
+  },
+  "originalrateuom": {
+    "description": " inputevents_cv.originalrateuom: Unit of measurement for the rate originally chosen. (VARCHAR(30)).",
+    "tables": [
+      "inputevents_cv"
+    ]
+  },
+  "originalsite": {
+    "description": " inputevents_cv.originalsite: Anatomical site for the original administration of the item. (VARCHAR(30)).",
+    "tables": [
+      "inputevents_cv"
+    ]
+  },
+  "starttime": {
+    "description": " inputevents_mv.starttime: Time when the event started. (TIMESTAMP). procedureevents_mv.starttime: starttime (TIMESTAMP).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "endtime": {
+    "description": " inputevents_mv.endtime: Time when the event ended. (TIMESTAMP). procedureevents_mv.endtime: endtime (TIMESTAMP).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "ordercategoryname": {
+    "description": " inputevents_mv.ordercategoryname: A group which the item corresponds to. (VARCHAR(100)). procedureevents_mv.ordercategoryname: ordercategoryname (VARCHAR(100)).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "secondaryordercategoryname": {
+    "description": " inputevents_mv.secondaryordercategoryname: A secondary group for those items with more than one grouping possible. (VARCHAR(100)). procedureevents_mv.secondaryordercategoryname: secondaryordercategoryname (VARCHAR(100)).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "ordercomponenttypedescription": {
+    "description": " inputevents_mv.ordercomponenttypedescription: The role of the item administered in the order. (VARCHAR(200)).",
+    "tables": [
+      "inputevents_mv"
+    ]
+  },
+  "ordercategorydescription": {
+    "description": " inputevents_mv.ordercategorydescription: The type of item administered. (VARCHAR(50)). procedureevents_mv.ordercategorydescription: ordercategorydescription (VARCHAR(50)).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "patientweight": {
+    "description": " inputevents_mv.patientweight: For drugs dosed by weight, the value of the weight used in the calculation. (DOUBLE PRECISION).",
+    "tables": [
+      "inputevents_mv"
+    ]
+  },
+  "totalamount": {
+    "description": " inputevents_mv.totalamount: The total amount in the solution for the given item. (DOUBLE PRECISION).",
+    "tables": [
+      "inputevents_mv"
+    ]
+  },
+  "totalamountuom": {
+    "description": " inputevents_mv.totalamountuom: Unit of measurement for the total amount in the solution. (VARCHAR(50)).",
+    "tables": [
+      "inputevents_mv"
+    ]
+  },
+  "isopenbag": {
+    "description": " inputevents_mv.isopenbag: Indicates whether the bag containing the solution is open. (SMALLINT). procedureevents_mv.isopenbag: isopenbag (SMALLINT).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "continueinnextdept": {
+    "description": " inputevents_mv.continueinnextdept: Indicates whether the item will be continued in the next department where the patient is transferred to. (SMALLINT). procedureevents_mv.continueinnextdept: continueinnextdept (SMALLINT).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "cancelreason": {
+    "description": " inputevents_mv.cancelreason: Reason for cancellation, if cancelled. (SMALLINT). procedureevents_mv.cancelreason: cancelreason (SMALLINT).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "statusdescription": {
+    "description": " inputevents_mv.statusdescription: The current status of the order: stopped, rewritten, running or cancelled. (VARCHAR(30)). procedureevents_mv.statusdescription: statusdescription (VARCHAR(30)).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "comments_editedby": {
+    "description": " inputevents_mv.comments_editedby: The title of the caregiver who edited the order. (VARCHAR(30)). procedureevents_mv.comments_editedby: comments editedby (VARCHAR(30)).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "comments_canceledby": {
+    "description": " inputevents_mv.comments_canceledby: The title of the caregiver who canceled the order. (VARCHAR(40)). procedureevents_mv.comments_canceledby: comments canceledby (VARCHAR(30)).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "comments_date": {
+    "description": " inputevents_mv.comments_date: Time at which the caregiver edited or cancelled the order. (TIMESTAMP). procedureevents_mv.comments_date: comments date (TIMESTAMP).",
+    "tables": [
+      "inputevents_mv",
+      "procedureevents_mv"
+    ]
+  },
+  "flag": {
+    "description": " labevents.flag: Flag indicating whether the lab test value is considered abnormal (null if the test was normal). (VARCHAR(20)).",
+    "tables": [
+      "labevents"
+    ]
+  },
+  "spec_itemid": {
+    "description": " microbiologyevents.spec_itemid: Foreign key. Identifies the specimen. (INTEGER).",
+    "tables": [
+      "microbiologyevents"
+    ]
   },
   "spec_type_desc": {
-    "description": "Specimen type description for microbiology cultures. Detailed description of the biological specimen or sample that was collected and sent for microbiological culture and sensitivity testing. Common values include BLOOD CULTURE (blood), URINE (urine culture), SPUTUM (respiratory secretions), WOUND (wound culture), CSF (cerebrospinal fluid), CATHETER TIP (central line tip), STOOL (stool culture), and many others. Also referred to as specimen type, culture specimen, sample type, specimen description, or material cultured. Indicates the body site or source from which the culture was obtained. Critical for interpreting culture results as different organisms are expected in different specimen types. Used to analyze infection sources, contamination rates, and specimen collection practices. Essential for infectious disease research and antimicrobial stewardship.",
+    "description": " microbiologyevents.spec_type_desc: Description of the specimen. (VARCHAR(100)).",
     "tables": [
       "microbiologyevents"
-    ],
-    "data_type":"text"
+    ]
+  },
+  "org_itemid": {
+    "description": " microbiologyevents.org_itemid: Foreign key. Identifies the organism. (INTEGER).",
+    "tables": [
+      "microbiologyevents"
+    ]
   },
   "org_name": {
-    "description": "Organism name identified in microbiology culture. The specific microorganism, bacteria, fungus, or pathogen that grew or was isolated from the culture specimen. Common examples include Staphylococcus aureus, Escherichia coli, Pseudomonas aeruginosa, Candida albicans, Enterococcus species, Klebsiella pneumoniae, and many others. Also referred to as microorganism, bacteria name, pathogen, culture result, what grew, isolated organism, or cultured microbe. NULL or negative if no organism was isolated (no growth). Used to identify infectious agents, track nosocomial infections, analyze resistance patterns, and guide antimicrobial therapy. Critical for infection control surveillance, epidemiological studies, and understanding microbial ecology in healthcare settings. May include multiple organisms if polymicrobial infection.",
+    "description": " microbiologyevents.org_name: Name of the organism. (VARCHAR(100)).",
     "tables": [
       "microbiologyevents"
-    ],
-    "data_type":"text"
+    ]
+  },
+  "isolate_num": {
+    "description": " microbiologyevents.isolate_num: Isolate number associated with the test. (SMALLINT).",
+    "tables": [
+      "microbiologyevents"
+    ]
+  },
+  "ab_itemid": {
+    "description": " microbiologyevents.ab_itemid: Foreign key. Identifies the antibody. (INTEGER).",
+    "tables": [
+      "microbiologyevents"
+    ]
+  },
+  "ab_name": {
+    "description": " microbiologyevents.ab_name: Name of the antibody used. (VARCHAR(30)).",
+    "tables": [
+      "microbiologyevents"
+    ]
+  },
+  "dilution_text": {
+    "description": " microbiologyevents.dilution_text: The dilution amount tested for and the comparison which was made against it (e.g. <=4). (VARCHAR(10)).",
+    "tables": [
+      "microbiologyevents"
+    ]
+  },
+  "dilution_comparison": {
+    "description": " microbiologyevents.dilution_comparison: The comparison component of DILUTION_TEXT: either <= (less than or equal), = (equal), or >= (greater than or equal), or null when not available. (VARCHAR(20)).",
+    "tables": [
+      "microbiologyevents"
+    ]
+  },
+  "dilution_value": {
+    "description": " microbiologyevents.dilution_value: The value component of DILUTION_TEXT: must be a floating point number. (DOUBLE PRECISION).",
+    "tables": [
+      "microbiologyevents"
+    ]
+  },
+  "interpretation": {
+    "description": " microbiologyevents.interpretation: Interpretation of the test. (VARCHAR(5)).",
+    "tables": [
+      "microbiologyevents"
+    ]
+  },
+  "iserror": {
+    "description": " noteevents.iserror: Flag to highlight an error with the note. (BPCHAR). outputevents.iserror: iserror (INTEGER).",
+    "tables": [
+      "noteevents",
+      "outputevents"
+    ]
+  },
+  "text": {
+    "description": " noteevents.text: Content of the note. (TEXT).",
+    "tables": [
+      "noteevents"
+    ]
   },
   "gender": {
-    "description": "Biological sex or gender of the patient. Indicates whether the patient is male or female. Values are typically M (male) or F (female). Also referred to as patient sex, biological sex, patient gender, or sex assigned at birth. Important demographic variable for clinical decision-making, as many diseases, treatments, and normal laboratory values differ by gender. Used in epidemiological studies and for appropriate gender-specific care protocols.",
+    "description": " patients.gender: Gender. (VARCHAR(5)).",
     "tables": [
       "patients"
-    ],
-    "data_type": "text"
+    ]
   },
   "dob": {
-    "description": "Patient's date of birth. The date when the patient was born, used to calculate age. Format is typically date with year, month, and day. Also referred to as birth date, birthday, date born, DOB, or birth datetime. Essential for determining patient age at time of admission, age-related risk factors, and age-appropriate care protocols. Note: in MIMIC-III, dates may be shifted for privacy protection while maintaining temporal relationships. Critical for pediatric vs adult vs geriatric care decisions.",
+    "description": " patients.dob: Date of birth. (TIMESTAMP).",
     "tables": [
       "patients"
-    ],
-    "data_type": "time"
+    ]
   },
   "dod": {
-    "description": "Patient's date of death. The date when the patient died or expired, either during hospitalization or after discharge. Format is typically date with year, month, and day. NULL or empty if the patient has not died or death date is unknown. Also referred to as death date, date of death, date died, mortality date, DOD, or expiration date. Used for survival analysis, long-term mortality studies, and outcome assessment beyond hospital discharge. May include deaths occurring outside the hospital.",
+    "description": " patients.dod: Date of death. Null if the patient was alive at least 90 days post hospital discharge. (TIMESTAMP).",
     "tables": [
       "patients"
-    ],
-    "data_type": "time"
+    ]
+  },
+  "dod_hosp": {
+    "description": " patients.dod_hosp: Date of death recorded in the hospital records. (TIMESTAMP).",
+    "tables": [
+      "patients"
+    ]
+  },
+  "dod_ssn": {
+    "description": " patients.dod_ssn: Date of death recorded in the social security records. (TIMESTAMP).",
+    "tables": [
+      "patients"
+    ]
+  },
+  "expire_flag": {
+    "description": " patients.expire_flag: Flag indicating that the patient has died. (INTEGER).",
+    "tables": [
+      "patients"
+    ]
   },
   "startdate": {
-    "description": "Medication or prescription start date. The date when a medication was initiated, prescribed, or ordered for the patient. Marks the beginning of drug therapy or treatment period. Format is typically date with year, month, and day. Also referred to as prescription start date, medication start date, drug start date, therapy start date, or order start date. Used to analyze medication timing, duration of therapy, and temporal relationships with clinical events. May differ from actual adminitextation time. Critical for understanding pharmacotherapy timelines and drug exposure periods.",
+    "description": " prescriptions.startdate: Date when the prescription started. (TIMESTAMP).",
     "tables": [
       "prescriptions"
-    ],
-     "data_type": "time"
+    ]
   },
   "enddate": {
-    "description": "Medication or prescription end date. The date when a medication was discontinued, stopped, or the prescription ended. Marks the end of drug therapy or treatment period. Format is typically date with year, month, and day. Also referred to as prescription end date, medication stop date, drug discontinuation date, therapy end date, or order end date. May be NULL if medication is ongoing or end date not documented. Used to calculate medication duration, analyze discontinuation patterns, and understand total drug exposure. Critical for medication reconciliation and understanding complete pharmacotherapy course.",
+    "description": " prescriptions.enddate: Date when the prescription ended. (TIMESTAMP).",
     "tables": [
       "prescriptions"
-    ],
-     "data_type": "time"
+    ]
+  },
+  "drug_type": {
+    "description": " prescriptions.drug_type: Type of drug. (VARCHAR(100)).",
+    "tables": [
+      "prescriptions"
+    ]
   },
   "drug": {
-    "description": "Name of the medication, pharmaceutical agent, or drug prescribed to the patient. The specific medication identifier as recorded in the prescription system. May include brand names, generic names, or formulation details. Also referred to as medication name, drug name, pharmaceutical name, prescribed drug, therapeutic agent, or medication identifier. Examples: 'Aspirin', 'Metoprolol', 'Insulin', 'Vancomycin', 'Normal Saline'. Used for pharmacotherapy analysis, drug utilization studies, medication safety research, and polypharmacy assessment. May vary in specificity and formatting across different records.",
+    "description": " prescriptions.drug: Name of the drug. (VARCHAR(100)).",
     "tables": [
       "prescriptions"
-    ],
-     "data_type": "text"
+    ]
+  },
+  "drug_name_poe": {
+    "description": " prescriptions.drug_name_poe: Name of the drug on the Provider Order Entry interface. (VARCHAR(100)).",
+    "tables": [
+      "prescriptions"
+    ]
+  },
+  "drug_name_generic": {
+    "description": " prescriptions.drug_name_generic: Generic drug name. (VARCHAR(100)).",
+    "tables": [
+      "prescriptions"
+    ]
+  },
+  "formulary_drug_cd": {
+    "description": " prescriptions.formulary_drug_cd: Formulary drug code. (VARCHAR(120)).",
+    "tables": [
+      "prescriptions"
+    ]
+  },
+  "gsn": {
+    "description": " prescriptions.gsn: Generic Sequence Number. (VARCHAR(200)).",
+    "tables": [
+      "prescriptions"
+    ]
+  },
+  "ndc": {
+    "description": " prescriptions.ndc: National Drug Code. (VARCHAR(120)).",
+    "tables": [
+      "prescriptions"
+    ]
+  },
+  "prod_strength": {
+    "description": " prescriptions.prod_strength: Strength of the drug (product). (VARCHAR(120)).",
+    "tables": [
+      "prescriptions"
+    ]
   },
   "dose_val_rx": {
-    "description": "Prescribed dose amount or dosage value of the medication. The numeric quantity or textength of the drug ordered for adminitextation. Represents how much of the medication should be given. Also referred to as dose amount, dosage value, drug quantity, medication dose, prescribed amount, or dose textength. Examples: 5, 10, 100, 500 (corresponding to units in dose_unit_rx). Used with dose_unit_rx to specify complete dosing information (e.g., '5 mg', '100 units'). Critical for pharmacotherapy analysis, dosing appropriateness studies, and medication safety research.",
+    "description": " prescriptions.dose_val_rx: Dose of the drug prescribed. (VARCHAR(120)).",
     "tables": [
       "prescriptions"
-    ],
-     "data_type": "text"
+    ]
   },
   "dose_unit_rx": {
-    "description": "Unit of measurement for the prescribed medication dose. The specific unit in which the drug dosage is measured. Common values include mg (milligrams), mcg (micrograms), mL (milliliters), units, grams, mg/kg, and others. Also referred to as dosage unit, dose measurement unit, medication unit, drug amount unit, or unit of adminitextation. Used together with dose_val_rx to form complete dosing information. Examples: 'mg' for milligrams, 'units' for insulin, 'mL' for liquid medications. Essential for accurate medication adminitextation and dose calculations. Critical for pharmacological analysis and dose-response studies.",
+    "description": " prescriptions.dose_unit_rx: Unit of measurement associated with the dose. (VARCHAR(120)).",
     "tables": [
       "prescriptions"
-    ],
-     "data_type": "text"
+    ]
+  },
+  "form_val_disp": {
+    "description": " prescriptions.form_val_disp: Amount of the formulation dispensed. (VARCHAR(120)).",
+    "tables": [
+      "prescriptions"
+    ]
+  },
+  "form_unit_disp": {
+    "description": " prescriptions.form_unit_disp: Unit of measurement associated with the formulation. (VARCHAR(120)).",
+    "tables": [
+      "prescriptions"
+    ]
   },
   "route": {
-    "description": "Route or method of medication adminitextation. Indicates how the drug is given to or taken by the patient. Common values include PO (by mouth/oral), IV (intravenous), IM (intramuscular), SC/SubQ (subcutaneous), NG (nasogatextic tube), GT (gatextostomy tube), INH (inhaled), TOP (topical), and others. Also referred to as adminitextation route, route of adminitextation, delivery method, medication pathway, or how drug is given. Critical for pharmacokinetics as absorption, onset, and bioavailability vary by route. Used for medication safety analysis and adminitextation practice studies.",
+    "description": " prescriptions.route: Route of administration, for example intravenous or oral. (VARCHAR(120)).",
     "tables": [
       "prescriptions"
-    ],
-     "data_type": "text"
+    ]
   },
-  "careunit": {
-    "description":"careunit indicates the specific clinical unit responsible for the patient’s care at a given time, such as an ICU or step-down unit. It provides contextual information about the level and type of care delivered during an encounter or stay.",
+  "location": {
+    "description": " procedureevents_mv.location: location (VARCHAR(30)).",
     "tables": [
-        "transfers"
-    ],
-    "data_type": "text"
+      "procedureevents_mv"
+    ]
   },
-  "wardid": {
-    "description":"ward_id identifies the hospital ward or unit where a patient is located at a given time. It is used to track patient movement and care location within the hospital and can be linked to ward metadata for organizational or operational analysis.",
+  "locationcategory": {
+    "description": " procedureevents_mv.locationcategory: locationcategory (VARCHAR(30)).",
     "tables": [
-        "transfers"
-    ],
-    "data_type": "number"
+      "procedureevents_mv"
+    ]
   },
-  "cost": {
-    "description": "The cost/price of an event or admission the patients need to pay",
+  "transfertime": {
+    "description": " services.transfertime: Time when the transfer occured. (TIMESTAMP).",
     "tables": [
-      "cost"
-    ],
-    "data_type": "number"
+      "services"
+    ]
+  },
+  "prev_service": {
+    "description": " services.prev_service: Previous service type. (VARCHAR(20)).",
+    "tables": [
+      "services"
+    ]
+  },
+  "curr_service": {
+    "description": " services.curr_service: Current service type. (VARCHAR(20)).",
+    "tables": [
+      "services"
+    ]
+  },
+  "eventtype": {
+    "description": " transfers.eventtype: Type of event, for example admission or transfer. (VARCHAR(20)).",
+    "tables": [
+      "transfers"
+    ]
+  },
+  "prev_careunit": {
+    "description": " transfers.prev_careunit: Previous careunit. (VARCHAR(20)).",
+    "tables": [
+      "transfers"
+    ]
+  },
+  "prev_wardid": {
+    "description": " transfers.prev_wardid: Identifier for the previous ward the patient was located in. (SMALLINT).",
+    "tables": [
+      "transfers"
+    ]
   }
 }

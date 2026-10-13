@@ -1,0 +1,1607 @@
+{
+  "multi_table_questions": 71,
+  "matched_prompts": 71,
+  "all_sql_tables_provided": 59,
+  "missing_tables": 12,
+  "missing_columns_with_tables_present": 0,
+  "invalid_schema_columns": 0,
+  "join_conditions_absent_from_prompt": 6,
+  "context_supports_all_checked_references": 59,
+  "explicit_join_queries": 58,
+  "correct_with_supported_context": 34,
+  "limitations": "Initial RAG prompt compared with final SQL (possibly repaired); multi-table SQL may use subqueries without JOIN. Counts overlap. Derived/correlated references and non-equality joins are not fully checked. This does not prove the generated query is the required correct query.",
+  "details": [
+    {
+      "id": "20",
+      "matched": true,
+      "timestamp": "2026-10-13T10:48:19.162296+07:00",
+      "question": "what were the results of the patient 's last lactate for his leukocytosis",
+      "sql_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "microbiologyevents",
+        "patients"
+      ],
+      "missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": false
+    },
+    {
+      "id": "1002",
+      "matched": true,
+      "timestamp": "2026-10-13T10:48:19.190456+07:00",
+      "question": "what causes the patient's death?",
+      "sql_tables": [
+        "noteevents",
+        "patients"
+      ],
+      "context_tables": [
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "56",
+      "matched": true,
+      "timestamp": "2026-10-13T10:48:38.878892+07:00",
+      "question": "can i search my patient 's medical record for gastrointestinal bleed in the past",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": false
+    },
+    {
+      "id": "1017",
+      "matched": true,
+      "timestamp": "2026-10-13T10:48:41.663011+07:00",
+      "question": "when did the patient evaluated for an acute worsening in dyspnea",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "1021",
+      "matched": true,
+      "timestamp": "2026-10-13T10:48:44.647794+07:00",
+      "question": "When did his father die",
+      "sql_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 2,
+      "correct": false
+    },
+    {
+      "id": "72",
+      "matched": true,
+      "timestamp": "2026-10-13T10:49:00.797275+07:00",
+      "question": "has she ever had acute renal failure before",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "noteevents"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": true
+    },
+    {
+      "id": "88",
+      "matched": true,
+      "timestamp": "2026-10-13T10:49:17.848376+07:00",
+      "question": "can i search my patient 's medical record for hypotensive in the past",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "1038",
+      "matched": true,
+      "timestamp": "2026-10-13T10:49:39.348798+07:00",
+      "question": "does the patient currently have acute ischemic",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "icustays",
+        "noteevents"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "120",
+      "matched": true,
+      "timestamp": "2026-10-13T10:49:40.984054+07:00",
+      "question": "does new c - spine fracture on c - spine exist",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "133",
+      "matched": true,
+      "timestamp": "2026-10-13T10:49:52.431660+07:00",
+      "question": "does the patient have a current pain",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "148",
+      "matched": true,
+      "timestamp": "2026-10-13T10:50:02.653721+07:00",
+      "question": "can i search my patient 's medical record for lymphadenopathy in mediastinum in the past",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "1053",
+      "matched": true,
+      "timestamp": "2026-10-13T10:50:05.255209+07:00",
+      "question": "does the patient have pulm lymphadenopathy",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "1054",
+      "matched": true,
+      "timestamp": "2026-10-13T10:50:04.641419+07:00",
+      "question": "what is the effect of central cord syndrome",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "1066",
+      "matched": true,
+      "timestamp": "2026-10-13T10:50:16.689015+07:00",
+      "question": "How long was the incision made",
+      "sql_tables": [
+        "d_items",
+        "procedureevents_mv"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "missing_tables": [
+        "d_items",
+        "procedureevents_mv"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": false
+    },
+    {
+      "id": "193",
+      "matched": true,
+      "timestamp": "2026-10-13T10:50:46.143107+07:00",
+      "question": "can i search my patient 's medical record for chronic pancreatitis in the past",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": true
+    },
+    {
+      "id": "206",
+      "matched": true,
+      "timestamp": "2026-10-13T10:51:00.551548+07:00",
+      "question": "can i search my patient 's medical record for hyperlipidemia in the past",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "219",
+      "matched": true,
+      "timestamp": "2026-10-13T10:51:10.645373+07:00",
+      "question": "can i search my patient 's medical record for esophagitis in the past",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": true
+    },
+    {
+      "id": "237",
+      "matched": true,
+      "timestamp": "2026-10-13T10:51:26.513725+07:00",
+      "question": "what lab results does he have that are pertinent to significant irritation of the esophagus diagnosis",
+      "sql_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "drgcodes",
+        "microbiologyevents"
+      ],
+      "missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [
+        "labevents.itemid = d_labitems.itemid"
+      ],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "300",
+      "matched": true,
+      "timestamp": "2026-10-13T10:53:02.745926+07:00",
+      "question": "how was prolonged seizure managed",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "354",
+      "matched": true,
+      "timestamp": "2026-10-13T10:53:39.105054+07:00",
+      "question": "when was the patient evaluated for chronic renal insufficiency and what are baseline creatinine results",
+      "sql_tables": [
+        "d_labitems",
+        "labevents",
+        "noteevents"
+      ],
+      "context_tables": [
+        "prescriptions"
+      ],
+      "missing_tables": [
+        "d_labitems",
+        "labevents",
+        "noteevents"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [
+        "labevents.hadm_id = noteevents.hadm_id",
+        "labevents.subject_id = noteevents.subject_id"
+      ],
+      "checked_join_conditions": 2,
+      "correct": false
+    },
+    {
+      "id": "372",
+      "matched": true,
+      "timestamp": "2026-10-13T10:53:35.409475+07:00",
+      "question": "does the patient have a current pseudomonal pneumonia",
+      "sql_tables": [
+        "admissions",
+        "microbiologyevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "microbiologyevents",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "394",
+      "matched": true,
+      "timestamp": "2026-10-13T10:53:47.665794+07:00",
+      "question": "what were the results of the patient 's last left ventricular systolic for his hyperdynamic",
+      "sql_tables": [
+        "d_labitems",
+        "icustays",
+        "inputevents_mv"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "inputevents_mv",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [
+        "d_labitems"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "402",
+      "matched": true,
+      "timestamp": "2026-10-13T10:54:22.300738+07:00",
+      "question": "does the patient have a current hypernatremia",
+      "sql_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions",
+        "transfers"
+      ],
+      "missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": true
+    },
+    {
+      "id": "404",
+      "matched": true,
+      "timestamp": "2026-10-13T10:53:54.843871+07:00",
+      "question": "what were the results of the patient 's last ct c - spine for his fracture",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "413",
+      "matched": true,
+      "timestamp": "2026-10-13T10:54:00.674329+07:00",
+      "question": "what lab results does he have that are pertinent to altered mental status diagnosis",
+      "sql_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "context_tables": [
+        "noteevents"
+      ],
+      "missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [
+        "labevents.itemid = d_labitems.itemid"
+      ],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "1135",
+      "matched": true,
+      "timestamp": "2026-10-13T10:54:50.515976+07:00",
+      "question": "does the doctor recommend using too much narcotics for pain",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "423",
+      "matched": true,
+      "timestamp": "2026-10-13T10:54:14.087173+07:00",
+      "question": "has the patient been diagnosed with any pulmonary infectious disease",
+      "sql_tables": [
+        "admissions",
+        "microbiologyevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "microbiologyevents",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "429",
+      "matched": true,
+      "timestamp": "2026-10-13T10:55:07.154734+07:00",
+      "question": "what is his highest ck for his rhabdomylosis",
+      "sql_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "d_cpt",
+        "drgcodes",
+        "noteevents",
+        "prescriptions"
+      ],
+      "missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [
+        "labevents.itemid = d_labitems.itemid"
+      ],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "431",
+      "matched": true,
+      "timestamp": "2026-10-13T10:54:23.947600+07:00",
+      "question": "how was his neck hematoma",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "434",
+      "matched": true,
+      "timestamp": "2026-10-13T10:54:26.533555+07:00",
+      "question": "what was his wbc count in the ed",
+      "sql_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [
+        "labevents.itemid = d_labitems.itemid"
+      ],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "437",
+      "matched": true,
+      "timestamp": "2026-10-13T10:55:12.820840+07:00",
+      "question": "what was the treatment for his atrial fibrillation",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "drgcodes",
+        "icustays",
+        "noteevents",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "497",
+      "matched": true,
+      "timestamp": "2026-10-13T10:55:51.681669+07:00",
+      "question": "has the patient ever had any metabolic alkalosis",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "1146",
+      "matched": true,
+      "timestamp": "2026-10-13T10:55:45.222297+07:00",
+      "question": "When did his father die",
+      "sql_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 2,
+      "correct": false
+    },
+    {
+      "id": "1148",
+      "matched": true,
+      "timestamp": "2026-10-13T10:55:53.716239+07:00",
+      "question": "is the patient hypothermic",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "543",
+      "matched": true,
+      "timestamp": "2026-10-13T10:56:13.036875+07:00",
+      "question": "has she ever had new right posterior rib fracture before",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": false
+    },
+    {
+      "id": "1165",
+      "matched": true,
+      "timestamp": "2026-10-13T10:56:19.345141+07:00",
+      "question": "is the patient's hct stable",
+      "sql_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "transfers"
+      ],
+      "missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": false
+    },
+    {
+      "id": "599",
+      "matched": true,
+      "timestamp": "2026-10-13T10:56:52.568236+07:00",
+      "question": "has the patient ever had any chf",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "transfers"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": true
+    },
+    {
+      "id": "1199",
+      "matched": true,
+      "timestamp": "2026-10-13T10:58:37.152372+07:00",
+      "question": "what methods have been tried to manage her supratherapeutic inr",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "1203",
+      "matched": true,
+      "timestamp": "2026-10-13T10:58:35.323313+07:00",
+      "question": "can i search my patient 's medical record for siadh in the past",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "transfers"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": true
+    },
+    {
+      "id": "690",
+      "matched": true,
+      "timestamp": "2026-10-13T10:58:55.307791+07:00",
+      "question": "can i search my patient 's medical record for hypertension in the past",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": false
+    },
+    {
+      "id": "691",
+      "matched": true,
+      "timestamp": "2026-10-13T10:58:38.473927+07:00",
+      "question": "does the patient have a current sensation defect",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "710",
+      "matched": true,
+      "timestamp": "2026-10-13T10:58:55.114476+07:00",
+      "question": "does the patient have a current erythema of neck and back",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "715",
+      "matched": true,
+      "timestamp": "2026-10-13T10:59:24.284442+07:00",
+      "question": "what was the indication for my patient 's tylenol",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "1218",
+      "matched": true,
+      "timestamp": "2026-10-13T10:59:24.442292+07:00",
+      "question": "what is the patient's current pstatus of cardiomediastinal silhoutte",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "751",
+      "matched": true,
+      "timestamp": "2026-10-13T10:59:35.679225+07:00",
+      "question": "does the patient have a current sick interaction",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "noteevents"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "1222",
+      "matched": true,
+      "timestamp": "2026-10-13T10:59:36.396342+07:00",
+      "question": "does the patient have any sick contacts",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "noteevents"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "780",
+      "matched": true,
+      "timestamp": "2026-10-13T10:59:54.642092+07:00",
+      "question": "does the patient has any past depressed free wall contractility .",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "785",
+      "matched": true,
+      "timestamp": "2026-10-13T10:59:59.040842+07:00",
+      "question": "has this patient ever had mild pulmonary edema",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "789",
+      "matched": true,
+      "timestamp": "2026-10-13T11:00:00.431744+07:00",
+      "question": "does the patient have a current mild pulmonary edema",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "799",
+      "matched": true,
+      "timestamp": "2026-10-13T11:00:14.648278+07:00",
+      "question": "how was the patient 's diastolic dysfunction diagnosed",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "832",
+      "matched": true,
+      "timestamp": "2026-10-13T11:00:52.967032+07:00",
+      "question": "does the patient have a current m / r / g",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "858",
+      "matched": true,
+      "timestamp": "2026-10-13T11:01:29.870531+07:00",
+      "question": "was the patient ever seen for oxygen desaturations overnight",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "864",
+      "matched": true,
+      "timestamp": "2026-10-13T11:01:55.626313+07:00",
+      "question": "what treatment has the patient had for his severe hypoglycemia",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "869",
+      "matched": true,
+      "timestamp": "2026-10-13T11:02:36.354832+07:00",
+      "question": "what treatment has the patient had for his constipation",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "1255",
+      "matched": true,
+      "timestamp": "2026-10-13T11:01:52.358789+07:00",
+      "question": "When did her grandmother have an mi",
+      "sql_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "context_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 2,
+      "correct": true
+    },
+    {
+      "id": "880",
+      "matched": true,
+      "timestamp": "2026-10-13T11:02:35.166643+07:00",
+      "question": "what treatments for severe hyperglycemia has this patient tried",
+      "sql_tables": [
+        "admissions",
+        "prescriptions"
+      ],
+      "context_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "1261",
+      "matched": true,
+      "timestamp": "2026-10-13T11:02:35.434603+07:00",
+      "question": "how was the patient 's severe hypoglycemia treated",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "881",
+      "matched": true,
+      "timestamp": "2026-10-13T11:02:36.354832+07:00",
+      "question": "what treatment has the patient had for his constipation",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "1269",
+      "matched": true,
+      "timestamp": "2026-10-13T11:03:08.390100+07:00",
+      "question": "did the patient become acutely hypotensive to sbp of 80s-90s",
+      "sql_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 0,
+      "correct": false
+    },
+    {
+      "id": "1280",
+      "matched": true,
+      "timestamp": "2026-10-13T11:03:35.070196+07:00",
+      "question": "when was neurology service consulted",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "1282",
+      "matched": true,
+      "timestamp": "2026-10-13T11:03:23.559791+07:00",
+      "question": "What time did he become acutely hypotensive",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "transfers"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "1284",
+      "matched": true,
+      "timestamp": "2026-10-13T11:03:24.809278+07:00",
+      "question": "when did his heart rate go up to 90s",
+      "sql_tables": [
+        "chartevents",
+        "d_items",
+        "patients"
+      ],
+      "context_tables": [
+        "cptevents",
+        "d_cpt",
+        "patients"
+      ],
+      "missing_tables": [
+        "chartevents",
+        "d_items"
+      ],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [
+        "chartevents.subject_id = patients.subject_id"
+      ],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "1293",
+      "matched": true,
+      "timestamp": "2026-10-13T11:03:44.843813+07:00",
+      "question": "what caused his mother's death",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "934",
+      "matched": true,
+      "timestamp": "2026-10-13T11:04:03.718286+07:00",
+      "question": "what treatments for colonic mass has this patient tried",
+      "sql_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 2,
+      "correct": true
+    },
+    {
+      "id": "1297",
+      "matched": true,
+      "timestamp": "2026-10-13T11:03:56.664335+07:00",
+      "question": "What led to his father's death",
+      "sql_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 2,
+      "correct": true
+    },
+    {
+      "id": "952",
+      "matched": true,
+      "timestamp": "2026-10-13T11:04:33.377660+07:00",
+      "question": "how was the patient 's diabetes mellitus diagnosed",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": true
+    },
+    {
+      "id": "956",
+      "matched": true,
+      "timestamp": "2026-10-13T11:05:00.529400+07:00",
+      "question": "how was the patient 's diabetes mellitus treated",
+      "sql_tables": [
+        "admissions",
+        "patients",
+        "prescriptions"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 2,
+      "correct": false
+    },
+    {
+      "id": "958",
+      "matched": true,
+      "timestamp": "2026-10-13T11:04:46.361388+07:00",
+      "question": "any prior bilious return testing",
+      "sql_tables": [
+        "admissions",
+        "microbiologyevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "inputevents_cv",
+        "microbiologyevents",
+        "noteevents"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "962",
+      "matched": true,
+      "timestamp": "2026-10-13T11:05:08.134589+07:00",
+      "question": "what was the indication for the most recent endoscopy",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "965",
+      "matched": true,
+      "timestamp": "2026-10-13T11:04:52.143989+07:00",
+      "question": "what were the results of the patient's last pelvic ultrasound for his thickened endometrium",
+      "sql_tables": [
+        "admissions",
+        "noteevents"
+      ],
+      "context_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 1,
+      "correct": false
+    },
+    {
+      "id": "970",
+      "matched": true,
+      "timestamp": "2026-10-13T11:05:16.766299+07:00",
+      "question": "what was given to the patient after surgery",
+      "sql_tables": [
+        "admissions",
+        "patients",
+        "prescriptions"
+      ],
+      "context_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ],
+      "missing_tables": [],
+      "missing_columns": [],
+      "unknown_columns": [],
+      "missing_join_conditions": [],
+      "checked_join_conditions": 2,
+      "correct": true
+    }
+  ]
+}

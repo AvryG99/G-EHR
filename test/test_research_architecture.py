@@ -77,7 +77,7 @@ class ClinicalContextTests(unittest.TestCase):
     def test_graph_returns_join_keys(self):
         paths = describe_join_paths({"patients", "diagnoses_icd"})
         keys = [join["key"] for join in paths[0]["joins"]]
-        self.assertEqual(keys, ["hadm_id", "subject_id"])
+        self.assertEqual(keys, ["subject_id"])
 
 
 if __name__ == "__main__":

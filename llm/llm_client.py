@@ -16,6 +16,11 @@ class LLMClient:
         self.model = model
         self.temperature = temperature
         self.client = OpenAI(api_key=api_key)
+        self.reset_usage()
+
+    def reset_usage(self) -> None:
+        self.usage = {"prompt_tokens": 0, "completion_tokens": 0,
+                      "total_tokens": 0, "llm_calls": 0}
 
     def generate(self, prompt: str) -> str:
         response = self.client.chat.completions.create(
@@ -25,5 +30,12 @@ class LLMClient:
             ],
             temperature=self.temperature,
         )
+        usage = getattr(response, "usage", None)
+        prompt = int(getattr(usage, "prompt_tokens", 0) or 0)
+        completion = int(getattr(usage, "completion_tokens", 0) or 0)
+        self.usage["prompt_tokens"] += prompt
+        self.usage["completion_tokens"] += completion
+        self.usage["total_tokens"] += prompt + completion
+        self.usage["llm_calls"] += 1
         return response.choices[0].message.content.strip()
 

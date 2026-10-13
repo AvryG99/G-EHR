@@ -1,0 +1,1576 @@
+[
+  {
+    "db_id": "mimic_iii",
+    "question": "what is lidocaine 5% ointment's way of ingesting it?",
+    "template": "what is the intake method of lidocaine 5% ointment?",
+    "query": "select distinct prescriptions.route from prescriptions where prescriptions.drug = 'lidocaine 5% ointment'",
+    "value": {
+      "drug_name": "lidocaine 5% ointment"
+    },
+    "q_tag": "what is the intake method of {drug_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the intake method of {drug_name}?",
+    "department": "['nursing']",
+    "importance": "medium",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "0d92a1f6eab9515735f242f4",
+    "answer": [
+      "tp"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the method for ingestion of danazol?",
+    "template": "what is the intake method of danazol?",
+    "query": "select distinct prescriptions.route from prescriptions where prescriptions.drug = 'danazol'",
+    "value": {
+      "drug_name": "danazol"
+    },
+    "q_tag": "what is the intake method of {drug_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the intake method of {drug_name}?",
+    "department": "['nursing']",
+    "importance": "medium",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "769483cfab48dda44872f850",
+    "answer": [
+      "po"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how is naproxen taken?",
+    "template": "what is the intake method of naproxen?",
+    "query": "select distinct prescriptions.route from prescriptions where prescriptions.drug = 'naproxen'",
+    "value": {
+      "drug_name": "naproxen"
+    },
+    "q_tag": "what is the intake method of {drug_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the intake method of {drug_name}?",
+    "department": "['nursing']",
+    "importance": "medium",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "2c0a11eb8e5e719bb20eb271",
+    "answer": [
+      "po"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is phenytoin infatab's intake method?",
+    "template": "what is the intake method of phenytoin infatab?",
+    "query": "select distinct prescriptions.route from prescriptions where prescriptions.drug = 'phenytoin infatab'",
+    "value": {
+      "drug_name": "phenytoin infatab"
+    },
+    "q_tag": "what is the intake method of {drug_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the intake method of {drug_name}?",
+    "department": "['nursing']",
+    "importance": "medium",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "3799354c7a881b01105356a7",
+    "answer": [
+      "po/ng",
+      "ng"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what are the genders of patient 7107?",
+    "template": "what is the gender of patient 7107?",
+    "query": "select patients.gender from patients where patients.subject_id = 7107",
+    "value": {
+      "patient_id": 7107
+    },
+    "q_tag": "what is the gender of patient {patient_id}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the gender of patient {patient_id}?",
+    "department": "['nursing']",
+    "importance": "low",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "e862af8849ff1c02705da36d",
+    "answer": [
+      "f"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "tell me patient 76005's sex.",
+    "template": "what is the gender of patient 76005?",
+    "query": "select patients.gender from patients where patients.subject_id = 76005",
+    "value": {
+      "patient_id": 76005
+    },
+    "q_tag": "what is the gender of patient {patient_id}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the gender of patient {patient_id}?",
+    "department": "['nursing']",
+    "importance": "low",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "cd051a61ff6129f7a8fca20b",
+    "answer": [
+      "m"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "tell me the gender of 27038?",
+    "template": "what is the gender of patient 27038?",
+    "query": "select patients.gender from patients where patients.subject_id = 27038",
+    "value": {
+      "patient_id": 27038
+    },
+    "q_tag": "what is the gender of patient {patient_id}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the gender of patient {patient_id}?",
+    "department": "['nursing']",
+    "importance": "low",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "3ee83f6be50294b39e219f81",
+    "answer": [
+      "f"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is patient 1114's gender?",
+    "template": "what is the gender of patient 1114?",
+    "query": "select patients.gender from patients where patients.subject_id = 1114",
+    "value": {
+      "patient_id": 1114
+    },
+    "q_tag": "what is the gender of patient {patient_id}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the gender of patient {patient_id}?",
+    "department": "['nursing']",
+    "importance": "low",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "da04bd0d32301e95cba6d32d",
+    "answer": [
+      "m"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the date of patient 65467's birth?",
+    "template": "what is the date of birth of patient 65467?",
+    "query": "select patients.dob from patients where patients.subject_id = 65467",
+    "value": {
+      "patient_id": 65467
+    },
+    "q_tag": "what is the date of birth of patient {patient_id}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the date of birth of patient {patient_id}?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "e3d7d9da5f8ad50dfdbb891d",
+    "answer": [
+      "2066-01-08 00:00:00"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "whats the date of birth of patient 31854?",
+    "template": "what is the date of birth of patient 31854?",
+    "query": "select patients.dob from patients where patients.subject_id = 31854",
+    "value": {
+      "patient_id": 31854
+    },
+    "q_tag": "what is the date of birth of patient {patient_id}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the date of birth of patient {patient_id}?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "720f9af3fa526ec80231a0b5",
+    "answer": [
+      "2035-12-15 00:00:00"
+    ],
+    "difficulty_level": 1
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "cost of ziprasidone and how much does it cost.",
+    "template": "what is the cost of a drug named ziprasidone?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'prescriptions' and cost.event_id in ( select prescriptions.row_id from prescriptions where prescriptions.drug = 'ziprasidone' )",
+    "value": {
+      "drug_name": "ziprasidone"
+    },
+    "q_tag": "what is the cost of a drug named {drug_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a drug named {drug_name}?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "c27061a940b856a6824ecbf6",
+    "answer": [
+      "11.12"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how much does it cost for emtricitabine-tenofovir?",
+    "template": "what is the cost of a drug named emtricitabine-tenofovir?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'prescriptions' and cost.event_id in ( select prescriptions.row_id from prescriptions where prescriptions.drug = 'emtricitabine-tenofovir' )",
+    "value": {
+      "drug_name": "emtricitabine-tenofovir"
+    },
+    "q_tag": "what is the cost of a drug named {drug_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a drug named {drug_name}?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "40739534aac68f4da9e75c0a",
+    "answer": [
+      "11.58"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the cost of neo*iv*parenteral nutrition?",
+    "template": "what is the cost of a drug named neo*iv*parenteral nutrition?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'prescriptions' and cost.event_id in ( select prescriptions.row_id from prescriptions where prescriptions.drug = 'neo*iv*parenteral nutrition' )",
+    "value": {
+      "drug_name": "neo*iv*parenteral nutrition"
+    },
+    "q_tag": "what is the cost of a drug named {drug_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a drug named {drug_name}?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "555249afe5d321b85e6f6756",
+    "answer": [
+      "12.25"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how much does nicardipine hcl iv cost?",
+    "template": "what is the cost of a drug named nicardipine hcl iv?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'prescriptions' and cost.event_id in ( select prescriptions.row_id from prescriptions where prescriptions.drug = 'nicardipine hcl iv' )",
+    "value": {
+      "drug_name": "nicardipine hcl iv"
+    },
+    "q_tag": "what is the cost of a drug named {drug_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a drug named {drug_name}?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "47797402cfa2a3d41a5c96b4",
+    "answer": [
+      "10.88"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what ac embl internl jug vein does it stand for?",
+    "template": "what does ac embl internl jug vein stand for?",
+    "query": "select d_icd_diagnoses.long_title from d_icd_diagnoses where d_icd_diagnoses.short_title = 'ac embl internl jug vein' union select d_icd_procedures.long_title from d_icd_procedures where d_icd_procedures.short_title = 'ac embl internl jug vein'",
+    "value": {
+      "abbreviation": "ac embl internl jug vein",
+      "diagnosis_name": "ac embl internl jug vein",
+      "procedure_name": "ac embl internl jug vein"
+    },
+    "q_tag": "what does {abbreviation} stand for?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what does {abbreviation} stand for?",
+    "department": "['nursing']",
+    "importance": "medium",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "5b4a882e229bcd3e1136d11d",
+    "answer": [
+      "acute venous embolism and thrombosis of internal jugular veins"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what exactly does the periph t cell lym abdom stand for?",
+    "template": "what does periph t cell lym abdom stand for?",
+    "query": "select d_icd_diagnoses.long_title from d_icd_diagnoses where d_icd_diagnoses.short_title = 'periph t cell lym abdom' union select d_icd_procedures.long_title from d_icd_procedures where d_icd_procedures.short_title = 'periph t cell lym abdom'",
+    "value": {
+      "abbreviation": "periph t cell lym abdom",
+      "diagnosis_name": "periph t cell lym abdom",
+      "procedure_name": "periph t cell lym abdom"
+    },
+    "q_tag": "what does {abbreviation} stand for?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what does {abbreviation} stand for?",
+    "department": "['nursing']",
+    "importance": "medium",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "1b9eec387695cdf573490a84",
+    "answer": [
+      "peripheral t cell lymphoma, intra-abdominal lymph nodes"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is acq cardiac septl defect short for?",
+    "template": "what does acq cardiac septl defect stand for?",
+    "query": "select d_icd_diagnoses.long_title from d_icd_diagnoses where d_icd_diagnoses.short_title = 'acq cardiac septl defect' union select d_icd_procedures.long_title from d_icd_procedures where d_icd_procedures.short_title = 'acq cardiac septl defect'",
+    "value": {
+      "abbreviation": "acq cardiac septl defect",
+      "diagnosis_name": "acq cardiac septl defect",
+      "procedure_name": "acq cardiac septl defect"
+    },
+    "q_tag": "what does {abbreviation} stand for?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what does {abbreviation} stand for?",
+    "department": "['nursing']",
+    "importance": "medium",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "889cc7817da4513eec3b43ba",
+    "answer": [
+      "acquired cardiac septal defect"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the unabbreviated version of screening for diphtheria?",
+    "template": "what does screening for diphtheria stand for?",
+    "query": "select d_icd_diagnoses.long_title from d_icd_diagnoses where d_icd_diagnoses.short_title = 'screening for diphtheria' union select d_icd_procedures.long_title from d_icd_procedures where d_icd_procedures.short_title = 'screening for diphtheria'",
+    "value": {
+      "abbreviation": "screening for diphtheria",
+      "diagnosis_name": "screening for diphtheria",
+      "procedure_name": "screening for diphtheria"
+    },
+    "q_tag": "what does {abbreviation} stand for?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what does {abbreviation} stand for?",
+    "department": "['nursing']",
+    "importance": "medium",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "ec0679ef8146861f4d842425",
+    "answer": [
+      "screening examination for diphtheria"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how many days have passed since patient 12775 was admitted to icu?",
+    "template": "how many days have passed since patient 12775 was admitted to the icu currently?",
+    "query": "select 1 * ( strftime('%j',current_time) - strftime('%j',icustays.intime) ) from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 12775 ) and icustays.outtime is null",
+    "value": {
+      "patient_id": 12775
+    },
+    "q_tag": "how many [unit_count] have passed since patient {patient_id} was admitted to the icu currently?",
+    "t_tag": [
+      "rel-icu-cur",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "days"
+    ],
+    "tag": "how many [unit_count:days] have passed since patient {patient_id} was admitted to the icu currently?",
+    "department": "['-']",
+    "importance": "n/a",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "bc83755b522d4164776814c1",
+    "answer": [
+      "-357"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how many hours have passed since patient 31854 was admitted to the intensive care unit?",
+    "template": "how many hours have passed since patient 31854 was admitted to the icu currently?",
+    "query": "select 24 * ( strftime('%j',current_time) - strftime('%j',icustays.intime) ) from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 31854 ) and icustays.outtime is null",
+    "value": {
+      "patient_id": 31854
+    },
+    "q_tag": "how many [unit_count] have passed since patient {patient_id} was admitted to the icu currently?",
+    "t_tag": [
+      "rel-icu-cur",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "hours"
+    ],
+    "tag": "how many [unit_count:hours] have passed since patient {patient_id} was admitted to the icu currently?",
+    "department": "['-']",
+    "importance": "n/a",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "3743a34b15837aa5ce9f3733",
+    "answer": [
+      "-8640"
+    ],
+    "difficulty_level": 2
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the price of a procedure named soft tissue division nec?",
+    "template": "what is the cost of a procedure named soft tissue division nec?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'procedures_icd' and cost.event_id in ( select procedures_icd.row_id from procedures_icd where procedures_icd.icd9_code = ( select d_icd_procedures.icd9_code from d_icd_procedures where d_icd_procedures.short_title = 'soft tissue division nec' ) )",
+    "value": {
+      "procedure_name": "soft tissue division nec"
+    },
+    "q_tag": "what is the cost of a procedure named {procedure_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a procedure named {procedure_name}?",
+    "department": "['insurance_review']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "bd6cea419bc5f0a4edf72bb9",
+    "answer": [
+      "10.75"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how much to pay for a dressing of wound nec?",
+    "template": "what is the cost of a procedure named dressing of wound nec?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'procedures_icd' and cost.event_id in ( select procedures_icd.row_id from procedures_icd where procedures_icd.icd9_code = ( select d_icd_procedures.icd9_code from d_icd_procedures where d_icd_procedures.short_title = 'dressing of wound nec' ) )",
+    "value": {
+      "procedure_name": "dressing of wound nec"
+    },
+    "q_tag": "what is the cost of a procedure named {procedure_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a procedure named {procedure_name}?",
+    "department": "['insurance_review']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "fa2f8acd008402e42c567872",
+    "answer": [
+      "9.96"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is heart vessel op nec's price?",
+    "template": "what is the cost of a procedure named heart vessel op nec?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'procedures_icd' and cost.event_id in ( select procedures_icd.row_id from procedures_icd where procedures_icd.icd9_code = ( select d_icd_procedures.icd9_code from d_icd_procedures where d_icd_procedures.short_title = 'heart vessel op nec' ) )",
+    "value": {
+      "procedure_name": "heart vessel op nec"
+    },
+    "q_tag": "what is the cost of a procedure named {procedure_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a procedure named {procedure_name}?",
+    "department": "['insurance_review']",
+    "importance": "high",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "0cce2cb5569991d85d71388a",
+    "answer": [
+      "12.38"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the price for loc exc bone lesion nec?",
+    "template": "what is the cost of a procedure named loc exc bone lesion nec?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'procedures_icd' and cost.event_id in ( select procedures_icd.row_id from procedures_icd where procedures_icd.icd9_code = ( select d_icd_procedures.icd9_code from d_icd_procedures where d_icd_procedures.short_title = 'loc exc bone lesion nec' ) )",
+    "value": {
+      "procedure_name": "loc exc bone lesion nec"
+    },
+    "q_tag": "what is the cost of a procedure named {procedure_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a procedure named {procedure_name}?",
+    "department": "['insurance_review']",
+    "importance": "high",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "35b8d922e1c37640d591922f",
+    "answer": [
+      "11.25"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the cost of a laboratory test of calculated total co2?",
+    "template": "what is the cost of a calculated total co2 lab test?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'labevents' and cost.event_id in ( select labevents.row_id from labevents where labevents.itemid in ( select d_labitems.itemid from d_labitems where d_labitems.label = 'calculated total co2' ) )",
+    "value": {
+      "lab_name": "calculated total co2"
+    },
+    "q_tag": "what is the cost of a {lab_name} lab test?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a {lab_name} lab test?",
+    "department": "['physician', 'nursing']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "03849ee05a7094a88f3bb777",
+    "answer": [
+      "7.05"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how much does a 24 hr creatinine lab test cost?",
+    "template": "what is the cost of a 24 hr creatinine lab test?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'labevents' and cost.event_id in ( select labevents.row_id from labevents where labevents.itemid in ( select d_labitems.itemid from d_labitems where d_labitems.label = '24 hr creatinine' ) )",
+    "value": {
+      "lab_name": "24 hr creatinine"
+    },
+    "q_tag": "what is the cost of a {lab_name} lab test?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a {lab_name} lab test?",
+    "department": "['physician', 'nursing']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "5467c3e41d9a639686bbfea5",
+    "answer": [
+      "7.24"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the cost of hematocrit, pleural?",
+    "template": "what is the cost of a hematocrit, pleural lab test?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'labevents' and cost.event_id in ( select labevents.row_id from labevents where labevents.itemid in ( select d_labitems.itemid from d_labitems where d_labitems.label = 'hematocrit, pleural' ) )",
+    "value": {
+      "lab_name": "hematocrit, pleural"
+    },
+    "q_tag": "what is the cost of a {lab_name} lab test?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a {lab_name} lab test?",
+    "department": "['physician', 'nursing']",
+    "importance": "high",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "47980a8d18f9ef7e5b6a13fc",
+    "answer": [
+      "7.33"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the price for amylase, body fluid?",
+    "template": "what is the cost of a amylase, body fluid lab test?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'labevents' and cost.event_id in ( select labevents.row_id from labevents where labevents.itemid in ( select d_labitems.itemid from d_labitems where d_labitems.label = 'amylase, body fluid' ) )",
+    "value": {
+      "lab_name": "amylase, body fluid"
+    },
+    "q_tag": "what is the cost of a {lab_name} lab test?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of a {lab_name} lab test?",
+    "department": "['physician', 'nursing']",
+    "importance": "high",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "553ea63e3ae5daa161d98ab0",
+    "answer": [
+      "8.89"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is 'diagnosis cost' of abn liver function study?",
+    "template": "what is the cost of diagnosing abn liver function study?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'diagnoses_icd' and cost.event_id in ( select diagnoses_icd.row_id from diagnoses_icd where diagnoses_icd.icd9_code = ( select d_icd_diagnoses.icd9_code from d_icd_diagnoses where d_icd_diagnoses.short_title = 'abn liver function study' ) )",
+    "value": {
+      "diagnosis_name": "abn liver function study"
+    },
+    "q_tag": "what is the cost of diagnosing {diagnosis_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of diagnosing {diagnosis_name}?",
+    "department": "['-']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "cc4ea59fb99ea8f7eba91505",
+    "answer": [
+      "3.91"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how much does it cost to receive a diagnosis for leukocytosis nos?",
+    "template": "what is the cost of diagnosing leukocytosis nos?",
+    "query": "select distinct cost.cost from cost where cost.event_type = 'diagnoses_icd' and cost.event_id in ( select diagnoses_icd.row_id from diagnoses_icd where diagnoses_icd.icd9_code = ( select d_icd_diagnoses.icd9_code from d_icd_diagnoses where d_icd_diagnoses.short_title = 'leukocytosis nos' ) )",
+    "value": {
+      "diagnosis_name": "leukocytosis nos"
+    },
+    "q_tag": "what is the cost of diagnosing {diagnosis_name}?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the cost of diagnosing {diagnosis_name}?",
+    "department": "['-']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "7eb056c9546022c994817482",
+    "answer": [
+      "4.54"
+    ],
+    "difficulty_level": 3
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the weight variation of patient 2518 last measured on the current hospital visit compared to the first value measured on the current hospital visit?",
+    "template": "what is the change in the weight of patient 2518 from the last value measured on the current hospital visit compared to the first value measured on the current hospital visit?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 2518 and admissions.dischtime is null ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime desc limit 1 ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 2518 and admissions.dischtime is null ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 )",
+    "value": {
+      "patient_id": 2518
+    },
+    "q_tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "rel-hosp-cur",
+      "rel-hosp-cur",
+      "",
+      "exact-first",
+      "exact-last"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2:exact-last] value measured [time_filter_global2:rel-hosp-cur] compared to the [time_filter_exact1:exact-first] value measured [time_filter_global1:rel-hosp-cur]?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "259f31d3d284515e3b821f84",
+    "answer": [
+      "27.400001525878878"
+    ],
+    "difficulty_level": 4
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what difference is there in patient 20166's weight second measured on the first hospital visit compared to the first value measured on the first hospital visit?",
+    "template": "what is the change in the weight of patient 20166 from the second value measured on the first hospital visit compared to the first value measured on the first hospital visit?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 20166 and admissions.dischtime is not null order by admissions.admittime asc limit 1 ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 offset 1 ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 20166 and admissions.dischtime is not null order by admissions.admittime asc limit 1 ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 )",
+    "value": {
+      "patient_id": 20166
+    },
+    "q_tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "rel-hosp-first",
+      "rel-hosp-first",
+      "",
+      "exact-first",
+      "exact-second"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2:exact-second] value measured [time_filter_global2:rel-hosp-first] compared to the [time_filter_exact1:exact-first] value measured [time_filter_global1:rel-hosp-first]?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "506c2d1276c5ea6dd7370a7f",
+    "answer": [
+      "-0.40000152587890625"
+    ],
+    "difficulty_level": 4
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is patient 13806's weight difference from the last value measured on the last hospital visit compared to the first value measured on the last hospital visit?",
+    "template": "what is the change in the weight of patient 13806 from the last value measured on the last hospital visit compared to the first value measured on the last hospital visit?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 13806 and admissions.dischtime is not null order by admissions.admittime desc limit 1 ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime desc limit 1 ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 13806 and admissions.dischtime is not null order by admissions.admittime desc limit 1 ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 )",
+    "value": {
+      "patient_id": 13806
+    },
+    "q_tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "rel-hosp-last",
+      "rel-hosp-last",
+      "",
+      "exact-first",
+      "exact-last"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2:exact-last] value measured [time_filter_global2:rel-hosp-last] compared to the [time_filter_exact1:exact-first] value measured [time_filter_global1:rel-hosp-last]?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "3b28f16af6609dcd90643be6",
+    "answer": [
+      "2.0"
+    ],
+    "difficulty_level": 4
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the weight difference of patient 30826 from the last value measured on the current hospital visit compared to the first value measured on the current hospital visit?",
+    "template": "what is the change in the weight of patient 30826 from the last value measured on the current hospital visit compared to the first value measured on the current hospital visit?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 30826 and admissions.dischtime is null ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime desc limit 1 ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 30826 and admissions.dischtime is null ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 )",
+    "value": {
+      "patient_id": 30826
+    },
+    "q_tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "rel-hosp-cur",
+      "rel-hosp-cur",
+      "",
+      "exact-first",
+      "exact-last"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2:exact-last] value measured [time_filter_global2:rel-hosp-cur] compared to the [time_filter_exact1:exact-first] value measured [time_filter_global1:rel-hosp-cur]?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "6ba76307ad83b81dab171438",
+    "answer": [
+      "43.29999542236327"
+    ],
+    "difficulty_level": 4
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the weight change of patient 12927 from the second value measured on the current hospital visit compared to the first value measured on the current hospital visit?",
+    "template": "what is the change in the weight of patient 12927 from the second value measured on the current hospital visit compared to the first value measured on the current hospital visit?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 12927 and admissions.dischtime is null ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 offset 1 ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 12927 and admissions.dischtime is null ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'admit wt' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 )",
+    "value": {
+      "patient_id": 12927
+    },
+    "q_tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "rel-hosp-cur",
+      "rel-hosp-cur",
+      "",
+      "exact-first",
+      "exact-second"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the weight of patient {patient_id} from the [time_filter_exact2:exact-second] value measured [time_filter_global2:rel-hosp-cur] compared to the [time_filter_exact1:exact-first] value measured [time_filter_global1:rel-hosp-cur]?",
+    "department": "['nursing']",
+    "importance": "high",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "c77c0545eb36a902a51a0911",
+    "answer": [
+      "39.80000305175781"
+    ],
+    "difficulty_level": 4
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how much difference of arterial bp [systolic] was there in patient 30235 last measured on the first icu visit compared to the second to last value measured on the first icu visit?",
+    "template": "what is the change in the arterial bp [systolic] of patient 30235 from the last value measured on the first icu visit compared to the second to last value measured on the first icu visit?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 30235 ) and icustays.outtime is not null order by icustays.intime asc limit 1 ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'arterial bp [systolic]' and d_items.linksto = 'chartevents' ) order by chartevents.charttime desc limit 1 ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 30235 ) and icustays.outtime is not null order by icustays.intime asc limit 1 ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'arterial bp [systolic]' and d_items.linksto = 'chartevents' ) order by chartevents.charttime desc limit 1 offset 1 )",
+    "value": {
+      "patient_id": 30235,
+      "vital_name": "arterial bp [systolic]"
+    },
+    "q_tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "rel-icu-first",
+      "rel-icu-first",
+      "",
+      "exact-second_to_last",
+      "exact-last"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2:exact-last] value measured [time_filter_global2:rel-icu-first] compared to the [time_filter_exact1:exact-second_to_last] value measured [time_filter_global1:rel-icu-first]?",
+    "department": "['physician', 'nursing']",
+    "importance": "medium",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "fe24c3f0e839fd7ef75abd6e",
+    "answer": [
+      "11.0"
+    ],
+    "difficulty_level": 4
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is the variation of patient 29540's heart rate measured at 2101-04-21 16:00:00 compared to the value measured at 2101-04-21 15:00:00?",
+    "template": "what is the change in the heart rate of patient 29540 from the value measured at 2101-04-21 16:00:00 compared to the value measured at 2101-04-21 15:00:00?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 29540 ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'heart rate' and d_items.linksto = 'chartevents' ) and chartevents.charttime = '2101-04-21 16:00:00' ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 29540 ) ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'heart rate' and d_items.linksto = 'chartevents' ) and chartevents.charttime = '2101-04-21 15:00:00' )",
+    "value": {
+      "patient_id": 29540,
+      "vital_name": "heart rate"
+    },
+    "q_tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "",
+      "",
+      "",
+      "exact-default",
+      "exact-default"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2:exact-default] value measured [time_filter_global2:null] compared to the [time_filter_exact1:exact-default] value measured [time_filter_global1:null]?",
+    "department": "['physician', 'nursing']",
+    "importance": "medium",
+    "para_type": "machine",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "ced20a82d2035f9bca26742c",
+    "answer": [
+      "2.0"
+    ],
+    "difficulty_level": 4
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is patient 18866's difference in heart rate from the second value measured on the current icu visit compared to the first value measured on the current icu visit?",
+    "template": "what is the change in the heart rate of patient 18866 from the second value measured on the current icu visit compared to the first value measured on the current icu visit?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 18866 ) and icustays.outtime is null ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'heart rate' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 offset 1 ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 18866 ) and icustays.outtime is null ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'heart rate' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 )",
+    "value": {
+      "vital_name": "heart rate",
+      "patient_id": 18866
+    },
+    "q_tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "rel-icu-cur",
+      "rel-icu-cur",
+      "",
+      "exact-first",
+      "exact-second"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2:exact-second] value measured [time_filter_global2:rel-icu-cur] compared to the [time_filter_exact1:exact-first] value measured [time_filter_global1:rel-icu-cur]?",
+    "department": "['physician', 'nursing']",
+    "importance": "medium",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "070a610fa83329ae7143eb02",
+    "answer": [
+      "15.0"
+    ],
+    "difficulty_level": 4
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "how much does patient 19473's arterial bp [diastolic] change from the last value measured on the first intensive care unit visit compared to the second to last value measured on the first intensive care unit visit?",
+    "template": "what is the change in the arterial bp [diastolic] of patient 19473 from the last value measured on the first icu visit compared to the second to last value measured on the first icu visit?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 19473 ) and icustays.outtime is not null order by icustays.intime asc limit 1 ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'arterial bp [diastolic]' and d_items.linksto = 'chartevents' ) order by chartevents.charttime desc limit 1 ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 19473 ) and icustays.outtime is not null order by icustays.intime asc limit 1 ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'arterial bp [diastolic]' and d_items.linksto = 'chartevents' ) order by chartevents.charttime desc limit 1 offset 1 )",
+    "value": {
+      "patient_id": 19473,
+      "vital_name": "arterial bp [diastolic]"
+    },
+    "q_tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "rel-icu-first",
+      "rel-icu-first",
+      "",
+      "exact-second_to_last",
+      "exact-last"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2:exact-last] value measured [time_filter_global2:rel-icu-first] compared to the [time_filter_exact1:exact-second_to_last] value measured [time_filter_global1:rel-icu-first]?",
+    "department": "['physician', 'nursing']",
+    "importance": "medium",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "9a02007ad168826fde384cd5",
+    "answer": [
+      "19.0"
+    ],
+    "difficulty_level": 4
+  },
+  {
+    "db_id": "mimic_iii",
+    "question": "what is patient 10624's change in heart rate from the second value measured on the first icu visit compared to the first value measured on the first icu visit?",
+    "template": "what is the change in the heart rate of patient 10624 from the second value measured on the first icu visit compared to the first value measured on the first icu visit?",
+    "query": "select ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 10624 ) and icustays.outtime is not null order by icustays.intime asc limit 1 ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'heart rate' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 offset 1 ) - ( select chartevents.valuenum from chartevents where chartevents.icustay_id in ( select icustays.icustay_id from icustays where icustays.hadm_id in ( select admissions.hadm_id from admissions where admissions.subject_id = 10624 ) and icustays.outtime is not null order by icustays.intime asc limit 1 ) and chartevents.itemid in ( select d_items.itemid from d_items where d_items.label = 'heart rate' and d_items.linksto = 'chartevents' ) order by chartevents.charttime asc limit 1 )",
+    "value": {
+      "patient_id": 10624,
+      "vital_name": "heart rate"
+    },
+    "q_tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2] value measured [time_filter_global2] compared to the [time_filter_exact1] value measured [time_filter_global1]?",
+    "t_tag": [
+      "rel-icu-first",
+      "rel-icu-first",
+      "",
+      "exact-first",
+      "exact-second"
+    ],
+    "o_tag": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tag": "what is the change in the {vital_name} of patient {patient_id} from the [time_filter_exact2:exact-second] value measured [time_filter_global2:rel-icu-first] compared to the [time_filter_exact1:exact-first] value measured [time_filter_global1:rel-icu-first]?",
+    "department": "['physician', 'nursing']",
+    "importance": "medium",
+    "para_type": "human",
+    "is_impossible": false,
+    "split": "valid",
+    "id": "790ef481f30d03994d883540",
+    "answer": [
+      "2.0"
+    ],
+    "difficulty_level": 4
+  }
+]

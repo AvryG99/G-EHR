@@ -1,0 +1,27 @@
+{
+  "output_prefix": "evaluation/rag_v2_full",
+  "questions": 1287,
+  "agent_model": "gpt-4o-mini",
+  "comparator_model": "gpt-4o-mini",
+  "temperature": 0,
+  "agent_prose_generation": false,
+  "workers": 16,
+  "active_task_deadline_seconds": 300,
+  "ordinary_query_bytes_limit": 12000000000,
+  "notes_chart_query_bytes_limit": 30000000000,
+  "grading": "Semantic array comparison plus deterministic review of provably unscoped OR branches in single-table note queries. SQL failures count as incorrect; comparison errors are handled separately.",
+  "sha256": {
+    "test.final.json": "ea406e4d0cd7a8cc1417ccefb076f717a82c8d715e95dfe549cbeb0f33cea653",
+    "graph/mimiciii_schema.json": "524cda77a8ce47cf9c678fc67c2748069fad8bba06b8b6f86081886967565366",
+    "graph/faiss_meta.json": "f0b004499f7f27b5e9a5e16bb3a93dce84acb45c3207f00640ef424e1117d366",
+    "graph/faiss_index.bin": "0f2b002f8c5f47c43fa4bc6f55466bdf57fcaf7e97f34b9496f32cb4a1f9898f",
+    "rag/query_context.py": "cc7cdde3c7a6f6ed1739f1eed23781e7d1a50ab0a98974e95566287ee2557b5b",
+    "rag/retrieve.py": "b18c548658afec76bd5b533ebbdd4a597218128043334a79086ee69d151b742a",
+    "prompt/schema_context.py": "b7a4b85aaa36c302f119c28815f86ef746c290f1c65485dfb8a836288dd96119",
+    "prompt/schema_validation.py": "f13e27d28c5c5468447c364a82a0226f0ae9c9c0de33b77f56a818c9b125a14e",
+    "graph/graph_builder.py": "8e8059bfe24a65b470f698e482dba09a49a0320d0928350473392e735dbf0f1e",
+    "medical_assistant.py": "acf3e55439000ab2215b2f99c794627d5cac953eea60b9ddc1cc32b161f414ff",
+    "evaluation/run_array_batch.py": "9457854a70271420df5e726d4a90dfed511461bfa15259d2308f1d4413143ca5",
+    "evaluation/scope_review.py": "73f4e4898ca5b20a97dd13f6f6adc99364a5f732a834791e500acb46fab5e332"
+  }
+}

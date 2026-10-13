@@ -59,21 +59,34 @@ class FeasibleValueLookup:
     ) -> list[dict]:
         if (table.lower(), column.lower()) not in LOOKUP_COLUMNS:
             raise ValueError(f"Lookup is not allowed for {table}.{column}")
-        if not self.database_path.exists():
-            return []
+        from executor.code_runner import RuntimeConfig, run_sql
 
-        import duckdb
-
-        sql = (
-            f'SELECT "{column}" AS value, COUNT(*) AS frequency '
-            f'FROM "{table}" WHERE "{column}" IS NOT NULL '
-            f'GROUP BY "{column}" ORDER BY frequency DESC LIMIT ?'
-        )
-        try:
-            with duckdb.connect(str(self.database_path), read_only=True) as connection:
-                candidates = connection.execute(sql, [candidate_limit]).fetchall()
-        except Exception:
-            return []
+        if RuntimeConfig.from_env().environment == "cloud":
+            # Identifiers come exclusively from LOOKUP_COLUMNS above.
+            table, column = table.lower(), column.lower()
+            sql = (
+                f"SELECT `{column}` AS value, COUNT(*) AS frequency "
+                f"FROM `{table}` WHERE `{column}` IS NOT NULL "
+                f"GROUP BY `{column}` ORDER BY frequency DESC LIMIT {int(candidate_limit)}"
+            )
+            result = run_sql(sql)
+            if not result["success"]:
+                raise RuntimeError(f"BigQuery value lookup failed: {result['error']}")
+            candidates = [(row["value"], row["frequency"]) for row in result["rows"]]
+        else:
+            if not self.database_path.exists():
+                return []
+            import duckdb
+            sql = (
+                f'SELECT "{column}" AS value, COUNT(*) AS frequency '
+                f'FROM "{table}" WHERE "{column}" IS NOT NULL '
+                f'GROUP BY "{column}" ORDER BY frequency DESC LIMIT ?'
+            )
+            try:
+                with duckdb.connect(str(self.database_path), read_only=True) as connection:
+                    candidates = connection.execute(sql, [candidate_limit]).fetchall()
+            except Exception:
+                return []
         if not candidates:
             return []
 

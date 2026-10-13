@@ -1,0 +1,289 @@
+{
+  "counts": {
+    "correct": 579,
+    "wrong_nonempty_result": 460,
+    "scan_budget": 37,
+    "empty_result": 188,
+    "syntax": 8,
+    "unknown_column_or_alias": 3,
+    "timeout": 2,
+    "type_mismatch": 3,
+    "connection": 5,
+    "invalid_join": 1,
+    "unbound_parameter": 1
+  },
+  "incorrect_total": 708,
+  "failed_question_context_observations": {
+    "note_text_available": 169,
+    "note_text_absent": 539
+  },
+  "root_cause_note": "Absence of notes context is an observed coverage gap for a note-QA benchmark, not proof that RAG alone caused every failure. Wrong nonempty results need per-question review for RAG versus LLM logic.",
+  "budget_failures": [
+    {
+      "id": "20",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "1032",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "237",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "352",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "354",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "402",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "404",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "413",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "434",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "1194",
+      "estimated_bytes": 1045937874,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "612",
+      "estimated_bytes": 3840496941,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "1184",
+      "estimated_bytes": 8127148560,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "638",
+      "estimated_bytes": 8127520720,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "1267",
+      "estimated_bytes": 9109823326,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "1282",
+      "estimated_bytes": 9110394782,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "1061",
+      "estimated_bytes": 10650527632,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "167",
+      "estimated_bytes": 10771586578,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "1007",
+      "estimated_bytes": 10771904808,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "365",
+      "estimated_bytes": 10771904808,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "857",
+      "estimated_bytes": 10771976340,
+      "configured_limit": 1000000000
+    },
+    {
+      "id": "184",
+      "estimated_bytes": 10772848424,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "284",
+      "estimated_bytes": 10772848424,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "736",
+      "estimated_bytes": 10772848424,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "859",
+      "estimated_bytes": 10772848424,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "463",
+      "estimated_bytes": 10773320232,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "522",
+      "estimated_bytes": 10773320232,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "414",
+      "estimated_bytes": 11755151030,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "584",
+      "estimated_bytes": 11755151030,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "695",
+      "estimated_bytes": 11755151030,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "1232",
+      "estimated_bytes": 11755151030,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "969",
+      "estimated_bytes": 11755151030,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "1284",
+      "estimated_bytes": 11755523190,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "79",
+      "estimated_bytes": 13417604672,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "850",
+      "estimated_bytes": 13417604672,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "1250",
+      "estimated_bytes": 13418920448,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "1116",
+      "estimated_bytes": 29749231058,
+      "configured_limit": 10000000000
+    },
+    {
+      "id": "1112",
+      "estimated_bytes": 29749603218,
+      "configured_limit": 10000000000
+    }
+  ],
+  "maximum_estimated_bytes": 29749603218,
+  "budget_by_current_limit": {
+    "1000000000": {
+      "count": 16,
+      "maximum_estimated_bytes": 10771976340
+    },
+    "10000000000": {
+      "count": 21,
+      "maximum_estimated_bytes": 29749603218
+    }
+  },
+  "illustrative_failures": [
+    {
+      "id": "1062",
+      "schema_tables": [
+        "patients",
+        "procedureevents_mv",
+        "inputevents_mv",
+        "admissions"
+      ],
+      "note_text_available": false,
+      "sql": "SELECT statusdescription \nFROM procedureevents_mv \nWHERE subject_id = 22180 AND hadm_id = 162436 AND itemid = <item_id_for_incision_status>"
+    },
+    {
+      "id": "259",
+      "schema_tables": [
+        "inputevents_mv",
+        "procedureevents_mv",
+        "admissions"
+      ],
+      "note_text_available": false,
+      "sql": "SELECT \n    COUNT(*) > 0 AS has_spontaneous_movement\nFROM \n    procedureevents_mv \nWHERE \n    subject_id = 54190 \n    AND hadm_id = 188571 \n    AND itemid = <item_id_for_spontaneous_movement> \n    AND statusdescription = 'completed';"
+    },
+    {
+      "id": "262",
+      "schema_tables": [
+        "patients",
+        "admissions"
+      ],
+      "note_text_available": false,
+      "sql": "SELECT \n    CASE \n        WHEN LOWER(p.hay_fever_status) = 'yes' THEN 'Yes'\n        WHEN LOWER(p.hay_fever_status) = 'no' THEN 'No'\n        ELSE 'Unknown'\n    END AS hay_fever_status\nFROM \n    patients p \nJOIN \n    admissions a ON p.subject_id = a.subject_id \nWHERE \n    p.subject_id = 54190 AND a.hadm_id = 188571;"
+    },
+    {
+      "id": "436",
+      "schema_tables": [
+        "patients"
+      ],
+      "note_text_available": false,
+      "sql": "SELECT ie.itemid, ie.value AS medication \nFROM inputevents_mv ie \nJOIN admissions a ON ie.hadm_id = a.hadm_id \nWHERE a.hadm_id = 120799 \nAND ie.itemid IN (\n    SELECT itemid \n    FROM d_items \n    WHERE LOWER(label) LIKE '%osteomyelitis%' \n    OR LOWER(label) LIKE '%cellulitis%'\n);"
+    },
+    {
+      "id": "564",
+      "schema_tables": [
+        "patients",
+        "inputevents_cv",
+        "inputevents_mv",
+        "admissions"
+      ],
+      "note_text_available": false,
+      "sql": "SELECT COUNT(*) AS hematemesis_count \nFROM inputevents_cv \nWHERE subject_id = 28016 \n  AND hadm_id = 122235 \n  AND itemid = <actual_itemid_for_hematemesis>;  -- Replace with the actual itemid for hematemesis"
+    },
+    {
+      "id": "642",
+      "schema_tables": [
+        "patients",
+        "icustays"
+      ],
+      "note_text_available": false,
+      "sql": "SELECT COUNT(*) AS seen_for_premature_coronary_artery\nFROM noteevents\nJOIN patients ON noteevents.subject_id = patients.subject_id\nJOIN icustays ON patients.subject_id = icustays.subject_id AND noteevents.hadm_id = icustays.hadm_id\nWHERE icustays.hadm_id = 117238\nAND noteevents.text LIKE '%premature coronary artery%';"
+    },
+    {
+      "id": "918",
+      "schema_tables": [
+        "patients",
+        "admissions",
+        "inputevents_mv"
+      ],
+      "note_text_available": false,
+      "sql": "SELECT \n    CASE \n        WHEN SUM(CASE WHEN itemid = <aspiration_control_itemid> AND amount > 0 THEN 1 ELSE 0 END) > 0 THEN 'Well Controlled'\n        ELSE 'Not Well Controlled'\n    END AS aspiration_control_status\nFROM \n    inputevents_mv \nWHERE \n    hadm_id = 113195 \n    AND subject_id = 2589;"
+    }
+  ]
+}

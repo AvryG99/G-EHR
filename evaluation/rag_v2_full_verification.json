@@ -1,0 +1,19 @@
+{
+  "unique_question_ids": 1287,
+  "all_dataset_ids_present": true,
+  "csv_json_arrays_valid": true,
+  "unscored": 0,
+  "run_inputs_unchanged": true,
+  "failure_counts": {
+    "correct": 778,
+    "wrong_nonempty_result": 238,
+    "sql_scope_violation": 14,
+    "empty_result": 235,
+    "other_execution_error": 6,
+    "timeout": 9,
+    "unknown_column_or_alias": 3,
+    "context_table_violation": 1,
+    "context_column_violation": 2,
+    "type_mismatch": 1
+  }
+}

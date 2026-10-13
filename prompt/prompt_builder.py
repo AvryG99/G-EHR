@@ -1,3 +1,4 @@
+from prompt.schema_rules import ORIGINAL_SCHEMA_RULES
 # prompt/prompt_builder.py
 import os
 from rag.fewshot_retriever import retrieve_fewshots
@@ -33,6 +34,7 @@ def build_prompt(user_query, rag_result):
         {user_query}
 
         Requirements:
+        {ORIGINAL_SCHEMA_RULES}
 
         - Use Python and psycopg2
         - Return results in a structured format (list of dicts or pandas dataframe)

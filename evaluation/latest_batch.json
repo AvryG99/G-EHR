@@ -1,0 +1,7 @@
+{
+  "output_prefix": "evaluation/self_debug_full",
+  "summary": "evaluation/self_debug_full_summary.json",
+  "results_csv": "evaluation/self_debug_full_results.csv",
+  "accuracy_percent": 66.51126651126651,
+  "completed": 1287
+}

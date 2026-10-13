@@ -1,0 +1,913 @@
+{
+  "questions": 71,
+  "old_all_tables_covered": 59,
+  "updated_all_tables_covered": 69,
+  "previously_missing_fixed": 10,
+  "previously_missing_total": 12,
+  "method": "Offline replay of current context expansion over logged selected schema; compares to old generated SQL, not required-query ground truth or answer accuracy.",
+  "details": [
+    {
+      "id": "20",
+      "question": "what were the results of the patient 's last lactate for his leukocytosis",
+      "previous_missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "chartevents",
+        "d_items",
+        "d_labitems",
+        "icustays",
+        "labevents",
+        "microbiologyevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "1002",
+      "question": "what causes the patient's death?",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "56",
+      "question": "can i search my patient 's medical record for gastrointestinal bleed in the past",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "1017",
+      "question": "when did the patient evaluated for an acute worsening in dyspnea",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "1021",
+      "question": "When did his father die",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "72",
+      "question": "has she ever had acute renal failure before",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "noteevents"
+      ]
+    },
+    {
+      "id": "88",
+      "question": "can i search my patient 's medical record for hypotensive in the past",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "1038",
+      "question": "does the patient currently have acute ischemic",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "icustays",
+        "noteevents"
+      ]
+    },
+    {
+      "id": "120",
+      "question": "does new c - spine fracture on c - spine exist",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents"
+      ]
+    },
+    {
+      "id": "133",
+      "question": "does the patient have a current pain",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "148",
+      "question": "can i search my patient 's medical record for lymphadenopathy in mediastinum in the past",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "1053",
+      "question": "does the patient have pulm lymphadenopathy",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "1054",
+      "question": "what is the effect of central cord syndrome",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "1066",
+      "question": "How long was the incision made",
+      "previous_missing_tables": [
+        "d_items",
+        "procedureevents_mv"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "chartevents",
+        "d_items",
+        "noteevents",
+        "procedureevents_mv"
+      ]
+    },
+    {
+      "id": "193",
+      "question": "can i search my patient 's medical record for chronic pancreatitis in the past",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "206",
+      "question": "can i search my patient 's medical record for hyperlipidemia in the past",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "219",
+      "question": "can i search my patient 's medical record for esophagitis in the past",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "237",
+      "question": "what lab results does he have that are pertinent to significant irritation of the esophagus diagnosis",
+      "previous_missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "chartevents",
+        "d_items",
+        "d_labitems",
+        "drgcodes",
+        "labevents",
+        "microbiologyevents"
+      ]
+    },
+    {
+      "id": "300",
+      "question": "how was prolonged seizure managed",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "354",
+      "question": "when was the patient evaluated for chronic renal insufficiency and what are baseline creatinine results",
+      "previous_missing_tables": [
+        "d_labitems",
+        "labevents",
+        "noteevents"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "d_labitems",
+        "labevents",
+        "noteevents",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "372",
+      "question": "does the patient have a current pseudomonal pneumonia",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "chartevents",
+        "d_items",
+        "microbiologyevents",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "394",
+      "question": "what were the results of the patient 's last left ventricular systolic for his hyperdynamic",
+      "previous_missing_tables": [
+        "d_labitems"
+      ],
+      "updated_missing_tables": [
+        "d_labitems"
+      ],
+      "updated_tables": [
+        "admissions",
+        "chartevents",
+        "d_items",
+        "icustays",
+        "inputevents_mv",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "402",
+      "question": "does the patient have a current hypernatremia",
+      "previous_missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "d_labitems",
+        "labevents",
+        "noteevents",
+        "patients",
+        "prescriptions",
+        "transfers"
+      ]
+    },
+    {
+      "id": "404",
+      "question": "what were the results of the patient 's last ct c - spine for his fracture",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "413",
+      "question": "what lab results does he have that are pertinent to altered mental status diagnosis",
+      "previous_missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "d_labitems",
+        "labevents",
+        "noteevents"
+      ]
+    },
+    {
+      "id": "1135",
+      "question": "does the doctor recommend using too much narcotics for pain",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "423",
+      "question": "has the patient been diagnosed with any pulmonary infectious disease",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "chartevents",
+        "d_items",
+        "microbiologyevents",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "429",
+      "question": "what is his highest ck for his rhabdomylosis",
+      "previous_missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "d_cpt",
+        "d_labitems",
+        "drgcodes",
+        "labevents",
+        "noteevents",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "431",
+      "question": "how was his neck hematoma",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "434",
+      "question": "what was his wbc count in the ed",
+      "previous_missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "d_labitems",
+        "labevents",
+        "noteevents"
+      ]
+    },
+    {
+      "id": "437",
+      "question": "what was the treatment for his atrial fibrillation",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "drgcodes",
+        "icustays",
+        "noteevents",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "497",
+      "question": "has the patient ever had any metabolic alkalosis",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "1146",
+      "question": "When did his father die",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "1148",
+      "question": "is the patient hypothermic",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "543",
+      "question": "has she ever had new right posterior rib fracture before",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents"
+      ]
+    },
+    {
+      "id": "1165",
+      "question": "is the patient's hct stable",
+      "previous_missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "d_labitems",
+        "icustays",
+        "labevents",
+        "noteevents",
+        "transfers"
+      ]
+    },
+    {
+      "id": "599",
+      "question": "has the patient ever had any chf",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "transfers"
+      ]
+    },
+    {
+      "id": "1199",
+      "question": "what methods have been tried to manage her supratherapeutic inr",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "1203",
+      "question": "can i search my patient 's medical record for siadh in the past",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "transfers"
+      ]
+    },
+    {
+      "id": "690",
+      "question": "can i search my patient 's medical record for hypertension in the past",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "691",
+      "question": "does the patient have a current sensation defect",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "710",
+      "question": "does the patient have a current erythema of neck and back",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "715",
+      "question": "what was the indication for my patient 's tylenol",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "1218",
+      "question": "what is the patient's current pstatus of cardiomediastinal silhoutte",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "751",
+      "question": "does the patient have a current sick interaction",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "noteevents"
+      ]
+    },
+    {
+      "id": "1222",
+      "question": "does the patient have any sick contacts",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "noteevents"
+      ]
+    },
+    {
+      "id": "780",
+      "question": "does the patient has any past depressed free wall contractility .",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "785",
+      "question": "has this patient ever had mild pulmonary edema",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "789",
+      "question": "does the patient have a current mild pulmonary edema",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "799",
+      "question": "how was the patient 's diastolic dysfunction diagnosed",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "832",
+      "question": "does the patient have a current m / r / g",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "callout",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "858",
+      "question": "was the patient ever seen for oxygen desaturations overnight",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "864",
+      "question": "what treatment has the patient had for his severe hypoglycemia",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "869",
+      "question": "what treatment has the patient had for his constipation",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "1255",
+      "question": "When did her grandmother have an mi",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "880",
+      "question": "what treatments for severe hyperglycemia has this patient tried",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "1261",
+      "question": "how was the patient 's severe hypoglycemia treated",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "881",
+      "question": "what treatment has the patient had for his constipation",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "1269",
+      "question": "did the patient become acutely hypotensive to sbp of 80s-90s",
+      "previous_missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "updated_missing_tables": [
+        "d_labitems",
+        "labevents"
+      ],
+      "updated_tables": [
+        "admissions",
+        "chartevents",
+        "d_items",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "1280",
+      "question": "when was neurology service consulted",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "1282",
+      "question": "What time did he become acutely hypotensive",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "transfers"
+      ]
+    },
+    {
+      "id": "1284",
+      "question": "when did his heart rate go up to 90s",
+      "previous_missing_tables": [
+        "chartevents",
+        "d_items"
+      ],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "chartevents",
+        "cptevents",
+        "d_cpt",
+        "d_items",
+        "patients"
+      ]
+    },
+    {
+      "id": "1293",
+      "question": "what caused his mother's death",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "934",
+      "question": "what treatments for colonic mass has this patient tried",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "1297",
+      "question": "What led to his father's death",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "952",
+      "question": "how was the patient 's diabetes mellitus diagnosed",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "drgcodes",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "956",
+      "question": "how was the patient 's diabetes mellitus treated",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "958",
+      "question": "any prior bilious return testing",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "chartevents",
+        "d_items",
+        "inputevents_cv",
+        "microbiologyevents",
+        "noteevents"
+      ]
+    },
+    {
+      "id": "962",
+      "question": "what was the indication for the most recent endoscopy",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "prescriptions"
+      ]
+    },
+    {
+      "id": "965",
+      "question": "what were the results of the patient's last pelvic ultrasound for his thickened endometrium",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "icustays",
+        "noteevents",
+        "patients"
+      ]
+    },
+    {
+      "id": "970",
+      "question": "what was given to the patient after surgery",
+      "previous_missing_tables": [],
+      "updated_missing_tables": [],
+      "updated_tables": [
+        "admissions",
+        "noteevents",
+        "patients",
+        "prescriptions"
+      ]
+    }
+  ]
+}

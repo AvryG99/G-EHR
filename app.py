@@ -1,6 +1,11 @@
-"""FastAPI interface for the MIMIC-IV medical assistant."""
+"""FastAPI interface for the MIMIC-III medical assistant."""
+
+from utils.config import load_project_env
+
+load_project_env()
 
 from datetime import datetime
+import os
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException
@@ -33,10 +38,11 @@ def create_assistant() -> MedicalDatabaseAssistant:
         value_lookup=FeasibleValueLookup(retriever.model),
         max_fewshot=MAX_FEWSHOT,
         max_retry=MAX_RETRY,
+        max_semantic_retry=int(os.getenv('MIMIC_SEMANTIC_RETRIES', '2')),
     )
 
 
-app = FastAPI(title="MIMIC-IV Medical Database Assistant")
+app = FastAPI(title="MIMIC-III Medical Database Assistant")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -71,7 +77,7 @@ def get_or_create_memory(session_id: str) -> ConversationBufferMemory:
 
 @app.get("/")
 async def root():
-    return {"message": "MIMIC-IV Medical Database Assistant API"}
+    return {"message": "MIMIC-III Medical Database Assistant API"}
 
 
 @app.post("/chat", response_model=ChatResponse)

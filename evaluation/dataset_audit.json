@@ -1,0 +1,13 @@
+{
+  "file": "test.final.json",
+  "format": "SQuAD-style clinical-note extractive QA",
+  "documents": 36,
+  "passages": 36,
+  "questions": 1287,
+  "questions_without_answers": 0,
+  "duplicate_question_ids": [],
+  "answer_span_mismatches": 0,
+  "database_identifier_fields_present": [],
+  "accuracy": null,
+  "status": "Not executed: evaluation mode needs clarification; model API credentials unavailable in tool environment."
+}

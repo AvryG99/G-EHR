@@ -1,3 +1,4 @@
+from graph.tables import unique_columns
 import json
 import os
 import numpy as np
@@ -9,8 +10,9 @@ def main(
     faiss_index_path="graph/faiss_index.bin",
     meta_path="graph/faiss_meta.json"
 ):
-    with open(json_file_path, "r", encoding="utf-8") as f:
-        columns_data = json.load(f)
+    columns_data = unique_columns()
+    with open(json_file_path, "w", encoding="utf-8") as f:
+        json.dump(columns_data, f, ensure_ascii=False, indent=2)
 
     hf_token = os.getenv("HUGGINGFACE_HUB_TOKEN")
     if hf_token is None:

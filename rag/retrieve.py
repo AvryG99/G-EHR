@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import faiss
 import numpy as np
 import networkx as nx
@@ -8,6 +9,7 @@ from typing import List, Dict
 
 from sentence_transformers import SentenceTransformer
 
+from graph.tables import tables, unique_columns
 from graph.graph_builder import build_schema_graph, describe_join_paths
 
 # Query Expansion (rule-based)
@@ -35,11 +37,12 @@ def expand_query(query: str) -> List[str]:
     q = query.lower()
 
     for k, variants in QUERY_EXPANSIONS.items():
-        if k in q:
+        pattern = re.compile(r'\b' + re.escape(k) + r'(?:s)?\b')
+        if pattern.search(q):
             for v in variants:
-                expanded.add(q.replace(k, v))
+                expanded.add(pattern.sub(v, q))
 
-    return list(expanded)
+    return [query] + sorted(expanded - {query})
 
 
 class MIMICColumnRetriever:
@@ -50,6 +53,9 @@ class MIMICColumnRetriever:
     ):
         with open(meta_path, "r", encoding="utf-8") as f:
             meta = json.load(f)
+
+        if meta["column_metadata"] != list(unique_columns().values()):
+            raise RuntimeError("Schema retrieval index is stale. Rebuild with python -m rag.faiss_embed")
 
         self.column_names = meta["column_names"]
         self.column_metadata = meta["column_metadata"]
@@ -125,8 +131,8 @@ class MIMICColumnRetriever:
         return sorted(results, key=lambda x: x["final_score"], reverse=True)
 
     def shortest_table_set(self, tables: List[str]) -> set:
-        G = self.schema_graph
-        keep_tables = set()
+        G = self.schema_graph.to_undirected()
+        keep_tables = set(tables)
 
         for i in range(len(tables)):
             for j in range(i + 1, len(tables)):
@@ -153,16 +159,22 @@ class MIMICColumnRetriever:
     def organize_by_table(self, columns: List[Dict]) -> Dict[str, Dict]:
         table_data = defaultdict(lambda: {'columns': [], 'total_score': 0.0})
 
+        # Shared IDs are join support, not evidence for the first table in metadata.
+        identifiers = {"row_id", "subject_id", "hadm_id", "icustay_id", "itemid"}
+        votes = Counter()
         for col in columns:
-            primary_table = col['tables'][0] if col['tables'] else None
-            if primary_table:
+            if col['column_name'] not in identifiers and col['tables']:
+                for table in col['tables']:
+                    votes[table] += 1 / len(col['tables'])
+        selected = {t for t, vote in sorted(votes.items(), key=lambda item: (-item[1], item[0]))[:3]
+                    if vote >= .6 * max(votes.values(), default=0)}
+        for col in columns:
+            for table in sorted(set(col['tables']) & selected):
                 score = col.get('final_score', col['similarity_score'])
-                table_data[primary_table]['columns'].append({
-                    'name': col['column_name'],
-                    'description': col['description'],
-                    'score': score
+                table_data[table]['columns'].append({
+                    'name': col['column_name'], 'description': col['description'], 'score': score
                 })
-                table_data[primary_table]['total_score'] += score
+                table_data[table]['total_score'] += score
 
         # Sort tables and columns
         sorted_tables = dict(sorted(
@@ -206,15 +218,14 @@ class MIMICColumnRetriever:
 
         # 5. Table-centric format
         tables_info = self.organize_by_table(filtered)
+        from rag.query_context import apply_query_context
+        tables_info = apply_query_context(query, tables_info)
 
-        # 6. Backward-compatible lists
-        all_columns = []
-        all_tables = set()
-
-        for table_name, table_data in tables_info.items():
-            all_tables.add(table_name)
-            for col in table_data['columns']:
-                all_columns.append(col['name'])
+        from prompt.schema_context import select_schema_columns
+        tables_info = select_schema_columns(tables_info)
+        all_tables = set(tables_info)
+        all_columns = sorted({col["name"] for info in tables_info.values()
+                              for col in info["columns"]})
 
         return {
             "tables_info": tables_info,
@@ -225,19 +236,8 @@ class MIMICColumnRetriever:
         }
 
     def format_for_llm_prompt(self, table_data: Dict[str, Dict]) -> str:
-        lines = []
-        lines.append("You are given the database schema below.")
-        lines.append("Use ONLY the tables and columns listed.\n")
-
-        for table, info in table_data.items():
-            lines.append(f"TABLE {table}:")
-            lines.append("-" * (7 + len(table)))
-            for col in info["columns"]:
-                desc = col["description"].replace("\n", " ")
-                lines.append(f"- {col['name']}: {desc}")
-            lines.append("")
-
-        return "\n".join(lines)
+        from prompt.schema_context import format_schema_context
+        return format_schema_context({'tables_info': table_data})
 
 
 

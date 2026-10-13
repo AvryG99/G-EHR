@@ -1,0 +1,22 @@
+{
+  "old_scored": 1278,
+  "old_correct": 817,
+  "old_accuracy_common": 63.92801251956182,
+  "new_correct_common": 776,
+  "new_accuracy_common": 60.719874804381845,
+  "new_accuracy_all": 60.45066045066045,
+  "transitions": {
+    "(False, False)": 412,
+    "(True, True)": 727,
+    "(True, False)": 90,
+    "(False, True)": 49
+  },
+  "old_correct_but_scope_invalid": 1,
+  "old_accuracy_common_scope_checked": 63.84976525821596,
+  "regression_reasons": {
+    "wrong_nonempty_result": 42,
+    "scope_violation": 4,
+    "empty_result": 31,
+    "execution_failure": 13
+  }
+}

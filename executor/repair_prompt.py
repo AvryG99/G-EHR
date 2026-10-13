@@ -1,3 +1,4 @@
+from prompt.schema_rules import ORIGINAL_SCHEMA_RULES
 import json
 
 
@@ -10,6 +11,9 @@ SQL:
 
 Database error:
 {json.dumps(error, indent=2)}
+
+Original MIMIC-III rules:
+{ORIGINAL_SCHEMA_RULES}
 
 Relevant schema (STRICT):
 {json.dumps(schema_info, indent=2)}

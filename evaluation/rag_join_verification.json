@@ -1,0 +1,61 @@
+[
+  {
+    "question": "baseline creatinine and patient history",
+    "expected_tables": [
+      "d_labitems",
+      "labevents",
+      "noteevents"
+    ],
+    "actual_tables": [
+      "admissions",
+      "d_labitems",
+      "labevents",
+      "noteevents",
+      "prescriptions"
+    ],
+    "passed": true
+  },
+  {
+    "question": "when did his heart rate go up to 90s",
+    "expected_tables": [
+      "chartevents",
+      "d_items"
+    ],
+    "actual_tables": [
+      "admissions",
+      "chartevents",
+      "cptevents",
+      "d_cpt",
+      "d_items",
+      "patients"
+    ],
+    "passed": true
+  },
+  {
+    "question": "what was his wbc count in the ed",
+    "expected_tables": [
+      "d_labitems",
+      "labevents"
+    ],
+    "actual_tables": [
+      "admissions",
+      "d_labitems",
+      "labevents"
+    ],
+    "passed": true
+  },
+  {
+    "question": "date of birth and latest glucose level",
+    "expected_tables": [
+      "d_labitems",
+      "labevents",
+      "patients"
+    ],
+    "actual_tables": [
+      "d_labitems",
+      "labevents",
+      "patients"
+    ],
+    "passed": true
+  }
+]

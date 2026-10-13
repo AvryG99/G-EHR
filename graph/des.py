@@ -289,20 +289,12 @@ Tips for better RAG matching:
 - Consider BM25 hybrid search for exact matches
 """
 
-import json
+# Generate metadata only from the canonical original schema.
+if __name__ == "__main__":
+    import json
+    from pathlib import Path
+    from graph.tables import unique_columns
 
-UNIQUE_COLUMN_DESCRIPTIONS = {}
-
-for table, cols in COLUMN_DESCRIPTIONS.items():
-    for col, desc in cols.items():
-        if col not in UNIQUE_COLUMN_DESCRIPTIONS:
-            UNIQUE_COLUMN_DESCRIPTIONS[col] = {
-                "description": desc,
-                "tables": [table]
-            }
-        else:
-            UNIQUE_COLUMN_DESCRIPTIONS[col]["tables"].append(table)
-
-# Save to file
-with open("unique_columns.json", "w", encoding="utf-8") as f:
-    json.dump(UNIQUE_COLUMN_DESCRIPTIONS, f, indent=2, ensure_ascii=False)
+    Path(__file__).with_name("unique_columns.json").write_text(
+        json.dumps(unique_columns(), indent=2, ensure_ascii=False) + "\n"
+    )
